@@ -1,7 +1,2 @@
-library data_layer;
-
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export './model/index.dart';
+export './repository/index.dart';
