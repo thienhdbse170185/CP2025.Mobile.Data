@@ -1,11 +1,7 @@
 import 'package:data_layer/model/dto/user/user_dto.dart';
 import 'package:data_layer/repository/auth/auth_data_client.dart';
-import 'package:dio/dio.dart';
 
-class AuthApiClient implements IAuthDataClient {
-  final Dio dio;
-  const AuthApiClient({required this.dio});
-
+class AuthLocalData implements IAuthDataClient {
   @override
   Future<UserDto> getUserInfo() {
     // TODO: implement getUserInfo
@@ -14,8 +10,16 @@ class AuthApiClient implements IAuthDataClient {
 
   @override
   Future<UserDto> login(String email, String password) {
-    // TODO: implement login
-    throw UnimplementedError();
+    if (email == 'staff@gmail.com' && password == '123456') {
+      return Future.value(UserDto(
+        id: 1,
+        email: email,
+        name: 'Staff User',
+        role: Role.FarmStaff,
+      ));
+    } else {
+      throw Exception('Login failed');
+    }
   }
 
   @override
