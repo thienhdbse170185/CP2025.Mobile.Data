@@ -1,5 +1,7 @@
 import 'dart:developer';
 
+import 'package:data_layer/model/entity/task/next_task.dart';
+import 'package:data_layer/model/entity/task/task.dart';
 import 'package:data_layer/model/response/task/task_by_cage/tasks_by_cage_response.dart';
 import 'package:data_layer/repository/data_client_interface.dart';
 import 'package:dio/dio.dart';
@@ -53,6 +55,24 @@ class TaskRemoteData implements IDataClient {
   }
 
   @override
+  Future<List<NextTask>> getNextTask(String userId) async {
+    try {
+      final response = await dio
+          .get('http://192.168.1.67:8088/api/tasks/next-task?userId=$userId');
+      if (response.statusCode == 200) {
+        return (response.data as List)
+            .map((task) => NextTask.fromJson(task))
+            .toList();
+      } else {
+        throw Exception('Failed to load next task');
+      }
+    } catch (e) {
+      log(e.toString());
+      rethrow;
+    }
+  }
+
+  @override
   Future create(entity) {
     // TODO: implement create
     throw UnimplementedError();
@@ -65,11 +85,11 @@ class TaskRemoteData implements IDataClient {
   }
 
   @override
-  Future<Map<String, dynamic>> read(String id) async {
+  Future<Task> read(String id) async {
     try {
       final response = await dio.get('http://192.168.1.67:8088/api/tasks/$id');
       if (response.statusCode == 200) {
-        return response.data;
+        return Task.fromJson(response.data['result']);
       } else {
         throw Exception('Failed to load task');
       }

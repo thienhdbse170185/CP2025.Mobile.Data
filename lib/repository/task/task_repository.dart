@@ -1,3 +1,5 @@
+import 'package:data_layer/model/entity/task/next_task.dart';
+import 'package:data_layer/model/entity/task/task.dart';
 import 'package:data_layer/model/response/task/task_by_cage/tasks_by_cage_response.dart';
 import 'package:data_layer/repository/data_client_interface.dart';
 import 'package:data_layer/repository/repository_interface.dart';
@@ -30,7 +32,7 @@ class TaskRepository implements IRepository {
   }
 
   @override
-  Future<Map<String, dynamic>> getById(String id) async {
+  Future<Task> getById(String id) async {
     try {
       return await dataClient.read(id);
     } catch (e) {
@@ -63,6 +65,15 @@ class TaskRepository implements IRepository {
     try {
       final response = await dataClient.getTasksByCageId(cageId);
       return response;
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  @override
+  Future<List<NextTask>> getNextTask(String userId) async {
+    try {
+      return await dataClient.getNextTask(userId);
     } catch (e) {
       rethrow;
     }
