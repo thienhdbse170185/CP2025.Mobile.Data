@@ -1,3 +1,4 @@
+import 'package:data_layer/model/response/task/task_by_cage/tasks_by_cage_response.dart';
 import 'package:data_layer/repository/data_client_interface.dart';
 import 'package:data_layer/model/example_data/task.dart';
 
@@ -59,5 +60,17 @@ class TaskLocalData implements IDataClient {
 
   Future<List<Map<String, dynamic>>> getTasksByDate(String date) async {
     return tasksByDate[date] ?? [];
+  }
+
+  @override
+  Future testConnect() {
+    // TODO: implement testConnect
+    throw UnimplementedError();
+  }
+  
+  @override
+  Future<TasksByCageResponse> getTasksByCageId(String cageId) {
+    // TODO: implement getTasksByCageId
+    throw UnimplementedError();
   }
 }

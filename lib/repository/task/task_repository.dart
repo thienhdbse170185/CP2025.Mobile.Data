@@ -1,9 +1,19 @@
+import 'package:data_layer/model/response/task/task_by_cage/tasks_by_cage_response.dart';
 import 'package:data_layer/repository/data_client_interface.dart';
 import 'package:data_layer/repository/repository_interface.dart';
 
 class TaskRepository implements IRepository {
   final IDataClient dataClient;
   const TaskRepository({required this.dataClient});
+
+  @override
+  Future<void> testConnect() async {
+    try {
+      await dataClient.testConnect();
+    } catch (e) {
+      rethrow;
+    }
+  }
 
   @override
   Future<bool> delete(String id) async {
@@ -20,7 +30,7 @@ class TaskRepository implements IRepository {
   }
 
   @override
-  Future getById(String id) async {
+  Future<Map<String, dynamic>> getById(String id) async {
     try {
       return await dataClient.read(id);
     } catch (e) {
@@ -43,6 +53,16 @@ class TaskRepository implements IRepository {
     try {
       await dataClient.update(item);
       return true;
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  @override
+  Future<TasksByCageResponse> getTasksByCageId(String cageId) async {
+    try {
+      final response = await dataClient.getTasksByCageId(cageId);
+      return response;
     } catch (e) {
       rethrow;
     }
