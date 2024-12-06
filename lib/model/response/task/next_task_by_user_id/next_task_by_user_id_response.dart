@@ -1,4 +1,4 @@
-import 'package:data_layer/model/entity/task/next_task.dart';
+import 'package:data_layer/model/entity/task/next_task/next_task.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'next_task_by_user_id_response.freezed.dart';

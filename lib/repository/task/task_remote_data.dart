@@ -1,6 +1,6 @@
 import 'dart:developer';
 
-import 'package:data_layer/model/entity/task/next_task.dart';
+import 'package:data_layer/model/entity/task/next_task/next_task.dart';
 import 'package:data_layer/model/entity/task/task.dart';
 import 'package:data_layer/model/response/task/task_by_cage/tasks_by_cage_response.dart';
 import 'package:data_layer/repository/data_client_interface.dart';
