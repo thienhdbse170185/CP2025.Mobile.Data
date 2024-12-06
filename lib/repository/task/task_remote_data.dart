@@ -14,7 +14,7 @@ class TaskRemoteData implements IDataClient {
   @override
   Future<void> testConnect() async {
     try {
-      final response = await dio.get('http://192.168.1.67:8088/api/tasks');
+      final response = await dio.get('http://10.3.90.9:8088/api/tasks');
       if (response.statusCode == 200) {
         log('Connected to server');
       } else {
@@ -29,7 +29,7 @@ class TaskRemoteData implements IDataClient {
   Future<TasksByCageResponse> getTasksByCageId(String cageId) async {
     try {
       final response =
-          await dio.get('http://192.168.1.67:8088/api/tasks?CageId=$cageId');
+          await dio.get('http://10.3.90.9:8088/api/tasks?CageId=$cageId');
       if (response.statusCode == 200) {
         return TasksByCageResponse.fromJson(response.data['result']);
       } else {
@@ -43,7 +43,7 @@ class TaskRemoteData implements IDataClient {
 
   Future<TasksByCageResponse> fetchTasks() async {
     try {
-      final response = await dio.get('http://192.168.1.67:8088/api/tasks');
+      final response = await dio.get('http://10.3.90.9:8088/api/tasks');
       if (response.statusCode == 200) {
         return TasksByCageResponse.fromJson(response.data);
       } else {
@@ -58,7 +58,7 @@ class TaskRemoteData implements IDataClient {
   Future<List<NextTask>> getNextTask(String userId) async {
     try {
       final response = await dio
-          .get('http://192.168.1.67:8088/api/tasks/next-task?userId=$userId');
+          .get('http://10.3.90.9:8088/api/tasks/next-task?userId=$userId');
       if (response.statusCode == 200) {
         return (response.data as List)
             .map((task) => NextTask.fromJson(task))
@@ -87,7 +87,7 @@ class TaskRemoteData implements IDataClient {
   @override
   Future<Task> read(String id) async {
     try {
-      final response = await dio.get('http://192.168.1.67:8088/api/tasks/$id');
+      final response = await dio.get('http://10.3.90.9:8088/api/tasks/$id');
       if (response.statusCode == 200) {
         return Task.fromJson(response.data['result']);
       } else {

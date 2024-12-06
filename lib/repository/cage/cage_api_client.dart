@@ -8,18 +8,18 @@ class CageApiClient {
 
   Future<GetAllCageResponse> fetchAllCages() async {
     try {
-      final response = await dio.get('http://192.168.1.67:8088/api/cages');
+      final response = await dio.get('http://10.3.90.9:8088/api/cages');
       return GetAllCageResponse.fromJson(response.data['result']);
-    } on DioException catch (e) {
+    } on DioException {
       rethrow;
     }
   }
 
   Future<Cage> fetchCageById(String id) async {
     try {
-      final response = await dio.get('http://192.168.1.67:8088/api/cages/$id');
+      final response = await dio.get('http://10.3.90.9:8088/api/cages/$id');
       return Cage.fromJson(response.data['result']);
-    } on DioException catch (e) {
+    } on DioException {
       rethrow;
     }
   }
