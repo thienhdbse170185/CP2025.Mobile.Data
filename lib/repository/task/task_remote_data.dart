@@ -25,7 +25,6 @@ class TaskRemoteData implements IDataClient {
     }
   }
 
-  @override
   Future<TasksByCageResponse> getTasksByCageId(String cageId) async {
     try {
       final response =
@@ -54,7 +53,6 @@ class TaskRemoteData implements IDataClient {
     }
   }
 
-  @override
   Future<List<NextTask>> getNextTask(String userId) async {
     try {
       final response = await dio
