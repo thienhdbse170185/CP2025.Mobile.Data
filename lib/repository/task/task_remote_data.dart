@@ -105,15 +105,22 @@ class TaskRemoteData implements IDataClient {
     throw UnimplementedError();
   }
 
-  Future<TaskByUserResponse> getTasksByUserIdAndDate(
+  Future<List<TaskByUserResponse>> getTasksByUserIdAndDate(
       String userId, String date) async {
     try {
       final response = await dio.get(
-        ApiEndpoints.getTasks,
-        queryParameters: {'userId': userId, 'filterDate': date},
+        '${ApiEndpoints.getUsers}/$userId/tasks',
+        queryParameters: {'filterDate': date},
       );
       if (response.statusCode == 200) {
-        return TaskByUserResponse.fromJson(response.data['result']);
+        final result = response.data['result'];
+        if (result is List) {
+          return result
+              .map((task) => TaskByUserResponse.fromJson(task))
+              .toList();
+        } else {
+          throw Exception('Failed to load tasks: unexpected response format');
+        }
       } else {
         throw Exception('Failed to load tasks');
       }

@@ -11,4 +11,8 @@ class ApiEndpoints {
   // SYMPTOM
   static const String postSymptom = '/medicalsymptom';
   static const String getSymptoms = '/medicalsymptom';
+
+  // USER
+  static const String getUsers = '/users';
+  static const String postUser = '/users';
 }

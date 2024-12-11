@@ -15,7 +15,6 @@ class CreateSymptomRequest with _$CreateSymptomRequest {
 
   factory CreateSymptomRequest.fromJson(Map<String, dynamic> json) =>
       _$CreateSymptomRequestFromJson(json);
-
 }
 
 @freezed
@@ -26,5 +25,4 @@ class PictureSymptom with _$PictureSymptom {
 
   factory PictureSymptom.fromJson(Map<String, dynamic> json) =>
       _$PictureSymptomFromJson(json);
-
 }
