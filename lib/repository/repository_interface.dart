@@ -1,6 +1,3 @@
-import 'package:data_layer/model/entity/task/next_task/next_task.dart';
-import 'package:data_layer/model/response/task/task_by_cage/tasks_by_cage_response.dart';
-
 abstract class IRepository<T> {
   Future testConnect();
   Future<List<T>> getAll();
@@ -8,6 +5,4 @@ abstract class IRepository<T> {
   Future<bool> insert(T item);
   Future<bool> update(T item);
   Future<bool> delete(String id);
-  Future<TasksByCageResponse> getTasksByCageId(String cageId);
-  Future<List<NextTask>> getNextTask(String userId);
 }

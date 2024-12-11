@@ -1,3 +1,4 @@
+import 'package:data_layer/api_endpoints.dart';
 import 'package:data_layer/model/entity/cage/cage.dart';
 import 'package:data_layer/model/response/cage/get_all/get_all_cage_response.dart';
 import 'package:dio/dio.dart';
@@ -8,7 +9,7 @@ class CageApiClient {
 
   Future<GetAllCageResponse> fetchAllCages() async {
     try {
-      final response = await dio.get('http://10.3.90.9:8088/api/cages');
+      final response = await dio.get(ApiEndpoints.getCages);
       return GetAllCageResponse.fromJson(response.data['result']);
     } on DioException {
       rethrow;
@@ -17,7 +18,7 @@ class CageApiClient {
 
   Future<Cage> fetchCageById(String id) async {
     try {
-      final response = await dio.get('http://10.3.90.9:8088/api/cages/$id');
+      final response = await dio.get('${ApiEndpoints.getCages}/$id');
       return Cage.fromJson(response.data['result']);
     } on DioException {
       rethrow;

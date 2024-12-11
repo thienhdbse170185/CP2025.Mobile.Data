@@ -1,6 +1,7 @@
 import 'package:data_layer/model/entity/task/next_task/next_task.dart';
 import 'package:data_layer/model/entity/task/task.dart';
 import 'package:data_layer/model/response/task/task_by_cage/tasks_by_cage_response.dart';
+import 'package:data_layer/model/response/task/task_by_user/task_by_user_response.dart';
 import 'package:data_layer/repository/data_client_interface.dart';
 import 'package:data_layer/repository/repository_interface.dart';
 import 'package:data_layer/repository/task/task_remote_data.dart';
@@ -61,20 +62,29 @@ class TaskRepository implements IRepository {
     }
   }
 
-  @override
   Future<TasksByCageResponse> getTasksByCageId(String cageId) async {
     try {
-      final response = await (dataClient as TaskRemoteData).getTasksByCageId(cageId);
+      final response =
+          await (dataClient as TaskRemoteData).getTasksByCageId(cageId);
       return response;
     } catch (e) {
       rethrow;
     }
   }
 
-  @override
   Future<List<NextTask>> getNextTask(String userId) async {
     try {
       return await (dataClient as TaskRemoteData).getNextTask(userId);
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  Future<TaskByUserResponse> getTasksByUserIdAndDate(
+      String userId, String date) async {
+    try {
+      return await (dataClient as TaskRemoteData)
+          .getTasksByUserIdAndDate(userId, date);
     } catch (e) {
       rethrow;
     }

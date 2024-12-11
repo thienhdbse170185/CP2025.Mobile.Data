@@ -4,7 +4,7 @@ import 'package:data_layer/repository/data_client_interface.dart';
 
 class HealthyApiClient extends IDataClient {
   @override
-  Future create(entity) {
+  Future<bool> create(entity) {
     // TODO: implement create
     throw UnimplementedError();
   }
