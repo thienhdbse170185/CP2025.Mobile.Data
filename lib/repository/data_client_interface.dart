@@ -1,10 +1,7 @@
-import 'package:data_layer/model/response/task/task_by_cage/tasks_by_cage_response.dart';
-
 abstract class IDataClient<T> {
   Future testConnect();
-  Future<T> create(T entity);
+  Future<bool> create(T request);
   Future<T> read(String id);
   Future<T> update(T entity);
   Future<bool> delete(String id);
-  Future<TasksByCageResponse> getTasksByCageId(String cageId);
 }

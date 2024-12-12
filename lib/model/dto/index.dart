@@ -1,4 +1,4 @@
-export './cage_dto.dart';
+export 'cage/cage_dto.dart';
 export './farming_cycle_dto.dart';
 export '../entity/task/task.dart';
 export './ticket_dto.dart';

@@ -1,6 +1,6 @@
+import 'package:data_layer/model/entity/task/tash_type/task_type.dart';
+import 'package:data_layer/model/entity/user/user.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import '../user/user.dart'; // Import the updated UserDto
-import 'task_type.dart'; // Import the new TaskTypeDto
 
 part 'task.freezed.dart';
 part 'task.g.dart';
