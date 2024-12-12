@@ -24,4 +24,15 @@ class CageApiClient {
       rethrow;
     }
   }
+
+  Future<List<Cage>> fetchCagesByUserId(String userId) async {
+    try {
+      final response = await dio.get('${ApiEndpoints.getUsers}/$userId/cages');
+      return (response.data['result'] as List)
+          .map((e) => Cage.fromJson(e))
+          .toList();
+    } on DioException {
+      rethrow;
+    }
+  }
 }
