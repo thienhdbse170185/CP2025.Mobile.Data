@@ -106,11 +106,11 @@ class TaskRemoteData implements IDataClient {
   }
 
   Future<List<TaskByUserResponse>> getTasksByUserIdAndDate(
-      String userId, String date) async {
+      String userId, String date, String? cageId) async {
     try {
       final response = await dio.get(
         '${ApiEndpoints.getUsers}/$userId/tasks',
-        queryParameters: {'filterDate': date},
+        queryParameters: {'filterDate': date, 'cageId': cageId},
       );
       if (response.statusCode == 200) {
         final result = response.data['result'];

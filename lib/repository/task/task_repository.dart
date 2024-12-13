@@ -81,10 +81,10 @@ class TaskRepository implements IRepository {
   }
 
   Future<List<TaskByUserResponse>> getTasksByUserIdAndDate(
-      String userId, String date) async {
+      String userId, String date, String? cageId) async {
     try {
       return await (dataClient as TaskRemoteData)
-          .getTasksByUserIdAndDate(userId, date);
+          .getTasksByUserIdAndDate(userId, date, cageId);
     } catch (e) {
       rethrow;
     }
