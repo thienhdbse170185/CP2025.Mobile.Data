@@ -1,5 +1,9 @@
 class ApiEndpoints {
+  // TEST CONNECT
   static const String testConnectAPI = '/tasks/testconnect';
+
+  // AUTH
+  static const String login = '/auth/login';
 
   // TASK
   static const String getTasks = '/tasks';

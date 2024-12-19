@@ -5,15 +5,13 @@ import 'package:data_layer/model/entity/task/next_task/next_task.dart';
 import 'package:data_layer/model/entity/task/task.dart';
 import 'package:data_layer/model/response/task/task_by_cage/tasks_by_cage_response.dart';
 import 'package:data_layer/model/response/task/task_by_user/task_by_user_response.dart';
-import 'package:data_layer/repository/data_client_interface.dart';
 import 'package:dio/dio.dart';
 
-class TaskRemoteData implements IDataClient {
+class TaskRemoteData {
   final Dio dio;
 
   TaskRemoteData({required this.dio});
 
-  @override
   Future<void> testConnect() async {
     try {
       final response = await dio.get(ApiEndpoints.testConnectAPI);
@@ -72,19 +70,16 @@ class TaskRemoteData implements IDataClient {
     }
   }
 
-  @override
   Future<bool> create(entity) {
     // TODO: implement create
     throw UnimplementedError();
   }
 
-  @override
   Future<bool> delete(String id) {
     // TODO: implement delete
     throw UnimplementedError();
   }
 
-  @override
   Future<Task> read(String id) async {
     try {
       final response = await dio.get('${ApiEndpoints.getTasks}/$id');
@@ -99,10 +94,18 @@ class TaskRemoteData implements IDataClient {
     }
   }
 
-  @override
-  Future update(entity) {
-    // TODO: implement update
-    throw UnimplementedError();
+  Future<bool> update(String taskId, String statusId) async {
+    try {
+      final response =
+          await dio.put('${ApiEndpoints.getTasks}/$taskId/status/$statusId');
+      if (response.statusCode == 200) {
+        return true;
+      } else {
+        throw Exception('Failed to update task status');
+      }
+    } catch (e) {
+      rethrow;
+    }
   }
 
   Future<List<TaskByUserResponse>> getTasksByUserIdAndDate(

@@ -6,11 +6,10 @@ import 'package:data_layer/repository/data_client_interface.dart';
 import 'package:data_layer/repository/repository_interface.dart';
 import 'package:data_layer/repository/task/task_remote_data.dart';
 
-class TaskRepository implements IRepository {
-  final IDataClient dataClient;
+class TaskRepository {
+  final TaskRemoteData dataClient;
   const TaskRepository({required this.dataClient});
 
-  @override
   Future<void> testConnect() async {
     try {
       await dataClient.testConnect();
@@ -19,7 +18,6 @@ class TaskRepository implements IRepository {
     }
   }
 
-  @override
   Future<bool> delete(String id) async {
     try {
       return await dataClient.delete(id);
@@ -28,12 +26,10 @@ class TaskRepository implements IRepository {
     }
   }
 
-  @override
   Future<List> getAll() async {
     throw UnimplementedError();
   }
 
-  @override
   Future<Task> getById(String id) async {
     try {
       return await dataClient.read(id);
@@ -42,7 +38,6 @@ class TaskRepository implements IRepository {
     }
   }
 
-  @override
   Future<bool> insert(item) async {
     try {
       await dataClient.create(item);
@@ -52,10 +47,9 @@ class TaskRepository implements IRepository {
     }
   }
 
-  @override
-  Future<bool> update(item) async {
+  Future<bool> update(String taskId, String statusId) async {
     try {
-      await dataClient.update(item);
+      await dataClient.update(taskId, statusId);
       return true;
     } catch (e) {
       rethrow;
@@ -64,8 +58,7 @@ class TaskRepository implements IRepository {
 
   Future<TasksByCageResponse> getTasksByCageId(String cageId) async {
     try {
-      final response =
-          await (dataClient as TaskRemoteData).getTasksByCageId(cageId);
+      final response = await (dataClient).getTasksByCageId(cageId);
       return response;
     } catch (e) {
       rethrow;
@@ -74,7 +67,7 @@ class TaskRepository implements IRepository {
 
   Future<List<NextTask>> getNextTask(String userId) async {
     try {
-      return await (dataClient as TaskRemoteData).getNextTask(userId);
+      return await (dataClient).getNextTask(userId);
     } catch (e) {
       rethrow;
     }
@@ -83,8 +76,7 @@ class TaskRepository implements IRepository {
   Future<List<TaskByUserResponse>> getTasksByUserIdAndDate(
       String userId, String date, String? cageId) async {
     try {
-      return await (dataClient as TaskRemoteData)
-          .getTasksByUserIdAndDate(userId, date, cageId);
+      return await (dataClient).getTasksByUserIdAndDate(userId, date, cageId);
     } catch (e) {
       rethrow;
     }
