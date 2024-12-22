@@ -56,7 +56,7 @@ class TaskRepository {
 
   Future<TasksByCageResponse> getTasksByCageId(String cageId) async {
     try {
-      final response = await (dataClient).getTasksByCageId(cageId);
+      final response = await dataClient.getTasksByCageId(cageId);
       return response;
     } catch (e) {
       rethrow;
@@ -65,7 +65,7 @@ class TaskRepository {
 
   Future<List<NextTask>> getNextTask(String userId) async {
     try {
-      return await (dataClient).getNextTask(userId);
+      return await dataClient.getNextTask(userId);
     } catch (e) {
       rethrow;
     }
@@ -74,7 +74,7 @@ class TaskRepository {
   Future<List<TaskByUserResponse>> getTasksByUserIdAndDate(
       String userId, String date, String? cageId) async {
     try {
-      return await (dataClient).getTasksByUserIdAndDate(userId, date, cageId);
+      return await dataClient.getTasksByUserIdAndDate(userId, date, cageId);
     } catch (e) {
       rethrow;
     }
