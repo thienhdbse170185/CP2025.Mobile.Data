@@ -21,4 +21,12 @@ class CageRepository {
       rethrow;
     }
   }
+
+  Future<List<Cage>> getCagesByUserId(String userId) async {
+    try {
+      return await cageApiClient.fetchCagesByUserId(userId);
+    } catch (e) {
+      rethrow;
+    }
+  }
 }

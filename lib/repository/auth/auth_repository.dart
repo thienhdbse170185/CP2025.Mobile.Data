@@ -1,13 +1,15 @@
-import 'package:data_layer/repository/auth/auth_data_client.dart';
+import 'package:data_layer/model/response/auth/login.dart';
+import 'package:data_layer/repository/auth/auth_api_client.dart';
 
 class AuthRepository {
-  // Remove the authApiClient dependency
-  final IAuthDataClient dataClient;
-  const AuthRepository({required this.dataClient});
+  final AuthApiClient authApiClient;
+  const AuthRepository({required this.authApiClient});
 
-  // Future<int> login(String username, String password) async {
-  //   // Temporary local login logic
-  //   UserDto user = await dataClient.login(username, password);
-  //   return user.id;
-  // }
+  Future<LoginResponse> login(String username, String password) async {
+    try {
+      return await authApiClient.login(username, password);
+    } catch (e) {
+      rethrow;
+    }
+  }
 }
