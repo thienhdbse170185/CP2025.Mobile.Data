@@ -9,6 +9,11 @@ class ApiEndpoints {
   static const String getTasks = '/tasks';
   static const String getNextTask = '/tasks/next-task';
 
+  // LOG
+  static const String dailyFoodUsageLog = '/dailyfoodusagelog';
+  static const String healthLog = '/healthlog';
+  static const String vaccineScheduleLog = '/vaccineschedulelog';
+
   // CAGE
   static const String getCages = '/cages';
 

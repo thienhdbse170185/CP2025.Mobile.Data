@@ -1,3 +1,6 @@
+import 'package:data_layer/model/dto/task/daily_food_usage_log/daily_food_usage_log_dto.dart';
+import 'package:data_layer/model/dto/task/health_log/health_log_dto.dart';
+import 'package:data_layer/model/dto/task/vaccin_schedule_log/vaccin_schedule_log_dto.dart';
 import 'package:data_layer/model/entity/task/next_task/next_task.dart';
 import 'package:data_layer/model/entity/task/task.dart';
 import 'package:data_layer/model/response/task/task_by_cage/tasks_by_cage_response.dart';
@@ -5,12 +8,12 @@ import 'package:data_layer/model/response/task/task_by_user/task_by_user_respons
 import 'package:data_layer/repository/task/task_remote_data.dart';
 
 class TaskRepository {
-  final TaskRemoteData dataClient;
-  const TaskRepository({required this.dataClient});
+  final TaskRemoteData apiClient;
+  const TaskRepository({required this.apiClient});
 
   Future<void> testConnect() async {
     try {
-      await dataClient.testConnect();
+      await apiClient.testConnect();
     } catch (e) {
       rethrow;
     }
@@ -18,7 +21,7 @@ class TaskRepository {
 
   Future<bool> delete(String id) async {
     try {
-      return await dataClient.delete(id);
+      return await apiClient.delete(id);
     } catch (e) {
       rethrow;
     }
@@ -30,7 +33,7 @@ class TaskRepository {
 
   Future<Task> getById(String id) async {
     try {
-      return await dataClient.read(id);
+      return await apiClient.read(id);
     } catch (e) {
       rethrow;
     }
@@ -38,7 +41,7 @@ class TaskRepository {
 
   Future<bool> insert(item) async {
     try {
-      await dataClient.create(item);
+      await apiClient.create(item);
       return true;
     } catch (e) {
       rethrow;
@@ -47,7 +50,7 @@ class TaskRepository {
 
   Future<bool> update(String taskId, String statusId) async {
     try {
-      await dataClient.update(taskId, statusId);
+      await apiClient.update(taskId, statusId);
       return true;
     } catch (e) {
       rethrow;
@@ -56,7 +59,7 @@ class TaskRepository {
 
   Future<TasksByCageResponse> getTasksByCageId(String cageId) async {
     try {
-      final response = await dataClient.getTasksByCageId(cageId);
+      final response = await apiClient.getTasksByCageId(cageId);
       return response;
     } catch (e) {
       rethrow;
@@ -65,7 +68,7 @@ class TaskRepository {
 
   Future<List<NextTask>> getNextTask(String userId) async {
     try {
-      return await dataClient.getNextTask(userId);
+      return await apiClient.getNextTask(userId);
     } catch (e) {
       rethrow;
     }
@@ -74,7 +77,35 @@ class TaskRepository {
   Future<List<TaskByUserResponse>> getTasksByUserIdAndDate(
       String userId, String date, String? cageId) async {
     try {
-      return await dataClient.getTasksByUserIdAndDate(userId, date, cageId);
+      return await apiClient.getTasksByUserIdAndDate(userId, date, cageId);
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  Future<bool> createDailyFoodUsageLog(
+      String cageId, DailyFoodUsageLogDto request) {
+    try {
+      return apiClient.createDailyFoodUsageLog(cageId, request);
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  Future<bool> createHealthLog(String cageId, HealthLogDto request) async {
+    try {
+      await apiClient.createHealthLog(cageId, request);
+      return true;
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  Future<bool> createVaccinScheduleLog(
+      String cageId, VaccinScheduleLogDto request) async {
+    try {
+      await apiClient.createVaccinScheduleLog(cageId, request);
+      return true;
     } catch (e) {
       rethrow;
     }
