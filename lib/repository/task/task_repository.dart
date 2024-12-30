@@ -1,5 +1,6 @@
 import 'package:data_layer/model/dto/task/daily_food_usage_log/daily_food_usage_log_dto.dart';
 import 'package:data_layer/model/dto/task/health_log/health_log_dto.dart';
+import 'package:data_layer/model/dto/task/task_have_cage_name/task_have_cage_name.dart';
 import 'package:data_layer/model/dto/task/vaccin_schedule_log/vaccin_schedule_log_dto.dart';
 import 'package:data_layer/model/entity/task/next_task/next_task.dart';
 import 'package:data_layer/model/entity/task/task.dart';
@@ -31,7 +32,7 @@ class TaskRepository {
     throw UnimplementedError();
   }
 
-  Future<Task> getById(String id) async {
+  Future<TaskHaveCageName> getById(String id) async {
     try {
       return await apiClient.read(id);
     } catch (e) {
@@ -57,9 +58,9 @@ class TaskRepository {
     }
   }
 
-  Future<TasksByCageResponse> getTasksByCageId(String cageId) async {
+  Future<List<TaskByUserResponse>> getTasksByCageId(String userId, String date, String cageId) async {
     try {
-      final response = await apiClient.getTasksByCageId(cageId);
+      final response = await apiClient.getTasksByUserIdAndDate(userId, date, cageId);
       return response;
     } catch (e) {
       rethrow;
