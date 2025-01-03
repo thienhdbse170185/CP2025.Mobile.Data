@@ -20,3 +20,6 @@ export './notification/notification_repository.dart';
 export 'task/task_remote_data.dart';
 export 'task/task_repository.dart';
 export 'task/task_local_data.dart';
+
+export 'growth_stage/growth_stage_repository.dart';
+export 'growth_stage/growth_stage_api_client.dart';

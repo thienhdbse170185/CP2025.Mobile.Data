@@ -132,6 +132,9 @@ class TaskRemoteData {
       }
     } on DioException catch (e) {
       log(e.toString());
+      if (e.response?.statusCode == 404) {
+        throw Exception('no-task-found');
+      }
       rethrow;
     }
   }

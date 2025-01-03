@@ -8,3 +8,4 @@ export 'cage/cage_dto.dart';
 export 'task/daily_food_usage_log/daily_food_usage_log_dto.dart';
 export 'task/vaccin_schedule_log/vaccin_schedule_log_dto.dart';
 export 'task/health_log/health_log_dto.dart';
+export 'growth_stage/growth_stage_dto.dart';

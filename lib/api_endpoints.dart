@@ -24,4 +24,8 @@ class ApiEndpoints {
   // USER
   static const String getUsers = '/users';
   static const String postUser = '/users';
+
+  // GROWTHSTAGE
+  static const String growthStage = '/growthstage';
+  static const String growthStageInCage = '$growthStage/cage';
 }
