@@ -190,4 +190,54 @@ class TaskRemoteData {
       rethrow;
     }
   }
+
+  Future<DailyFoodUsageLogDto> getDailyFoodUsageLog(String taskId) async {
+    try {
+      final response =
+          await dio.get('${ApiEndpoints.dailyFoodUsageLog}/task/$taskId');
+      if (response.statusCode == 200) {
+        return DailyFoodUsageLogDto.fromJson(response.data['result']);
+      } else {
+        throw Exception('Failed to load daily food usage log');
+      }
+    } on DioException catch (e) {
+      if (e.response?.statusCode == 404) {
+        throw Exception('growstage-not-found');
+      }
+      rethrow;
+    }
+  }
+
+  Future<HealthLogDto> getHealthLog(String taskId) async {
+    try {
+      final response = await dio.get('${ApiEndpoints.healthLog}/task/$taskId');
+      if (response.statusCode == 200) {
+        return HealthLogDto.fromJson(response.data['result']);
+      } else {
+        throw Exception('Failed to load health log');
+      }
+    } on DioException catch (e) {
+      if (e.response?.statusCode == 404) {
+        throw Exception('growstage-not-found');
+      }
+      rethrow;
+    }
+  }
+
+  Future<VaccinScheduleLogDto> getVaccinScheduleLog(String taskId) async {
+    try {
+      final response =
+          await dio.get('${ApiEndpoints.vaccineScheduleLog}/task/$taskId');
+      if (response.statusCode == 200) {
+        return VaccinScheduleLogDto.fromJson(response.data['result']);
+      } else {
+        throw Exception('Failed to load vaccin schedule log');
+      }
+    } on DioException catch (e) {
+      if (e.response?.statusCode == 404) {
+        throw Exception('growstage-not-found');
+      }
+      rethrow;
+    }
+  }
 }

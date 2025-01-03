@@ -3,8 +3,6 @@ import 'package:data_layer/model/dto/task/health_log/health_log_dto.dart';
 import 'package:data_layer/model/dto/task/task_have_cage_name/task_have_cage_name.dart';
 import 'package:data_layer/model/dto/task/vaccin_schedule_log/vaccin_schedule_log_dto.dart';
 import 'package:data_layer/model/entity/task/next_task/next_task.dart';
-import 'package:data_layer/model/entity/task/task.dart';
-import 'package:data_layer/model/response/task/task_by_cage/tasks_by_cage_response.dart';
 import 'package:data_layer/model/response/task/task_by_user/task_by_user_response.dart';
 import 'package:data_layer/repository/task/task_remote_data.dart';
 
@@ -58,9 +56,11 @@ class TaskRepository {
     }
   }
 
-  Future<List<TaskByUserResponse>> getTasksByCageId(String userId, String date, String cageId) async {
+  Future<List<TaskByUserResponse>> getTasksByCageId(
+      String userId, String date, String cageId) async {
     try {
-      final response = await apiClient.getTasksByUserIdAndDate(userId, date, cageId);
+      final response =
+          await apiClient.getTasksByUserIdAndDate(userId, date, cageId);
       return response;
     } catch (e) {
       rethrow;
@@ -107,6 +107,30 @@ class TaskRepository {
     try {
       await apiClient.createVaccinScheduleLog(cageId, request);
       return true;
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  Future<DailyFoodUsageLogDto> getDailyFoodUsageLog(String taskId) async {
+    try {
+      return await apiClient.getDailyFoodUsageLog(taskId);
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  Future<HealthLogDto> getHealthLog(String taskId) async {
+    try {
+      return await apiClient.getHealthLog(taskId);
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  Future<VaccinScheduleLogDto> getVaccinScheduleLog(String taskId) async {
+    try {
+      return await apiClient.getVaccinScheduleLog(taskId);
     } catch (e) {
       rethrow;
     }
