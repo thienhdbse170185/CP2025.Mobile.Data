@@ -9,8 +9,8 @@ class HealthyApiClient {
   HealthyApiClient({required this.dio});
   Future<bool> create(CreateSymptomRequest request) async {
     try {
-      final response =
-          await dio.post(ApiEndpoints.postSymptom, data: request.toJson());
+      final data = request.toJson();
+      final response = await dio.post(ApiEndpoints.postSymptom, data: data);
       if (response.statusCode == 200) {
         return true;
       }
