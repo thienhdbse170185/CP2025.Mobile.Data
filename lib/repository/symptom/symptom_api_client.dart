@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:data_layer/api_endpoints.dart';
+import 'package:data_layer/data_layer.dart';
 import 'package:data_layer/model/request/symptom/create_symptom/create_symptom_request.dart';
 import 'package:dio/dio.dart';
 
@@ -22,23 +23,18 @@ class SymptomApiClient {
     }
   }
 
-  Future<bool> delete(String id) {
-    // TODO: implement delete
-    throw UnimplementedError();
-  }
-
-  Future read(String id) {
-    // TODO: implement read
-    throw UnimplementedError();
-  }
-
-  Future testConnect() {
-    // TODO: implement testConnect
-    throw UnimplementedError();
-  }
-
-  Future update(entity) {
-    // TODO: implement update
-    throw UnimplementedError();
+  Future<List<SymptomDto>> getSymptoms() async {
+    try {
+      final response = await dio.get(ApiEndpoints.symptom);
+      if (response.statusCode == 200) {
+        return (response.data['result'] as List)
+            .map((e) => SymptomDto.fromJson(e))
+            .toList();
+      }
+      return [];
+    } on DioException catch (e) {
+      log(e.toString());
+      rethrow;
+    }
   }
 }

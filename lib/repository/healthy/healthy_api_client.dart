@@ -10,6 +10,7 @@ class HealthyApiClient {
   Future<bool> create(CreateSymptomRequest request) async {
     try {
       final data = request.toJson();
+      log(data.toString());
       final response = await dio.post(ApiEndpoints.postSymptom, data: data);
       if (response.statusCode == 200) {
         return true;
@@ -19,25 +20,5 @@ class HealthyApiClient {
       log(e.toString());
       rethrow;
     }
-  }
-
-  Future<bool> delete(String id) {
-    // TODO: implement delete
-    throw UnimplementedError();
-  }
-
-  Future read(String id) {
-    // TODO: implement read
-    throw UnimplementedError();
-  }
-
-  Future testConnect() {
-    // TODO: implement testConnect
-    throw UnimplementedError();
-  }
-
-  Future update(entity) {
-    // TODO: implement update
-    throw UnimplementedError();
   }
 }

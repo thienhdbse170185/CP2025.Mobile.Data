@@ -6,7 +6,7 @@ part 'vaccin_schedule_log_dto.g.dart';
 @freezed
 class VaccinScheduleLogDto with _$VaccinScheduleLogDto {
   const factory VaccinScheduleLogDto({
-    required DateTime date,
+    required String date,
     required String notes,
     required String photo,
     required String taskId,

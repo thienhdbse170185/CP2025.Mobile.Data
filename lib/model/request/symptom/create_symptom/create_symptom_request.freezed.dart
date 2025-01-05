@@ -21,11 +21,14 @@ CreateSymptomRequest _$CreateSymptomRequestFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$CreateSymptomRequest {
   String get farmingBatchId => throw _privateConstructorUsedError;
+  String get prescriptionId => throw _privateConstructorUsedError;
   String get symptoms => throw _privateConstructorUsedError;
   String get status => throw _privateConstructorUsedError;
   int get affectedQuantity => throw _privateConstructorUsedError;
   String get notes => throw _privateConstructorUsedError;
   List<PictureSymptom> get pictures => throw _privateConstructorUsedError;
+  List<GetSymptomRequest> get medicalSymptomDetails =>
+      throw _privateConstructorUsedError;
 
   /// Serializes this CreateSymptomRequest to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -45,11 +48,13 @@ abstract class $CreateSymptomRequestCopyWith<$Res> {
   @useResult
   $Res call(
       {String farmingBatchId,
+      String prescriptionId,
       String symptoms,
       String status,
       int affectedQuantity,
       String notes,
-      List<PictureSymptom> pictures});
+      List<PictureSymptom> pictures,
+      List<GetSymptomRequest> medicalSymptomDetails});
 }
 
 /// @nodoc
@@ -69,16 +74,22 @@ class _$CreateSymptomRequestCopyWithImpl<$Res,
   @override
   $Res call({
     Object? farmingBatchId = null,
+    Object? prescriptionId = null,
     Object? symptoms = null,
     Object? status = null,
     Object? affectedQuantity = null,
     Object? notes = null,
     Object? pictures = null,
+    Object? medicalSymptomDetails = null,
   }) {
     return _then(_value.copyWith(
       farmingBatchId: null == farmingBatchId
           ? _value.farmingBatchId
           : farmingBatchId // ignore: cast_nullable_to_non_nullable
+              as String,
+      prescriptionId: null == prescriptionId
+          ? _value.prescriptionId
+          : prescriptionId // ignore: cast_nullable_to_non_nullable
               as String,
       symptoms: null == symptoms
           ? _value.symptoms
@@ -100,6 +111,10 @@ class _$CreateSymptomRequestCopyWithImpl<$Res,
           ? _value.pictures
           : pictures // ignore: cast_nullable_to_non_nullable
               as List<PictureSymptom>,
+      medicalSymptomDetails: null == medicalSymptomDetails
+          ? _value.medicalSymptomDetails
+          : medicalSymptomDetails // ignore: cast_nullable_to_non_nullable
+              as List<GetSymptomRequest>,
     ) as $Val);
   }
 }
@@ -114,11 +129,13 @@ abstract class _$$CreateSymptomRequestImplCopyWith<$Res>
   @useResult
   $Res call(
       {String farmingBatchId,
+      String prescriptionId,
       String symptoms,
       String status,
       int affectedQuantity,
       String notes,
-      List<PictureSymptom> pictures});
+      List<PictureSymptom> pictures,
+      List<GetSymptomRequest> medicalSymptomDetails});
 }
 
 /// @nodoc
@@ -135,16 +152,22 @@ class __$$CreateSymptomRequestImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? farmingBatchId = null,
+    Object? prescriptionId = null,
     Object? symptoms = null,
     Object? status = null,
     Object? affectedQuantity = null,
     Object? notes = null,
     Object? pictures = null,
+    Object? medicalSymptomDetails = null,
   }) {
     return _then(_$CreateSymptomRequestImpl(
       farmingBatchId: null == farmingBatchId
           ? _value.farmingBatchId
           : farmingBatchId // ignore: cast_nullable_to_non_nullable
+              as String,
+      prescriptionId: null == prescriptionId
+          ? _value.prescriptionId
+          : prescriptionId // ignore: cast_nullable_to_non_nullable
               as String,
       symptoms: null == symptoms
           ? _value.symptoms
@@ -166,6 +189,10 @@ class __$$CreateSymptomRequestImplCopyWithImpl<$Res>
           ? _value._pictures
           : pictures // ignore: cast_nullable_to_non_nullable
               as List<PictureSymptom>,
+      medicalSymptomDetails: null == medicalSymptomDetails
+          ? _value._medicalSymptomDetails
+          : medicalSymptomDetails // ignore: cast_nullable_to_non_nullable
+              as List<GetSymptomRequest>,
     ));
   }
 }
@@ -175,18 +202,23 @@ class __$$CreateSymptomRequestImplCopyWithImpl<$Res>
 class _$CreateSymptomRequestImpl implements _CreateSymptomRequest {
   const _$CreateSymptomRequestImpl(
       {required this.farmingBatchId,
+      required this.prescriptionId,
       required this.symptoms,
       required this.status,
       required this.affectedQuantity,
       required this.notes,
-      required final List<PictureSymptom> pictures})
-      : _pictures = pictures;
+      required final List<PictureSymptom> pictures,
+      required final List<GetSymptomRequest> medicalSymptomDetails})
+      : _pictures = pictures,
+        _medicalSymptomDetails = medicalSymptomDetails;
 
   factory _$CreateSymptomRequestImpl.fromJson(Map<String, dynamic> json) =>
       _$$CreateSymptomRequestImplFromJson(json);
 
   @override
   final String farmingBatchId;
+  @override
+  final String prescriptionId;
   @override
   final String symptoms;
   @override
@@ -203,9 +235,18 @@ class _$CreateSymptomRequestImpl implements _CreateSymptomRequest {
     return EqualUnmodifiableListView(_pictures);
   }
 
+  final List<GetSymptomRequest> _medicalSymptomDetails;
+  @override
+  List<GetSymptomRequest> get medicalSymptomDetails {
+    if (_medicalSymptomDetails is EqualUnmodifiableListView)
+      return _medicalSymptomDetails;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_medicalSymptomDetails);
+  }
+
   @override
   String toString() {
-    return 'CreateSymptomRequest(farmingBatchId: $farmingBatchId, symptoms: $symptoms, status: $status, affectedQuantity: $affectedQuantity, notes: $notes, pictures: $pictures)';
+    return 'CreateSymptomRequest(farmingBatchId: $farmingBatchId, prescriptionId: $prescriptionId, symptoms: $symptoms, status: $status, affectedQuantity: $affectedQuantity, notes: $notes, pictures: $pictures, medicalSymptomDetails: $medicalSymptomDetails)';
   }
 
   @override
@@ -215,19 +256,31 @@ class _$CreateSymptomRequestImpl implements _CreateSymptomRequest {
             other is _$CreateSymptomRequestImpl &&
             (identical(other.farmingBatchId, farmingBatchId) ||
                 other.farmingBatchId == farmingBatchId) &&
+            (identical(other.prescriptionId, prescriptionId) ||
+                other.prescriptionId == prescriptionId) &&
             (identical(other.symptoms, symptoms) ||
                 other.symptoms == symptoms) &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.affectedQuantity, affectedQuantity) ||
                 other.affectedQuantity == affectedQuantity) &&
             (identical(other.notes, notes) || other.notes == notes) &&
-            const DeepCollectionEquality().equals(other._pictures, _pictures));
+            const DeepCollectionEquality().equals(other._pictures, _pictures) &&
+            const DeepCollectionEquality()
+                .equals(other._medicalSymptomDetails, _medicalSymptomDetails));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, farmingBatchId, symptoms, status,
-      affectedQuantity, notes, const DeepCollectionEquality().hash(_pictures));
+  int get hashCode => Object.hash(
+      runtimeType,
+      farmingBatchId,
+      prescriptionId,
+      symptoms,
+      status,
+      affectedQuantity,
+      notes,
+      const DeepCollectionEquality().hash(_pictures),
+      const DeepCollectionEquality().hash(_medicalSymptomDetails));
 
   /// Create a copy of CreateSymptomRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -250,11 +303,13 @@ class _$CreateSymptomRequestImpl implements _CreateSymptomRequest {
 abstract class _CreateSymptomRequest implements CreateSymptomRequest {
   const factory _CreateSymptomRequest(
           {required final String farmingBatchId,
+          required final String prescriptionId,
           required final String symptoms,
           required final String status,
           required final int affectedQuantity,
           required final String notes,
-          required final List<PictureSymptom> pictures}) =
+          required final List<PictureSymptom> pictures,
+          required final List<GetSymptomRequest> medicalSymptomDetails}) =
       _$CreateSymptomRequestImpl;
 
   factory _CreateSymptomRequest.fromJson(Map<String, dynamic> json) =
@@ -262,6 +317,8 @@ abstract class _CreateSymptomRequest implements CreateSymptomRequest {
 
   @override
   String get farmingBatchId;
+  @override
+  String get prescriptionId;
   @override
   String get symptoms;
   @override
@@ -272,6 +329,8 @@ abstract class _CreateSymptomRequest implements CreateSymptomRequest {
   String get notes;
   @override
   List<PictureSymptom> get pictures;
+  @override
+  List<GetSymptomRequest> get medicalSymptomDetails;
 
   /// Create a copy of CreateSymptomRequest
   /// with the given fields replaced by the non-null parameter values.

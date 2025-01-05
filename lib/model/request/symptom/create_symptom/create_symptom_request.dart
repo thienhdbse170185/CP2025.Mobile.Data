@@ -1,3 +1,5 @@
+import 'package:data_layer/data_layer.dart';
+import 'package:data_layer/model/request/symptom/symptom/get_symptom_request.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'create_symptom_request.freezed.dart';
@@ -6,12 +8,15 @@ part 'create_symptom_request.g.dart';
 @freezed
 class CreateSymptomRequest with _$CreateSymptomRequest {
   const factory CreateSymptomRequest(
-      {required String farmingBatchId,
-      required String symptoms,
-      required String status,
-      required int affectedQuantity,
-      required String notes,
-      required List<PictureSymptom> pictures}) = _CreateSymptomRequest;
+          {required String farmingBatchId,
+          required String prescriptionId,
+          required String symptoms,
+          required String status,
+          required int affectedQuantity,
+          required String notes,
+          required List<PictureSymptom> pictures,
+          required List<GetSymptomRequest> medicalSymptomDetails}) =
+      _CreateSymptomRequest;
 
   factory CreateSymptomRequest.fromJson(Map<String, dynamic> json) =>
       _$CreateSymptomRequestFromJson(json);

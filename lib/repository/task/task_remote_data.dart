@@ -132,6 +132,9 @@ class TaskRemoteData {
       }
     } on DioException catch (e) {
       log(e.toString());
+      if (e.response?.statusCode == 404) {
+        throw Exception('no-task-found');
+      }
       rethrow;
     }
   }
@@ -157,14 +160,16 @@ class TaskRemoteData {
 
   Future<bool> createHealthLog(String cageId, HealthLogDto request) async {
     try {
-      final response = await dio.post('${ApiEndpoints.healthLog}/$cageId',
+      final response = await dio.post(
+          '${ApiEndpoints.healthLog}/$cageId/health-log',
           data: request.toJson());
-      if (response.statusCode == 200) {
+      if (response.statusCode == 201) {
         return true;
       } else {
         throw Exception('Tạo log sức khỏe thất bại!');
       }
     } on DioException catch (e) {
+      log(e.response?.data.toString() ?? '');
       if (e.response?.statusCode == 404) {
         throw Exception('growstage-not-found');
       }
@@ -178,14 +183,15 @@ class TaskRemoteData {
       final response = await dio.post(
           '${ApiEndpoints.vaccineScheduleLog}/$cageId',
           data: request.toJson());
-      if (response.statusCode == 200) {
+      if (response.statusCode == 201) {
         return true;
       } else {
         throw Exception('Tạo log lịch tiêm chủng thất bại!');
       }
     } on DioException catch (e) {
+      log(e.response?.data.toString() ?? '');
       if (e.response?.statusCode == 404) {
-        throw Exception('growstage-not-found');
+        throw Exception('vaccinschedule-not-found');
       }
       rethrow;
     }

@@ -20,7 +20,7 @@ VaccinScheduleLogDto _$VaccinScheduleLogDtoFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$VaccinScheduleLogDto {
-  DateTime get date => throw _privateConstructorUsedError;
+  String get date => throw _privateConstructorUsedError;
   String get notes => throw _privateConstructorUsedError;
   String get photo => throw _privateConstructorUsedError;
   String get taskId => throw _privateConstructorUsedError;
@@ -41,7 +41,7 @@ abstract class $VaccinScheduleLogDtoCopyWith<$Res> {
           $Res Function(VaccinScheduleLogDto) then) =
       _$VaccinScheduleLogDtoCopyWithImpl<$Res, VaccinScheduleLogDto>;
   @useResult
-  $Res call({DateTime date, String notes, String photo, String taskId});
+  $Res call({String date, String notes, String photo, String taskId});
 }
 
 /// @nodoc
@@ -69,7 +69,7 @@ class _$VaccinScheduleLogDtoCopyWithImpl<$Res,
       date: null == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as String,
       notes: null == notes
           ? _value.notes
           : notes // ignore: cast_nullable_to_non_nullable
@@ -94,7 +94,7 @@ abstract class _$$VaccinScheduleLogDtoImplCopyWith<$Res>
       __$$VaccinScheduleLogDtoImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({DateTime date, String notes, String photo, String taskId});
+  $Res call({String date, String notes, String photo, String taskId});
 }
 
 /// @nodoc
@@ -119,7 +119,7 @@ class __$$VaccinScheduleLogDtoImplCopyWithImpl<$Res>
       date: null == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as String,
       notes: null == notes
           ? _value.notes
           : notes // ignore: cast_nullable_to_non_nullable
@@ -149,7 +149,7 @@ class _$VaccinScheduleLogDtoImpl implements _VaccinScheduleLogDto {
       _$$VaccinScheduleLogDtoImplFromJson(json);
 
   @override
-  final DateTime date;
+  final String date;
   @override
   final String notes;
   @override
@@ -197,7 +197,7 @@ class _$VaccinScheduleLogDtoImpl implements _VaccinScheduleLogDto {
 
 abstract class _VaccinScheduleLogDto implements VaccinScheduleLogDto {
   const factory _VaccinScheduleLogDto(
-      {required final DateTime date,
+      {required final String date,
       required final String notes,
       required final String photo,
       required final String taskId}) = _$VaccinScheduleLogDtoImpl;
@@ -206,7 +206,7 @@ abstract class _VaccinScheduleLogDto implements VaccinScheduleLogDto {
       _$VaccinScheduleLogDtoImpl.fromJson;
 
   @override
-  DateTime get date;
+  String get date;
   @override
   String get notes;
   @override
