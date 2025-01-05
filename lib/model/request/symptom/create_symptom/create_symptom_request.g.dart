@@ -10,6 +10,7 @@ _$CreateSymptomRequestImpl _$$CreateSymptomRequestImplFromJson(
         Map<String, dynamic> json) =>
     _$CreateSymptomRequestImpl(
       farmingBatchId: json['farmingBatchId'] as String,
+      prescriptionId: json['prescriptionId'] as String,
       symptoms: json['symptoms'] as String,
       status: json['status'] as String,
       affectedQuantity: (json['affectedQuantity'] as num).toInt(),
@@ -17,17 +18,22 @@ _$CreateSymptomRequestImpl _$$CreateSymptomRequestImplFromJson(
       pictures: (json['pictures'] as List<dynamic>)
           .map((e) => PictureSymptom.fromJson(e as Map<String, dynamic>))
           .toList(),
+      medicalSymptomDetails: (json['medicalSymptomDetails'] as List<dynamic>)
+          .map((e) => GetSymptomRequest.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$$CreateSymptomRequestImplToJson(
         _$CreateSymptomRequestImpl instance) =>
     <String, dynamic>{
       'farmingBatchId': instance.farmingBatchId,
+      'prescriptionId': instance.prescriptionId,
       'symptoms': instance.symptoms,
       'status': instance.status,
       'affectedQuantity': instance.affectedQuantity,
       'notes': instance.notes,
       'pictures': instance.pictures,
+      'medicalSymptomDetails': instance.medicalSymptomDetails,
     };
 
 _$PictureSymptomImpl _$$PictureSymptomImplFromJson(Map<String, dynamic> json) =>

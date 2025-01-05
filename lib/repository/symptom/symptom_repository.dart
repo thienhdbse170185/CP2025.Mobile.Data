@@ -1,3 +1,4 @@
+import 'package:data_layer/model/dto/symptom/symptom.dart';
 import 'package:data_layer/model/request/symptom/create_symptom/create_symptom_request.dart';
 import 'package:data_layer/repository/symptom/symptom_api_client.dart';
 
@@ -5,32 +6,8 @@ class SymptomRepository {
   final SymptomApiClient apiClient;
   SymptomRepository({required this.apiClient});
 
-  Future<void> testConnect() async {
-    try {
-      await apiClient.testConnect();
-    } catch (e) {
-      rethrow;
-    }
-  }
-
-  Future<bool> delete(String id) async {
-    try {
-      return await apiClient.delete(id);
-    } catch (e) {
-      rethrow;
-    }
-  }
-
   Future<List> getAll() async {
     throw UnimplementedError();
-  }
-
-  Future getById(String id) async {
-    try {
-      return await apiClient.read(id);
-    } catch (e) {
-      rethrow;
-    }
   }
 
   Future<bool> insert(CreateSymptomRequest request) async {
@@ -42,10 +19,9 @@ class SymptomRepository {
     }
   }
 
-  Future<bool> update(item) async {
+  Future<List<SymptomDto>> getSymptoms() async {
     try {
-      await apiClient.update(item);
-      return true;
+      return await apiClient.getSymptoms();
     } catch (e) {
       rethrow;
     }

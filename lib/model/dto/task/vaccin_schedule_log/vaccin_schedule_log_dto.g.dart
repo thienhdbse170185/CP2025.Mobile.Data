@@ -9,7 +9,7 @@ part of 'vaccin_schedule_log_dto.dart';
 _$VaccinScheduleLogDtoImpl _$$VaccinScheduleLogDtoImplFromJson(
         Map<String, dynamic> json) =>
     _$VaccinScheduleLogDtoImpl(
-      date: DateTime.parse(json['date'] as String),
+      date: json['date'] as String,
       notes: json['notes'] as String,
       photo: json['photo'] as String,
       taskId: json['taskId'] as String,
@@ -18,7 +18,7 @@ _$VaccinScheduleLogDtoImpl _$$VaccinScheduleLogDtoImplFromJson(
 Map<String, dynamic> _$$VaccinScheduleLogDtoImplToJson(
         _$VaccinScheduleLogDtoImpl instance) =>
     <String, dynamic>{
-      'date': instance.date.toIso8601String(),
+      'date': instance.date,
       'notes': instance.notes,
       'photo': instance.photo,
       'taskId': instance.taskId,

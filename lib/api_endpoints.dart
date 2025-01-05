@@ -17,7 +17,7 @@ class ApiEndpoints {
   // CAGE
   static const String getCages = '/cages';
 
-  // SYMPTOM
+  // MEDICAL SYMPTOM
   static const String postSymptom = '/medicalsymptom';
   static const String getSymptoms = '/medicalsymptom';
 
@@ -28,4 +28,11 @@ class ApiEndpoints {
   // GROWTHSTAGE
   static const String growthStage = '/growthstage';
   static const String growthStageInCage = '$growthStage/cage';
+
+  // FARMING-BATCH
+  static const String farmingBatch = '/farmingbatchs';
+  static const String farmingBatchByCage = '$farmingBatch/cage';
+
+  // SYMPTOM
+  static const String symptom = '/symptom';
 }
