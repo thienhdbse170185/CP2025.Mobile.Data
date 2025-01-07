@@ -13,7 +13,7 @@ _$MedicalSymptomDtoImpl _$$MedicalSymptomDtoImplFromJson(
       farmingBatchId: json['farmingBatchId'] as String,
       prescriptionId: json['prescriptionId'] as String?,
       symptoms: json['symptoms'] as String,
-      diagnosis: json['diagnosis'] as String,
+      diagnosis: json['diagnosis'] as String?,
       createAt: DateTime.parse(json['createAt'] as String),
       status: json['status'] as String,
       affectedQuantity: (json['affectedQuantity'] as num).toInt(),
@@ -23,11 +23,11 @@ _$MedicalSymptomDtoImpl _$$MedicalSymptomDtoImplFromJson(
       pictures: (json['pictures'] as List<dynamic>?)
           ?.map((e) => PictureSymptom.fromJson(e as Map<String, dynamic>))
           .toList(),
-      medicalSymptomDetails: (json['medicalSymptomDetails'] as List<dynamic>)
-          .map((e) => SymptomDto.fromJson(e as Map<String, dynamic>))
+      medicalSymptomDetails: (json['medicalSymptomDetails'] as List<dynamic>?)
+          ?.map((e) => SymptomDto.fromJson(e as Map<String, dynamic>))
           .toList(),
-      prescriptions: (json['prescriptions'] as List<dynamic>)
-          .map((e) => PrescriptionDto.fromJson(e as Map<String, dynamic>))
+      prescriptions: (json['prescriptions'] as List<dynamic>?)
+          ?.map((e) => PrescriptionDto.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 

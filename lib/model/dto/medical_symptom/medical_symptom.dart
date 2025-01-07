@@ -13,7 +13,7 @@ class MedicalSymptomDto with _$MedicalSymptomDto {
     required String farmingBatchId,
     required String? prescriptionId,
     required String symptoms,
-    required String diagnosis,
+    required String? diagnosis,
     required DateTime createAt,
     required String status,
     required int affectedQuantity,
@@ -21,8 +21,8 @@ class MedicalSymptomDto with _$MedicalSymptomDto {
     required String? nameAnimal,
     required String notes,
     required List<PictureSymptom>? pictures,
-    required List<SymptomDto> medicalSymptomDetails,
-    required List<PrescriptionDto> prescriptions,
+    required List<SymptomDto>? medicalSymptomDetails,
+    required List<PrescriptionDto>? prescriptions,
   }) = _MedicalSymptomDto;
 
   factory MedicalSymptomDto.fromJson(Map<String, dynamic> json) =>

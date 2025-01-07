@@ -24,7 +24,7 @@ mixin _$MedicalSymptomDto {
   String get farmingBatchId => throw _privateConstructorUsedError;
   String? get prescriptionId => throw _privateConstructorUsedError;
   String get symptoms => throw _privateConstructorUsedError;
-  String get diagnosis => throw _privateConstructorUsedError;
+  String? get diagnosis => throw _privateConstructorUsedError;
   DateTime get createAt => throw _privateConstructorUsedError;
   String get status => throw _privateConstructorUsedError;
   int get affectedQuantity => throw _privateConstructorUsedError;
@@ -32,9 +32,10 @@ mixin _$MedicalSymptomDto {
   String? get nameAnimal => throw _privateConstructorUsedError;
   String get notes => throw _privateConstructorUsedError;
   List<PictureSymptom>? get pictures => throw _privateConstructorUsedError;
-  List<SymptomDto> get medicalSymptomDetails =>
+  List<SymptomDto>? get medicalSymptomDetails =>
       throw _privateConstructorUsedError;
-  List<PrescriptionDto> get prescriptions => throw _privateConstructorUsedError;
+  List<PrescriptionDto>? get prescriptions =>
+      throw _privateConstructorUsedError;
 
   /// Serializes this MedicalSymptomDto to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -57,7 +58,7 @@ abstract class $MedicalSymptomDtoCopyWith<$Res> {
       String farmingBatchId,
       String? prescriptionId,
       String symptoms,
-      String diagnosis,
+      String? diagnosis,
       DateTime createAt,
       String status,
       int affectedQuantity,
@@ -65,8 +66,8 @@ abstract class $MedicalSymptomDtoCopyWith<$Res> {
       String? nameAnimal,
       String notes,
       List<PictureSymptom>? pictures,
-      List<SymptomDto> medicalSymptomDetails,
-      List<PrescriptionDto> prescriptions});
+      List<SymptomDto>? medicalSymptomDetails,
+      List<PrescriptionDto>? prescriptions});
 }
 
 /// @nodoc
@@ -88,7 +89,7 @@ class _$MedicalSymptomDtoCopyWithImpl<$Res, $Val extends MedicalSymptomDto>
     Object? farmingBatchId = null,
     Object? prescriptionId = freezed,
     Object? symptoms = null,
-    Object? diagnosis = null,
+    Object? diagnosis = freezed,
     Object? createAt = null,
     Object? status = null,
     Object? affectedQuantity = null,
@@ -96,8 +97,8 @@ class _$MedicalSymptomDtoCopyWithImpl<$Res, $Val extends MedicalSymptomDto>
     Object? nameAnimal = freezed,
     Object? notes = null,
     Object? pictures = freezed,
-    Object? medicalSymptomDetails = null,
-    Object? prescriptions = null,
+    Object? medicalSymptomDetails = freezed,
+    Object? prescriptions = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -116,10 +117,10 @@ class _$MedicalSymptomDtoCopyWithImpl<$Res, $Val extends MedicalSymptomDto>
           ? _value.symptoms
           : symptoms // ignore: cast_nullable_to_non_nullable
               as String,
-      diagnosis: null == diagnosis
+      diagnosis: freezed == diagnosis
           ? _value.diagnosis
           : diagnosis // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       createAt: null == createAt
           ? _value.createAt
           : createAt // ignore: cast_nullable_to_non_nullable
@@ -148,14 +149,14 @@ class _$MedicalSymptomDtoCopyWithImpl<$Res, $Val extends MedicalSymptomDto>
           ? _value.pictures
           : pictures // ignore: cast_nullable_to_non_nullable
               as List<PictureSymptom>?,
-      medicalSymptomDetails: null == medicalSymptomDetails
+      medicalSymptomDetails: freezed == medicalSymptomDetails
           ? _value.medicalSymptomDetails
           : medicalSymptomDetails // ignore: cast_nullable_to_non_nullable
-              as List<SymptomDto>,
-      prescriptions: null == prescriptions
+              as List<SymptomDto>?,
+      prescriptions: freezed == prescriptions
           ? _value.prescriptions
           : prescriptions // ignore: cast_nullable_to_non_nullable
-              as List<PrescriptionDto>,
+              as List<PrescriptionDto>?,
     ) as $Val);
   }
 }
@@ -173,7 +174,7 @@ abstract class _$$MedicalSymptomDtoImplCopyWith<$Res>
       String farmingBatchId,
       String? prescriptionId,
       String symptoms,
-      String diagnosis,
+      String? diagnosis,
       DateTime createAt,
       String status,
       int affectedQuantity,
@@ -181,8 +182,8 @@ abstract class _$$MedicalSymptomDtoImplCopyWith<$Res>
       String? nameAnimal,
       String notes,
       List<PictureSymptom>? pictures,
-      List<SymptomDto> medicalSymptomDetails,
-      List<PrescriptionDto> prescriptions});
+      List<SymptomDto>? medicalSymptomDetails,
+      List<PrescriptionDto>? prescriptions});
 }
 
 /// @nodoc
@@ -202,7 +203,7 @@ class __$$MedicalSymptomDtoImplCopyWithImpl<$Res>
     Object? farmingBatchId = null,
     Object? prescriptionId = freezed,
     Object? symptoms = null,
-    Object? diagnosis = null,
+    Object? diagnosis = freezed,
     Object? createAt = null,
     Object? status = null,
     Object? affectedQuantity = null,
@@ -210,8 +211,8 @@ class __$$MedicalSymptomDtoImplCopyWithImpl<$Res>
     Object? nameAnimal = freezed,
     Object? notes = null,
     Object? pictures = freezed,
-    Object? medicalSymptomDetails = null,
-    Object? prescriptions = null,
+    Object? medicalSymptomDetails = freezed,
+    Object? prescriptions = freezed,
   }) {
     return _then(_$MedicalSymptomDtoImpl(
       id: null == id
@@ -230,10 +231,10 @@ class __$$MedicalSymptomDtoImplCopyWithImpl<$Res>
           ? _value.symptoms
           : symptoms // ignore: cast_nullable_to_non_nullable
               as String,
-      diagnosis: null == diagnosis
+      diagnosis: freezed == diagnosis
           ? _value.diagnosis
           : diagnosis // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       createAt: null == createAt
           ? _value.createAt
           : createAt // ignore: cast_nullable_to_non_nullable
@@ -262,14 +263,14 @@ class __$$MedicalSymptomDtoImplCopyWithImpl<$Res>
           ? _value._pictures
           : pictures // ignore: cast_nullable_to_non_nullable
               as List<PictureSymptom>?,
-      medicalSymptomDetails: null == medicalSymptomDetails
+      medicalSymptomDetails: freezed == medicalSymptomDetails
           ? _value._medicalSymptomDetails
           : medicalSymptomDetails // ignore: cast_nullable_to_non_nullable
-              as List<SymptomDto>,
-      prescriptions: null == prescriptions
+              as List<SymptomDto>?,
+      prescriptions: freezed == prescriptions
           ? _value._prescriptions
           : prescriptions // ignore: cast_nullable_to_non_nullable
-              as List<PrescriptionDto>,
+              as List<PrescriptionDto>?,
     ));
   }
 }
@@ -290,8 +291,8 @@ class _$MedicalSymptomDtoImpl implements _MedicalSymptomDto {
       required this.nameAnimal,
       required this.notes,
       required final List<PictureSymptom>? pictures,
-      required final List<SymptomDto> medicalSymptomDetails,
-      required final List<PrescriptionDto> prescriptions})
+      required final List<SymptomDto>? medicalSymptomDetails,
+      required final List<PrescriptionDto>? prescriptions})
       : _pictures = pictures,
         _medicalSymptomDetails = medicalSymptomDetails,
         _prescriptions = prescriptions;
@@ -308,7 +309,7 @@ class _$MedicalSymptomDtoImpl implements _MedicalSymptomDto {
   @override
   final String symptoms;
   @override
-  final String diagnosis;
+  final String? diagnosis;
   @override
   final DateTime createAt;
   @override
@@ -331,21 +332,25 @@ class _$MedicalSymptomDtoImpl implements _MedicalSymptomDto {
     return EqualUnmodifiableListView(value);
   }
 
-  final List<SymptomDto> _medicalSymptomDetails;
+  final List<SymptomDto>? _medicalSymptomDetails;
   @override
-  List<SymptomDto> get medicalSymptomDetails {
+  List<SymptomDto>? get medicalSymptomDetails {
+    final value = _medicalSymptomDetails;
+    if (value == null) return null;
     if (_medicalSymptomDetails is EqualUnmodifiableListView)
       return _medicalSymptomDetails;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_medicalSymptomDetails);
+    return EqualUnmodifiableListView(value);
   }
 
-  final List<PrescriptionDto> _prescriptions;
+  final List<PrescriptionDto>? _prescriptions;
   @override
-  List<PrescriptionDto> get prescriptions {
+  List<PrescriptionDto>? get prescriptions {
+    final value = _prescriptions;
+    if (value == null) return null;
     if (_prescriptions is EqualUnmodifiableListView) return _prescriptions;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_prescriptions);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
@@ -426,7 +431,7 @@ abstract class _MedicalSymptomDto implements MedicalSymptomDto {
           required final String farmingBatchId,
           required final String? prescriptionId,
           required final String symptoms,
-          required final String diagnosis,
+          required final String? diagnosis,
           required final DateTime createAt,
           required final String status,
           required final int affectedQuantity,
@@ -434,8 +439,8 @@ abstract class _MedicalSymptomDto implements MedicalSymptomDto {
           required final String? nameAnimal,
           required final String notes,
           required final List<PictureSymptom>? pictures,
-          required final List<SymptomDto> medicalSymptomDetails,
-          required final List<PrescriptionDto> prescriptions}) =
+          required final List<SymptomDto>? medicalSymptomDetails,
+          required final List<PrescriptionDto>? prescriptions}) =
       _$MedicalSymptomDtoImpl;
 
   factory _MedicalSymptomDto.fromJson(Map<String, dynamic> json) =
@@ -450,7 +455,7 @@ abstract class _MedicalSymptomDto implements MedicalSymptomDto {
   @override
   String get symptoms;
   @override
-  String get diagnosis;
+  String? get diagnosis;
   @override
   DateTime get createAt;
   @override
@@ -466,9 +471,9 @@ abstract class _MedicalSymptomDto implements MedicalSymptomDto {
   @override
   List<PictureSymptom>? get pictures;
   @override
-  List<SymptomDto> get medicalSymptomDetails;
+  List<SymptomDto>? get medicalSymptomDetails;
   @override
-  List<PrescriptionDto> get prescriptions;
+  List<PrescriptionDto>? get prescriptions;
 
   /// Create a copy of MedicalSymptomDto
   /// with the given fields replaced by the non-null parameter values.
