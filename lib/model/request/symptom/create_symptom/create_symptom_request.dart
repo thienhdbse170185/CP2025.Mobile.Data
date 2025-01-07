@@ -1,4 +1,3 @@
-import 'package:data_layer/data_layer.dart';
 import 'package:data_layer/model/request/symptom/symptom/get_symptom_request.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 

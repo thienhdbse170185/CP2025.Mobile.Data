@@ -17,6 +17,8 @@ export 'farming_batch/farming_batch_api_client.dart';
 export 'farming_batch/farming_batch_repository.dart';
 export 'growth_stage/growth_stage_api_client.dart';
 export 'growth_stage/growth_stage_repository.dart';
+export 'medical_symptom/medical_symptom_api_client.dart';
+export 'medical_symptom/medical_symptom_repository.dart';
 export 'task/task_local_data.dart';
 export 'task/task_remote_data.dart';
 export 'task/task_repository.dart';
