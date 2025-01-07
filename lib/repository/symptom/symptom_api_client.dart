@@ -27,7 +27,7 @@ class SymptomApiClient {
     try {
       final response = await dio.get(ApiEndpoints.symptom);
       if (response.statusCode == 200) {
-        return (response.data['result'] as List)
+        return (response.data['result']['items'] as List)
             .map((e) => SymptomDto.fromJson(e))
             .toList();
       }
