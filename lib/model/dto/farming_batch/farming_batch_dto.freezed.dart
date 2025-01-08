@@ -25,9 +25,12 @@ mixin _$FarmingBatchDto {
   String get species => throw _privateConstructorUsedError;
   DateTime get startDate => throw _privateConstructorUsedError;
   DateTime? get completeAt => throw _privateConstructorUsedError;
+  DateTime? get endDate => throw _privateConstructorUsedError;
   String get status => throw _privateConstructorUsedError;
   int get cleaningFrequency => throw _privateConstructorUsedError;
   int get quantity => throw _privateConstructorUsedError;
+  int? get affectedQuantity => throw _privateConstructorUsedError;
+  GrowthStageDto? get growthStageDetails => throw _privateConstructorUsedError;
   CageDto? get cage => throw _privateConstructorUsedError;
 
   /// Serializes this FarmingBatchDto to a JSON map.
@@ -52,11 +55,15 @@ abstract class $FarmingBatchDtoCopyWith<$Res> {
       String species,
       DateTime startDate,
       DateTime? completeAt,
+      DateTime? endDate,
       String status,
       int cleaningFrequency,
       int quantity,
+      int? affectedQuantity,
+      GrowthStageDto? growthStageDetails,
       CageDto? cage});
 
+  $GrowthStageDtoCopyWith<$Res>? get growthStageDetails;
   $CageDtoCopyWith<$Res>? get cage;
 }
 
@@ -80,9 +87,12 @@ class _$FarmingBatchDtoCopyWithImpl<$Res, $Val extends FarmingBatchDto>
     Object? species = null,
     Object? startDate = null,
     Object? completeAt = freezed,
+    Object? endDate = freezed,
     Object? status = null,
     Object? cleaningFrequency = null,
     Object? quantity = null,
+    Object? affectedQuantity = freezed,
+    Object? growthStageDetails = freezed,
     Object? cage = freezed,
   }) {
     return _then(_value.copyWith(
@@ -106,6 +116,10 @@ class _$FarmingBatchDtoCopyWithImpl<$Res, $Val extends FarmingBatchDto>
           ? _value.completeAt
           : completeAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      endDate: freezed == endDate
+          ? _value.endDate
+          : endDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -118,11 +132,33 @@ class _$FarmingBatchDtoCopyWithImpl<$Res, $Val extends FarmingBatchDto>
           ? _value.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
               as int,
+      affectedQuantity: freezed == affectedQuantity
+          ? _value.affectedQuantity
+          : affectedQuantity // ignore: cast_nullable_to_non_nullable
+              as int?,
+      growthStageDetails: freezed == growthStageDetails
+          ? _value.growthStageDetails
+          : growthStageDetails // ignore: cast_nullable_to_non_nullable
+              as GrowthStageDto?,
       cage: freezed == cage
           ? _value.cage
           : cage // ignore: cast_nullable_to_non_nullable
               as CageDto?,
     ) as $Val);
+  }
+
+  /// Create a copy of FarmingBatchDto
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $GrowthStageDtoCopyWith<$Res>? get growthStageDetails {
+    if (_value.growthStageDetails == null) {
+      return null;
+    }
+
+    return $GrowthStageDtoCopyWith<$Res>(_value.growthStageDetails!, (value) {
+      return _then(_value.copyWith(growthStageDetails: value) as $Val);
+    });
   }
 
   /// Create a copy of FarmingBatchDto
@@ -154,11 +190,16 @@ abstract class _$$FarmingBatchDtoImplCopyWith<$Res>
       String species,
       DateTime startDate,
       DateTime? completeAt,
+      DateTime? endDate,
       String status,
       int cleaningFrequency,
       int quantity,
+      int? affectedQuantity,
+      GrowthStageDto? growthStageDetails,
       CageDto? cage});
 
+  @override
+  $GrowthStageDtoCopyWith<$Res>? get growthStageDetails;
   @override
   $CageDtoCopyWith<$Res>? get cage;
 }
@@ -181,9 +222,12 @@ class __$$FarmingBatchDtoImplCopyWithImpl<$Res>
     Object? species = null,
     Object? startDate = null,
     Object? completeAt = freezed,
+    Object? endDate = freezed,
     Object? status = null,
     Object? cleaningFrequency = null,
     Object? quantity = null,
+    Object? affectedQuantity = freezed,
+    Object? growthStageDetails = freezed,
     Object? cage = freezed,
   }) {
     return _then(_$FarmingBatchDtoImpl(
@@ -207,6 +251,10 @@ class __$$FarmingBatchDtoImplCopyWithImpl<$Res>
           ? _value.completeAt
           : completeAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      endDate: freezed == endDate
+          ? _value.endDate
+          : endDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -219,6 +267,14 @@ class __$$FarmingBatchDtoImplCopyWithImpl<$Res>
           ? _value.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
               as int,
+      affectedQuantity: freezed == affectedQuantity
+          ? _value.affectedQuantity
+          : affectedQuantity // ignore: cast_nullable_to_non_nullable
+              as int?,
+      growthStageDetails: freezed == growthStageDetails
+          ? _value.growthStageDetails
+          : growthStageDetails // ignore: cast_nullable_to_non_nullable
+              as GrowthStageDto?,
       cage: freezed == cage
           ? _value.cage
           : cage // ignore: cast_nullable_to_non_nullable
@@ -236,9 +292,12 @@ class _$FarmingBatchDtoImpl implements _FarmingBatchDto {
       required this.species,
       required this.startDate,
       required this.completeAt,
+      required this.endDate,
       required this.status,
       required this.cleaningFrequency,
       required this.quantity,
+      required this.affectedQuantity,
+      required this.growthStageDetails,
       required this.cage});
 
   factory _$FarmingBatchDtoImpl.fromJson(Map<String, dynamic> json) =>
@@ -255,17 +314,23 @@ class _$FarmingBatchDtoImpl implements _FarmingBatchDto {
   @override
   final DateTime? completeAt;
   @override
+  final DateTime? endDate;
+  @override
   final String status;
   @override
   final int cleaningFrequency;
   @override
   final int quantity;
   @override
+  final int? affectedQuantity;
+  @override
+  final GrowthStageDto? growthStageDetails;
+  @override
   final CageDto? cage;
 
   @override
   String toString() {
-    return 'FarmingBatchDto(id: $id, name: $name, species: $species, startDate: $startDate, completeAt: $completeAt, status: $status, cleaningFrequency: $cleaningFrequency, quantity: $quantity, cage: $cage)';
+    return 'FarmingBatchDto(id: $id, name: $name, species: $species, startDate: $startDate, completeAt: $completeAt, endDate: $endDate, status: $status, cleaningFrequency: $cleaningFrequency, quantity: $quantity, affectedQuantity: $affectedQuantity, growthStageDetails: $growthStageDetails, cage: $cage)';
   }
 
   @override
@@ -280,18 +345,35 @@ class _$FarmingBatchDtoImpl implements _FarmingBatchDto {
                 other.startDate == startDate) &&
             (identical(other.completeAt, completeAt) ||
                 other.completeAt == completeAt) &&
+            (identical(other.endDate, endDate) || other.endDate == endDate) &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.cleaningFrequency, cleaningFrequency) ||
                 other.cleaningFrequency == cleaningFrequency) &&
             (identical(other.quantity, quantity) ||
                 other.quantity == quantity) &&
+            (identical(other.affectedQuantity, affectedQuantity) ||
+                other.affectedQuantity == affectedQuantity) &&
+            (identical(other.growthStageDetails, growthStageDetails) ||
+                other.growthStageDetails == growthStageDetails) &&
             (identical(other.cage, cage) || other.cage == cage));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, species, startDate,
-      completeAt, status, cleaningFrequency, quantity, cage);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      species,
+      startDate,
+      completeAt,
+      endDate,
+      status,
+      cleaningFrequency,
+      quantity,
+      affectedQuantity,
+      growthStageDetails,
+      cage);
 
   /// Create a copy of FarmingBatchDto
   /// with the given fields replaced by the non-null parameter values.
@@ -317,9 +399,12 @@ abstract class _FarmingBatchDto implements FarmingBatchDto {
       required final String species,
       required final DateTime startDate,
       required final DateTime? completeAt,
+      required final DateTime? endDate,
       required final String status,
       required final int cleaningFrequency,
       required final int quantity,
+      required final int? affectedQuantity,
+      required final GrowthStageDto? growthStageDetails,
       required final CageDto? cage}) = _$FarmingBatchDtoImpl;
 
   factory _FarmingBatchDto.fromJson(Map<String, dynamic> json) =
@@ -336,11 +421,17 @@ abstract class _FarmingBatchDto implements FarmingBatchDto {
   @override
   DateTime? get completeAt;
   @override
+  DateTime? get endDate;
+  @override
   String get status;
   @override
   int get cleaningFrequency;
   @override
   int get quantity;
+  @override
+  int? get affectedQuantity;
+  @override
+  GrowthStageDto? get growthStageDetails;
   @override
   CageDto? get cage;
 

@@ -23,6 +23,8 @@ _$TaskHaveCageNameImpl _$$TaskHaveCageNameImplFromJson(
       assignedToUser:
           User.fromJson(json['assignedToUser'] as Map<String, dynamic>),
       taskType: TaskType.fromJson(json['taskType'] as Map<String, dynamic>),
+      prescriptionId: json['prescriptionId'] as String?,
+      isTreatmentTask: json['isTreatmentTask'] as bool,
     );
 
 Map<String, dynamic> _$$TaskHaveCageNameImplToJson(
@@ -41,4 +43,6 @@ Map<String, dynamic> _$$TaskHaveCageNameImplToJson(
       'completedAt': instance.completedAt,
       'assignedToUser': instance.assignedToUser,
       'taskType': instance.taskType,
+      'prescriptionId': instance.prescriptionId,
+      'isTreatmentTask': instance.isTreatmentTask,
     };

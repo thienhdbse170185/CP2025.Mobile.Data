@@ -93,9 +93,10 @@ class TaskRepository {
     }
   }
 
-  Future<bool> createHealthLog(String cageId, HealthLogDto request) async {
+  Future<bool> createHealthLog(
+      String prescriptionId, HealthLogDto request) async {
     try {
-      await apiClient.createHealthLog(cageId, request);
+      await apiClient.createHealthLog(prescriptionId, request);
       return true;
     } catch (e) {
       rethrow;

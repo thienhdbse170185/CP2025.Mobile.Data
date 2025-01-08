@@ -33,6 +33,8 @@ mixin _$TaskHaveCageName {
   String? get completedAt => throw _privateConstructorUsedError;
   User get assignedToUser => throw _privateConstructorUsedError;
   TaskType get taskType => throw _privateConstructorUsedError;
+  String? get prescriptionId => throw _privateConstructorUsedError;
+  bool get isTreatmentTask => throw _privateConstructorUsedError;
 
   /// Serializes this TaskHaveCageName to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -63,7 +65,9 @@ abstract class $TaskHaveCageNameCopyWith<$Res> {
       int session,
       String? completedAt,
       User assignedToUser,
-      TaskType taskType});
+      TaskType taskType,
+      String? prescriptionId,
+      bool isTreatmentTask});
 
   $UserCopyWith<$Res> get assignedToUser;
   $TaskTypeCopyWith<$Res> get taskType;
@@ -97,6 +101,8 @@ class _$TaskHaveCageNameCopyWithImpl<$Res, $Val extends TaskHaveCageName>
     Object? completedAt = freezed,
     Object? assignedToUser = null,
     Object? taskType = null,
+    Object? prescriptionId = freezed,
+    Object? isTreatmentTask = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -151,6 +157,14 @@ class _$TaskHaveCageNameCopyWithImpl<$Res, $Val extends TaskHaveCageName>
           ? _value.taskType
           : taskType // ignore: cast_nullable_to_non_nullable
               as TaskType,
+      prescriptionId: freezed == prescriptionId
+          ? _value.prescriptionId
+          : prescriptionId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isTreatmentTask: null == isTreatmentTask
+          ? _value.isTreatmentTask
+          : isTreatmentTask // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 
@@ -196,7 +210,9 @@ abstract class _$$TaskHaveCageNameImplCopyWith<$Res>
       int session,
       String? completedAt,
       User assignedToUser,
-      TaskType taskType});
+      TaskType taskType,
+      String? prescriptionId,
+      bool isTreatmentTask});
 
   @override
   $UserCopyWith<$Res> get assignedToUser;
@@ -230,6 +246,8 @@ class __$$TaskHaveCageNameImplCopyWithImpl<$Res>
     Object? completedAt = freezed,
     Object? assignedToUser = null,
     Object? taskType = null,
+    Object? prescriptionId = freezed,
+    Object? isTreatmentTask = null,
   }) {
     return _then(_$TaskHaveCageNameImpl(
       id: null == id
@@ -284,6 +302,14 @@ class __$$TaskHaveCageNameImplCopyWithImpl<$Res>
           ? _value.taskType
           : taskType // ignore: cast_nullable_to_non_nullable
               as TaskType,
+      prescriptionId: freezed == prescriptionId
+          ? _value.prescriptionId
+          : prescriptionId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isTreatmentTask: null == isTreatmentTask
+          ? _value.isTreatmentTask
+          : isTreatmentTask // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -304,7 +330,9 @@ class _$TaskHaveCageNameImpl implements _TaskHaveCageName {
       required this.session,
       this.completedAt,
       required this.assignedToUser,
-      required this.taskType});
+      required this.taskType,
+      required this.prescriptionId,
+      required this.isTreatmentTask});
 
   factory _$TaskHaveCageNameImpl.fromJson(Map<String, dynamic> json) =>
       _$$TaskHaveCageNameImplFromJson(json);
@@ -335,10 +363,14 @@ class _$TaskHaveCageNameImpl implements _TaskHaveCageName {
   final User assignedToUser;
   @override
   final TaskType taskType;
+  @override
+  final String? prescriptionId;
+  @override
+  final bool isTreatmentTask;
 
   @override
   String toString() {
-    return 'TaskHaveCageName(id: $id, cageId: $cageId, cageName: $cageName, taskName: $taskName, description: $description, status: $status, createdAt: $createdAt, priorityNum: $priorityNum, dueDate: $dueDate, session: $session, completedAt: $completedAt, assignedToUser: $assignedToUser, taskType: $taskType)';
+    return 'TaskHaveCageName(id: $id, cageId: $cageId, cageName: $cageName, taskName: $taskName, description: $description, status: $status, createdAt: $createdAt, priorityNum: $priorityNum, dueDate: $dueDate, session: $session, completedAt: $completedAt, assignedToUser: $assignedToUser, taskType: $taskType, prescriptionId: $prescriptionId, isTreatmentTask: $isTreatmentTask)';
   }
 
   @override
@@ -366,7 +398,11 @@ class _$TaskHaveCageNameImpl implements _TaskHaveCageName {
             (identical(other.assignedToUser, assignedToUser) ||
                 other.assignedToUser == assignedToUser) &&
             (identical(other.taskType, taskType) ||
-                other.taskType == taskType));
+                other.taskType == taskType) &&
+            (identical(other.prescriptionId, prescriptionId) ||
+                other.prescriptionId == prescriptionId) &&
+            (identical(other.isTreatmentTask, isTreatmentTask) ||
+                other.isTreatmentTask == isTreatmentTask));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -385,7 +421,9 @@ class _$TaskHaveCageNameImpl implements _TaskHaveCageName {
       session,
       completedAt,
       assignedToUser,
-      taskType);
+      taskType,
+      prescriptionId,
+      isTreatmentTask);
 
   /// Create a copy of TaskHaveCageName
   /// with the given fields replaced by the non-null parameter values.
@@ -418,7 +456,9 @@ abstract class _TaskHaveCageName implements TaskHaveCageName {
       required final int session,
       final String? completedAt,
       required final User assignedToUser,
-      required final TaskType taskType}) = _$TaskHaveCageNameImpl;
+      required final TaskType taskType,
+      required final String? prescriptionId,
+      required final bool isTreatmentTask}) = _$TaskHaveCageNameImpl;
 
   factory _TaskHaveCageName.fromJson(Map<String, dynamic> json) =
       _$TaskHaveCageNameImpl.fromJson;
@@ -449,6 +489,10 @@ abstract class _TaskHaveCageName implements TaskHaveCageName {
   User get assignedToUser;
   @override
   TaskType get taskType;
+  @override
+  String? get prescriptionId;
+  @override
+  bool get isTreatmentTask;
 
   /// Create a copy of TaskHaveCageName
   /// with the given fields replaced by the non-null parameter values.

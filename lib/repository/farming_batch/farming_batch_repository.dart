@@ -12,4 +12,12 @@ class FarmingBatchRepository {
       rethrow;
     }
   }
+
+  Future<List<FarmingBatchDto>> getFarmingBatchesByUserId(String userId) async {
+    try {
+      return await apiClient.getFarmingBatchesByUserId(userId);
+    } catch (e) {
+      rethrow;
+    }
+  }
 }

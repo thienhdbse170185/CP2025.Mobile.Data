@@ -30,6 +30,8 @@ mixin _$Task {
   String get dueDate => throw _privateConstructorUsedError;
   int get session => throw _privateConstructorUsedError;
   String? get completedAt => throw _privateConstructorUsedError;
+  bool get isTreatmentTask => throw _privateConstructorUsedError;
+  String? get prescriptionId => throw _privateConstructorUsedError;
   User get assignedToUser => throw _privateConstructorUsedError;
   TaskType get taskType => throw _privateConstructorUsedError;
 
@@ -58,6 +60,8 @@ abstract class $TaskCopyWith<$Res> {
       String dueDate,
       int session,
       String? completedAt,
+      bool isTreatmentTask,
+      String? prescriptionId,
       User assignedToUser,
       TaskType taskType});
 
@@ -90,6 +94,8 @@ class _$TaskCopyWithImpl<$Res, $Val extends Task>
     Object? dueDate = null,
     Object? session = null,
     Object? completedAt = freezed,
+    Object? isTreatmentTask = null,
+    Object? prescriptionId = freezed,
     Object? assignedToUser = null,
     Object? taskType = null,
   }) {
@@ -133,6 +139,14 @@ class _$TaskCopyWithImpl<$Res, $Val extends Task>
       completedAt: freezed == completedAt
           ? _value.completedAt
           : completedAt // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isTreatmentTask: null == isTreatmentTask
+          ? _value.isTreatmentTask
+          : isTreatmentTask // ignore: cast_nullable_to_non_nullable
+              as bool,
+      prescriptionId: freezed == prescriptionId
+          ? _value.prescriptionId
+          : prescriptionId // ignore: cast_nullable_to_non_nullable
               as String?,
       assignedToUser: null == assignedToUser
           ? _value.assignedToUser
@@ -184,6 +198,8 @@ abstract class _$$TaskImplCopyWith<$Res> implements $TaskCopyWith<$Res> {
       String dueDate,
       int session,
       String? completedAt,
+      bool isTreatmentTask,
+      String? prescriptionId,
       User assignedToUser,
       TaskType taskType});
 
@@ -215,6 +231,8 @@ class __$$TaskImplCopyWithImpl<$Res>
     Object? dueDate = null,
     Object? session = null,
     Object? completedAt = freezed,
+    Object? isTreatmentTask = null,
+    Object? prescriptionId = freezed,
     Object? assignedToUser = null,
     Object? taskType = null,
   }) {
@@ -259,6 +277,14 @@ class __$$TaskImplCopyWithImpl<$Res>
           ? _value.completedAt
           : completedAt // ignore: cast_nullable_to_non_nullable
               as String?,
+      isTreatmentTask: null == isTreatmentTask
+          ? _value.isTreatmentTask
+          : isTreatmentTask // ignore: cast_nullable_to_non_nullable
+              as bool,
+      prescriptionId: freezed == prescriptionId
+          ? _value.prescriptionId
+          : prescriptionId // ignore: cast_nullable_to_non_nullable
+              as String?,
       assignedToUser: null == assignedToUser
           ? _value.assignedToUser
           : assignedToUser // ignore: cast_nullable_to_non_nullable
@@ -285,6 +311,8 @@ class _$TaskImpl implements _Task {
       required this.dueDate,
       required this.session,
       this.completedAt,
+      required this.isTreatmentTask,
+      required this.prescriptionId,
       required this.assignedToUser,
       required this.taskType});
 
@@ -312,13 +340,17 @@ class _$TaskImpl implements _Task {
   @override
   final String? completedAt;
   @override
+  final bool isTreatmentTask;
+  @override
+  final String? prescriptionId;
+  @override
   final User assignedToUser;
   @override
   final TaskType taskType;
 
   @override
   String toString() {
-    return 'Task(id: $id, cageId: $cageId, taskName: $taskName, description: $description, status: $status, createdAt: $createdAt, priorityNum: $priorityNum, dueDate: $dueDate, session: $session, completedAt: $completedAt, assignedToUser: $assignedToUser, taskType: $taskType)';
+    return 'Task(id: $id, cageId: $cageId, taskName: $taskName, description: $description, status: $status, createdAt: $createdAt, priorityNum: $priorityNum, dueDate: $dueDate, session: $session, completedAt: $completedAt, isTreatmentTask: $isTreatmentTask, prescriptionId: $prescriptionId, assignedToUser: $assignedToUser, taskType: $taskType)';
   }
 
   @override
@@ -341,6 +373,10 @@ class _$TaskImpl implements _Task {
             (identical(other.session, session) || other.session == session) &&
             (identical(other.completedAt, completedAt) ||
                 other.completedAt == completedAt) &&
+            (identical(other.isTreatmentTask, isTreatmentTask) ||
+                other.isTreatmentTask == isTreatmentTask) &&
+            (identical(other.prescriptionId, prescriptionId) ||
+                other.prescriptionId == prescriptionId) &&
             (identical(other.assignedToUser, assignedToUser) ||
                 other.assignedToUser == assignedToUser) &&
             (identical(other.taskType, taskType) ||
@@ -361,6 +397,8 @@ class _$TaskImpl implements _Task {
       dueDate,
       session,
       completedAt,
+      isTreatmentTask,
+      prescriptionId,
       assignedToUser,
       taskType);
 
@@ -392,6 +430,8 @@ abstract class _Task implements Task {
       required final String dueDate,
       required final int session,
       final String? completedAt,
+      required final bool isTreatmentTask,
+      required final String? prescriptionId,
       required final User assignedToUser,
       required final TaskType taskType}) = _$TaskImpl;
 
@@ -417,6 +457,10 @@ abstract class _Task implements Task {
   int get session;
   @override
   String? get completedAt;
+  @override
+  bool get isTreatmentTask;
+  @override
+  String? get prescriptionId;
   @override
   User get assignedToUser;
   @override

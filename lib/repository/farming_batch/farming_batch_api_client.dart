@@ -21,4 +21,23 @@ class FarmingBatchApiClient {
       rethrow;
     }
   }
+
+  Future<List<FarmingBatchDto>> getFarmingBatchesByUserId(String userId) async {
+    try {
+      final response = await dio.get(
+          '${ApiEndpoints.farmingBatch}/active-batches-by-user',
+          queryParameters: {
+            'userId': userId,
+          });
+      if (response.statusCode == 200) {
+        return (response.data['result'] as List)
+            .map((batch) => FarmingBatchDto.fromJson(batch))
+            .toList();
+      }
+      throw Exception('Failed to fetch farming batches by user');
+    } on DioException catch (e) {
+      log(e.toString());
+      rethrow;
+    }
+  }
 }

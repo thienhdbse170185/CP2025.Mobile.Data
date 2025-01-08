@@ -21,6 +21,8 @@ class TaskHaveCageName with _$TaskHaveCageName {
     String? completedAt,
     required User assignedToUser,
     required TaskType taskType,
+    required String? prescriptionId,
+    required bool isTreatmentTask,
   }) = _TaskHaveCageName;
 
   factory TaskHaveCageName.fromJson(Map<String, dynamic> json) =>
