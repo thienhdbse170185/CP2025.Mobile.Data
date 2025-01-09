@@ -1,4 +1,3 @@
-import 'package:data_layer/model/dto/medical_symptom/medical_symptom.dart';
 import 'package:data_layer/model/dto/medication/medication.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 

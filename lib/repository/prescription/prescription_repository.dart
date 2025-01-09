@@ -9,7 +9,7 @@ class PrescriptionRepository {
   Future<PrescriptionDto> getPrescriptionById(String prescriptionId) async {
     try {
       return await apiClient.getPrescriptionById(prescriptionId);
-    } on DioException catch (e) {
+    } on DioException {
       rethrow;
     }
   }
