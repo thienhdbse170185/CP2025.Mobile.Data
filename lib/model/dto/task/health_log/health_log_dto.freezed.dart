@@ -20,9 +20,11 @@ HealthLogDto _$HealthLogDtoFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$HealthLogDto {
+  String? get id => throw _privateConstructorUsedError;
+  String? get prescriptionId => throw _privateConstructorUsedError;
   DateTime get date => throw _privateConstructorUsedError;
   String get notes => throw _privateConstructorUsedError;
-  String get photo => throw _privateConstructorUsedError;
+  String? get photo => throw _privateConstructorUsedError;
   String get taskId => throw _privateConstructorUsedError;
 
   /// Serializes this HealthLogDto to a JSON map.
@@ -41,7 +43,13 @@ abstract class $HealthLogDtoCopyWith<$Res> {
           HealthLogDto value, $Res Function(HealthLogDto) then) =
       _$HealthLogDtoCopyWithImpl<$Res, HealthLogDto>;
   @useResult
-  $Res call({DateTime date, String notes, String photo, String taskId});
+  $Res call(
+      {String? id,
+      String? prescriptionId,
+      DateTime date,
+      String notes,
+      String? photo,
+      String taskId});
 }
 
 /// @nodoc
@@ -59,12 +67,22 @@ class _$HealthLogDtoCopyWithImpl<$Res, $Val extends HealthLogDto>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? prescriptionId = freezed,
     Object? date = null,
     Object? notes = null,
-    Object? photo = null,
+    Object? photo = freezed,
     Object? taskId = null,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      prescriptionId: freezed == prescriptionId
+          ? _value.prescriptionId
+          : prescriptionId // ignore: cast_nullable_to_non_nullable
+              as String?,
       date: null == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
@@ -73,10 +91,10 @@ class _$HealthLogDtoCopyWithImpl<$Res, $Val extends HealthLogDto>
           ? _value.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String,
-      photo: null == photo
+      photo: freezed == photo
           ? _value.photo
           : photo // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       taskId: null == taskId
           ? _value.taskId
           : taskId // ignore: cast_nullable_to_non_nullable
@@ -93,7 +111,13 @@ abstract class _$$HealthLogDtoImplCopyWith<$Res>
       __$$HealthLogDtoImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({DateTime date, String notes, String photo, String taskId});
+  $Res call(
+      {String? id,
+      String? prescriptionId,
+      DateTime date,
+      String notes,
+      String? photo,
+      String taskId});
 }
 
 /// @nodoc
@@ -109,12 +133,22 @@ class __$$HealthLogDtoImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
+    Object? prescriptionId = freezed,
     Object? date = null,
     Object? notes = null,
-    Object? photo = null,
+    Object? photo = freezed,
     Object? taskId = null,
   }) {
     return _then(_$HealthLogDtoImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      prescriptionId: freezed == prescriptionId
+          ? _value.prescriptionId
+          : prescriptionId // ignore: cast_nullable_to_non_nullable
+              as String?,
       date: null == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
@@ -123,10 +157,10 @@ class __$$HealthLogDtoImplCopyWithImpl<$Res>
           ? _value.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String,
-      photo: null == photo
+      photo: freezed == photo
           ? _value.photo
           : photo // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       taskId: null == taskId
           ? _value.taskId
           : taskId // ignore: cast_nullable_to_non_nullable
@@ -139,7 +173,9 @@ class __$$HealthLogDtoImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$HealthLogDtoImpl implements _HealthLogDto {
   const _$HealthLogDtoImpl(
-      {required this.date,
+      {this.id,
+      this.prescriptionId,
+      required this.date,
       required this.notes,
       required this.photo,
       required this.taskId});
@@ -148,17 +184,21 @@ class _$HealthLogDtoImpl implements _HealthLogDto {
       _$$HealthLogDtoImplFromJson(json);
 
   @override
+  final String? id;
+  @override
+  final String? prescriptionId;
+  @override
   final DateTime date;
   @override
   final String notes;
   @override
-  final String photo;
+  final String? photo;
   @override
   final String taskId;
 
   @override
   String toString() {
-    return 'HealthLogDto(date: $date, notes: $notes, photo: $photo, taskId: $taskId)';
+    return 'HealthLogDto(id: $id, prescriptionId: $prescriptionId, date: $date, notes: $notes, photo: $photo, taskId: $taskId)';
   }
 
   @override
@@ -166,6 +206,9 @@ class _$HealthLogDtoImpl implements _HealthLogDto {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$HealthLogDtoImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.prescriptionId, prescriptionId) ||
+                other.prescriptionId == prescriptionId) &&
             (identical(other.date, date) || other.date == date) &&
             (identical(other.notes, notes) || other.notes == notes) &&
             (identical(other.photo, photo) || other.photo == photo) &&
@@ -174,7 +217,8 @@ class _$HealthLogDtoImpl implements _HealthLogDto {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, date, notes, photo, taskId);
+  int get hashCode =>
+      Object.hash(runtimeType, id, prescriptionId, date, notes, photo, taskId);
 
   /// Create a copy of HealthLogDto
   /// with the given fields replaced by the non-null parameter values.
@@ -194,20 +238,26 @@ class _$HealthLogDtoImpl implements _HealthLogDto {
 
 abstract class _HealthLogDto implements HealthLogDto {
   const factory _HealthLogDto(
-      {required final DateTime date,
+      {final String? id,
+      final String? prescriptionId,
+      required final DateTime date,
       required final String notes,
-      required final String photo,
+      required final String? photo,
       required final String taskId}) = _$HealthLogDtoImpl;
 
   factory _HealthLogDto.fromJson(Map<String, dynamic> json) =
       _$HealthLogDtoImpl.fromJson;
 
   @override
+  String? get id;
+  @override
+  String? get prescriptionId;
+  @override
   DateTime get date;
   @override
   String get notes;
   @override
-  String get photo;
+  String? get photo;
   @override
   String get taskId;
 

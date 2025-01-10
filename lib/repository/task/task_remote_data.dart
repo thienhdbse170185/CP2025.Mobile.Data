@@ -158,10 +158,11 @@ class TaskRemoteData {
     }
   }
 
-  Future<bool> createHealthLog(String cageId, HealthLogDto request) async {
+  Future<bool> createHealthLog(
+      String prescriptionId, HealthLogDto request) async {
     try {
       final response = await dio.post(
-          '${ApiEndpoints.healthLog}/$cageId/health-log',
+          '${ApiEndpoints.healthLog}/$prescriptionId/health-log',
           data: request.toJson());
       if (response.statusCode == 201) {
         return true;

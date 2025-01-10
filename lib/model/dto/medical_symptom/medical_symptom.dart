@@ -12,7 +12,7 @@ class MedicalSymptomDto with _$MedicalSymptomDto {
     required String id,
     required String farmingBatchId,
     required String? prescriptionId,
-    required String symptoms,
+    required String symtom,
     required String? diagnosis,
     required DateTime createAt,
     required String status,

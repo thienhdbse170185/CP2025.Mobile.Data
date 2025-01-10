@@ -37,4 +37,7 @@ class ApiEndpoints {
 
   // SYMPTOM
   static const String symptom = '/symptom';
+
+  // PRESCRIPTION
+  static const String prescription = '/prescription';
 }

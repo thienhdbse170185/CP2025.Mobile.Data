@@ -12,9 +12,12 @@ class FarmingBatchDto with _$FarmingBatchDto {
     required String species,
     required DateTime startDate,
     required DateTime? completeAt,
+    required DateTime? endDate,
     required String status,
     required int cleaningFrequency,
     required int quantity,
+    required int? affectedQuantity,
+    required GrowthStageDto? growthStageDetails,
     required CageDto? cage,
   }) = _FarmingBatchDto;
 

@@ -16,9 +16,17 @@ _$FarmingBatchDtoImpl _$$FarmingBatchDtoImplFromJson(
       completeAt: json['completeAt'] == null
           ? null
           : DateTime.parse(json['completeAt'] as String),
+      endDate: json['endDate'] == null
+          ? null
+          : DateTime.parse(json['endDate'] as String),
       status: json['status'] as String,
       cleaningFrequency: (json['cleaningFrequency'] as num).toInt(),
       quantity: (json['quantity'] as num).toInt(),
+      affectedQuantity: (json['affectedQuantity'] as num?)?.toInt(),
+      growthStageDetails: json['growthStageDetails'] == null
+          ? null
+          : GrowthStageDto.fromJson(
+              json['growthStageDetails'] as Map<String, dynamic>),
       cage: json['cage'] == null
           ? null
           : CageDto.fromJson(json['cage'] as Map<String, dynamic>),
@@ -32,8 +40,11 @@ Map<String, dynamic> _$$FarmingBatchDtoImplToJson(
       'species': instance.species,
       'startDate': instance.startDate.toIso8601String(),
       'completeAt': instance.completeAt?.toIso8601String(),
+      'endDate': instance.endDate?.toIso8601String(),
       'status': instance.status,
       'cleaningFrequency': instance.cleaningFrequency,
       'quantity': instance.quantity,
+      'affectedQuantity': instance.affectedQuantity,
+      'growthStageDetails': instance.growthStageDetails,
       'cage': instance.cage,
     };

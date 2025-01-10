@@ -17,6 +17,8 @@ _$TaskImpl _$$TaskImplFromJson(Map<String, dynamic> json) => _$TaskImpl(
       dueDate: json['dueDate'] as String,
       session: (json['session'] as num).toInt(),
       completedAt: json['completedAt'] as String?,
+      isTreatmentTask: json['isTreatmentTask'] as bool,
+      prescriptionId: json['prescriptionId'] as String?,
       assignedToUser:
           User.fromJson(json['assignedToUser'] as Map<String, dynamic>),
       taskType: TaskType.fromJson(json['taskType'] as Map<String, dynamic>),
@@ -34,6 +36,8 @@ Map<String, dynamic> _$$TaskImplToJson(_$TaskImpl instance) =>
       'dueDate': instance.dueDate,
       'session': instance.session,
       'completedAt': instance.completedAt,
+      'isTreatmentTask': instance.isTreatmentTask,
+      'prescriptionId': instance.prescriptionId,
       'assignedToUser': instance.assignedToUser,
       'taskType': instance.taskType,
     };

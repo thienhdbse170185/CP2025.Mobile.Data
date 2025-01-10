@@ -18,6 +18,8 @@ class Task with _$Task {
     required String dueDate,
     required int session,
     String? completedAt,
+    required bool isTreatmentTask,
+    required String? prescriptionId,
     required User assignedToUser,
     required TaskType taskType,
   }) = _Task;
