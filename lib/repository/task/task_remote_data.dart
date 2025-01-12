@@ -224,6 +224,7 @@ class TaskRemoteData {
         throw Exception('Failed to load health log');
       }
     } on DioException catch (e) {
+      log(e.response!.data.toString());
       if (e.response?.statusCode == 404) {
         throw Exception('growstage-not-found');
       }

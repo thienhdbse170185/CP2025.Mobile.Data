@@ -15,10 +15,11 @@ class PrescriptionApiClient {
       if (response.statusCode == 200) {
         return PrescriptionDto.fromJson(response.data['result']);
       } else {
+        log(response.data.toString());
         throw Exception('Failed to fetch prescription');
       }
     } on DioException catch (e) {
-      log(e.toString());
+      log(e.response!.data.toString());
       rethrow;
     }
   }

@@ -22,12 +22,10 @@ MedicationDto _$MedicationDtoFromJson(Map<String, dynamic> json) {
 mixin _$MedicationDto {
   String get medicationId => throw _privateConstructorUsedError;
   String get medicationName => throw _privateConstructorUsedError;
-  int get dosage => throw _privateConstructorUsedError;
-  int get duration => throw _privateConstructorUsedError;
-  bool get morning => throw _privateConstructorUsedError;
-  bool get afternoon => throw _privateConstructorUsedError;
-  bool get evening => throw _privateConstructorUsedError;
-  bool get noon => throw _privateConstructorUsedError;
+  int get morning => throw _privateConstructorUsedError;
+  int get afternoon => throw _privateConstructorUsedError;
+  int get evening => throw _privateConstructorUsedError;
+  int get noon => throw _privateConstructorUsedError;
 
   /// Serializes this MedicationDto to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -48,12 +46,10 @@ abstract class $MedicationDtoCopyWith<$Res> {
   $Res call(
       {String medicationId,
       String medicationName,
-      int dosage,
-      int duration,
-      bool morning,
-      bool afternoon,
-      bool evening,
-      bool noon});
+      int morning,
+      int afternoon,
+      int evening,
+      int noon});
 }
 
 /// @nodoc
@@ -73,8 +69,6 @@ class _$MedicationDtoCopyWithImpl<$Res, $Val extends MedicationDto>
   $Res call({
     Object? medicationId = null,
     Object? medicationName = null,
-    Object? dosage = null,
-    Object? duration = null,
     Object? morning = null,
     Object? afternoon = null,
     Object? evening = null,
@@ -89,30 +83,22 @@ class _$MedicationDtoCopyWithImpl<$Res, $Val extends MedicationDto>
           ? _value.medicationName
           : medicationName // ignore: cast_nullable_to_non_nullable
               as String,
-      dosage: null == dosage
-          ? _value.dosage
-          : dosage // ignore: cast_nullable_to_non_nullable
-              as int,
-      duration: null == duration
-          ? _value.duration
-          : duration // ignore: cast_nullable_to_non_nullable
-              as int,
       morning: null == morning
           ? _value.morning
           : morning // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as int,
       afternoon: null == afternoon
           ? _value.afternoon
           : afternoon // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as int,
       evening: null == evening
           ? _value.evening
           : evening // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as int,
       noon: null == noon
           ? _value.noon
           : noon // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as int,
     ) as $Val);
   }
 }
@@ -128,12 +114,10 @@ abstract class _$$MedicationDtoImplCopyWith<$Res>
   $Res call(
       {String medicationId,
       String medicationName,
-      int dosage,
-      int duration,
-      bool morning,
-      bool afternoon,
-      bool evening,
-      bool noon});
+      int morning,
+      int afternoon,
+      int evening,
+      int noon});
 }
 
 /// @nodoc
@@ -151,8 +135,6 @@ class __$$MedicationDtoImplCopyWithImpl<$Res>
   $Res call({
     Object? medicationId = null,
     Object? medicationName = null,
-    Object? dosage = null,
-    Object? duration = null,
     Object? morning = null,
     Object? afternoon = null,
     Object? evening = null,
@@ -167,30 +149,22 @@ class __$$MedicationDtoImplCopyWithImpl<$Res>
           ? _value.medicationName
           : medicationName // ignore: cast_nullable_to_non_nullable
               as String,
-      dosage: null == dosage
-          ? _value.dosage
-          : dosage // ignore: cast_nullable_to_non_nullable
-              as int,
-      duration: null == duration
-          ? _value.duration
-          : duration // ignore: cast_nullable_to_non_nullable
-              as int,
       morning: null == morning
           ? _value.morning
           : morning // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as int,
       afternoon: null == afternoon
           ? _value.afternoon
           : afternoon // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as int,
       evening: null == evening
           ? _value.evening
           : evening // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as int,
       noon: null == noon
           ? _value.noon
           : noon // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as int,
     ));
   }
 }
@@ -201,8 +175,6 @@ class _$MedicationDtoImpl implements _MedicationDto {
   const _$MedicationDtoImpl(
       {required this.medicationId,
       required this.medicationName,
-      required this.dosage,
-      required this.duration,
       required this.morning,
       required this.afternoon,
       required this.evening,
@@ -216,21 +188,17 @@ class _$MedicationDtoImpl implements _MedicationDto {
   @override
   final String medicationName;
   @override
-  final int dosage;
+  final int morning;
   @override
-  final int duration;
+  final int afternoon;
   @override
-  final bool morning;
+  final int evening;
   @override
-  final bool afternoon;
-  @override
-  final bool evening;
-  @override
-  final bool noon;
+  final int noon;
 
   @override
   String toString() {
-    return 'MedicationDto(medicationId: $medicationId, medicationName: $medicationName, dosage: $dosage, duration: $duration, morning: $morning, afternoon: $afternoon, evening: $evening, noon: $noon)';
+    return 'MedicationDto(medicationId: $medicationId, medicationName: $medicationName, morning: $morning, afternoon: $afternoon, evening: $evening, noon: $noon)';
   }
 
   @override
@@ -242,9 +210,6 @@ class _$MedicationDtoImpl implements _MedicationDto {
                 other.medicationId == medicationId) &&
             (identical(other.medicationName, medicationName) ||
                 other.medicationName == medicationName) &&
-            (identical(other.dosage, dosage) || other.dosage == dosage) &&
-            (identical(other.duration, duration) ||
-                other.duration == duration) &&
             (identical(other.morning, morning) || other.morning == morning) &&
             (identical(other.afternoon, afternoon) ||
                 other.afternoon == afternoon) &&
@@ -255,7 +220,7 @@ class _$MedicationDtoImpl implements _MedicationDto {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, medicationId, medicationName,
-      dosage, duration, morning, afternoon, evening, noon);
+      morning, afternoon, evening, noon);
 
   /// Create a copy of MedicationDto
   /// with the given fields replaced by the non-null parameter values.
@@ -277,12 +242,10 @@ abstract class _MedicationDto implements MedicationDto {
   const factory _MedicationDto(
       {required final String medicationId,
       required final String medicationName,
-      required final int dosage,
-      required final int duration,
-      required final bool morning,
-      required final bool afternoon,
-      required final bool evening,
-      required final bool noon}) = _$MedicationDtoImpl;
+      required final int morning,
+      required final int afternoon,
+      required final int evening,
+      required final int noon}) = _$MedicationDtoImpl;
 
   factory _MedicationDto.fromJson(Map<String, dynamic> json) =
       _$MedicationDtoImpl.fromJson;
@@ -292,17 +255,13 @@ abstract class _MedicationDto implements MedicationDto {
   @override
   String get medicationName;
   @override
-  int get dosage;
+  int get morning;
   @override
-  int get duration;
+  int get afternoon;
   @override
-  bool get morning;
+  int get evening;
   @override
-  bool get afternoon;
-  @override
-  bool get evening;
-  @override
-  bool get noon;
+  int get noon;
 
   /// Create a copy of MedicationDto
   /// with the given fields replaced by the non-null parameter values.
