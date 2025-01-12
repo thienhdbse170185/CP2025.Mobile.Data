@@ -18,6 +18,7 @@ _$GrowthStageDtoImpl _$$GrowthStageDtoImplFromJson(Map<String, dynamic> json) =>
       ageStartDate: json['ageStartDate'] as String,
       ageEndDate: json['ageEndDate'] as String,
       status: json['status'] as String,
+      affectQuantity: (json['affectQuantity'] as num).toInt(),
       recommendedWeightPerSession:
           (json['recommendedWeightPerSession'] as num).toDouble(),
       weightBasedOnBodyMass: (json['weightBasedOnBodyMass'] as num).toDouble(),
@@ -43,6 +44,7 @@ Map<String, dynamic> _$$GrowthStageDtoImplToJson(
       'ageStartDate': instance.ageStartDate,
       'ageEndDate': instance.ageEndDate,
       'status': instance.status,
+      'affectQuantity': instance.affectQuantity,
       'recommendedWeightPerSession': instance.recommendedWeightPerSession,
       'weightBasedOnBodyMass': instance.weightBasedOnBodyMass,
       'taskDailies': instance.taskDailies,

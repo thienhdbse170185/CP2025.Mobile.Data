@@ -161,6 +161,7 @@ class TaskRemoteData {
   Future<bool> createHealthLog(
       String prescriptionId, HealthLogDto request) async {
     try {
+      final data = request.toJson();
       final response = await dio.post(
           '${ApiEndpoints.healthLog}/$prescriptionId/health-log',
           data: request.toJson());
