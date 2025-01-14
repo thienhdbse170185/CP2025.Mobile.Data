@@ -3,6 +3,7 @@ import 'package:data_layer/model/dto/task/health_log/health_log_dto.dart';
 import 'package:data_layer/model/dto/task/task_have_cage_name/task_have_cage_name.dart';
 import 'package:data_layer/model/dto/task/vaccin_schedule_log/vaccin_schedule_log_dto.dart';
 import 'package:data_layer/model/entity/task/next_task/next_task.dart';
+import 'package:data_layer/model/request/task/get_task/get_task.dart';
 import 'package:data_layer/model/response/task/task_by_user/task_by_user_response.dart';
 import 'package:data_layer/repository/task/task_remote_data.dart';
 
@@ -26,8 +27,17 @@ class TaskRepository {
     }
   }
 
-  Future<List> getAll() async {
-    throw UnimplementedError();
+  Future<List<TaskHaveCageName>> fetchTasks(GetTaskRequest request) async {
+    try {
+      final data = await apiClient.fetchTasks(request);
+      if (data.success) {
+        return data.result.items;
+      } else {
+        throw Exception('Failed to load tasks');
+      }
+    } catch (e) {
+      rethrow;
+    }
   }
 
   Future<TaskHaveCageName> getById(String id) async {

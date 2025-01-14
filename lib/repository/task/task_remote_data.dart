@@ -6,6 +6,8 @@ import 'package:data_layer/model/dto/task/health_log/health_log_dto.dart';
 import 'package:data_layer/model/dto/task/task_have_cage_name/task_have_cage_name.dart';
 import 'package:data_layer/model/dto/task/vaccin_schedule_log/vaccin_schedule_log_dto.dart';
 import 'package:data_layer/model/entity/task/next_task/next_task.dart';
+import 'package:data_layer/model/request/task/get_task/get_task.dart';
+import 'package:data_layer/model/response/task/get_task/get_task.dart';
 import 'package:data_layer/model/response/task/task_by_cage/tasks_by_cage_response.dart';
 import 'package:data_layer/model/response/task/task_by_user/task_by_user_response.dart';
 import 'package:dio/dio.dart';
@@ -43,15 +45,19 @@ class TaskRemoteData {
     }
   }
 
-  Future<TasksByCageResponse> fetchTasks() async {
+  Future<GetTaskResponse> fetchTasks(GetTaskRequest request) async {
     try {
-      final response = await dio.get(ApiEndpoints.getTasks);
+      final reqParam = request.toJson();
+      log(reqParam.toString());
+      final response =
+          await dio.get(ApiEndpoints.getTasks, queryParameters: reqParam);
       if (response.statusCode == 200) {
-        return TasksByCageResponse.fromJson(response.data);
+        return GetTaskResponse.fromJson(response.data);
       } else {
         throw Exception('Failed to load tasks');
       }
-    } on DioException {
+    } on DioException catch (e) {
+      log(e.response?.data.toString() ?? '');
       rethrow;
     }
   }
