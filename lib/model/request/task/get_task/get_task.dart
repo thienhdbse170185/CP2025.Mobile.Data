@@ -8,7 +8,7 @@ class GetTaskRequest with _$GetTaskRequest {
   const factory GetTaskRequest({
     String? KeySearch,
     String? Status,
-    String? TaskType,
+    String? TaskTypeId,
     String? CageId,
     String? AssignedToUserId,
     String? DueDateFrom,

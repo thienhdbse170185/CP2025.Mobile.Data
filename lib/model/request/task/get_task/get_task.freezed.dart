@@ -22,7 +22,7 @@ GetTaskRequest _$GetTaskRequestFromJson(Map<String, dynamic> json) {
 mixin _$GetTaskRequest {
   String? get KeySearch => throw _privateConstructorUsedError;
   String? get Status => throw _privateConstructorUsedError;
-  String? get TaskType => throw _privateConstructorUsedError;
+  String? get TaskTypeId => throw _privateConstructorUsedError;
   String? get CageId => throw _privateConstructorUsedError;
   String? get AssignedToUserId => throw _privateConstructorUsedError;
   String? get DueDateFrom => throw _privateConstructorUsedError;
@@ -53,7 +53,7 @@ abstract class $GetTaskRequestCopyWith<$Res> {
   $Res call(
       {String? KeySearch,
       String? Status,
-      String? TaskType,
+      String? TaskTypeId,
       String? CageId,
       String? AssignedToUserId,
       String? DueDateFrom,
@@ -83,7 +83,7 @@ class _$GetTaskRequestCopyWithImpl<$Res, $Val extends GetTaskRequest>
   $Res call({
     Object? KeySearch = freezed,
     Object? Status = freezed,
-    Object? TaskType = freezed,
+    Object? TaskTypeId = freezed,
     Object? CageId = freezed,
     Object? AssignedToUserId = freezed,
     Object? DueDateFrom = freezed,
@@ -104,9 +104,9 @@ class _$GetTaskRequestCopyWithImpl<$Res, $Val extends GetTaskRequest>
           ? _value.Status
           : Status // ignore: cast_nullable_to_non_nullable
               as String?,
-      TaskType: freezed == TaskType
-          ? _value.TaskType
-          : TaskType // ignore: cast_nullable_to_non_nullable
+      TaskTypeId: freezed == TaskTypeId
+          ? _value.TaskTypeId
+          : TaskTypeId // ignore: cast_nullable_to_non_nullable
               as String?,
       CageId: freezed == CageId
           ? _value.CageId
@@ -163,7 +163,7 @@ abstract class _$$GetTaskRequestImplCopyWith<$Res>
   $Res call(
       {String? KeySearch,
       String? Status,
-      String? TaskType,
+      String? TaskTypeId,
       String? CageId,
       String? AssignedToUserId,
       String? DueDateFrom,
@@ -191,7 +191,7 @@ class __$$GetTaskRequestImplCopyWithImpl<$Res>
   $Res call({
     Object? KeySearch = freezed,
     Object? Status = freezed,
-    Object? TaskType = freezed,
+    Object? TaskTypeId = freezed,
     Object? CageId = freezed,
     Object? AssignedToUserId = freezed,
     Object? DueDateFrom = freezed,
@@ -212,9 +212,9 @@ class __$$GetTaskRequestImplCopyWithImpl<$Res>
           ? _value.Status
           : Status // ignore: cast_nullable_to_non_nullable
               as String?,
-      TaskType: freezed == TaskType
-          ? _value.TaskType
-          : TaskType // ignore: cast_nullable_to_non_nullable
+      TaskTypeId: freezed == TaskTypeId
+          ? _value.TaskTypeId
+          : TaskTypeId // ignore: cast_nullable_to_non_nullable
               as String?,
       CageId: freezed == CageId
           ? _value.CageId
@@ -266,7 +266,7 @@ class _$GetTaskRequestImpl implements _GetTaskRequest {
   const _$GetTaskRequestImpl(
       {this.KeySearch,
       this.Status,
-      this.TaskType,
+      this.TaskTypeId,
       this.CageId,
       this.AssignedToUserId,
       this.DueDateFrom,
@@ -286,7 +286,7 @@ class _$GetTaskRequestImpl implements _GetTaskRequest {
   @override
   final String? Status;
   @override
-  final String? TaskType;
+  final String? TaskTypeId;
   @override
   final String? CageId;
   @override
@@ -310,7 +310,7 @@ class _$GetTaskRequestImpl implements _GetTaskRequest {
 
   @override
   String toString() {
-    return 'GetTaskRequest(KeySearch: $KeySearch, Status: $Status, TaskType: $TaskType, CageId: $CageId, AssignedToUserId: $AssignedToUserId, DueDateFrom: $DueDateFrom, DueDateTo: $DueDateTo, PriorityNum: $PriorityNum, Session: $Session, CompletedAt: $CompletedAt, CreatedAt: $CreatedAt, PageNumber: $PageNumber, PageSize: $PageSize)';
+    return 'GetTaskRequest(KeySearch: $KeySearch, Status: $Status, TaskTypeId: $TaskTypeId, CageId: $CageId, AssignedToUserId: $AssignedToUserId, DueDateFrom: $DueDateFrom, DueDateTo: $DueDateTo, PriorityNum: $PriorityNum, Session: $Session, CompletedAt: $CompletedAt, CreatedAt: $CreatedAt, PageNumber: $PageNumber, PageSize: $PageSize)';
   }
 
   @override
@@ -321,8 +321,8 @@ class _$GetTaskRequestImpl implements _GetTaskRequest {
             (identical(other.KeySearch, KeySearch) ||
                 other.KeySearch == KeySearch) &&
             (identical(other.Status, Status) || other.Status == Status) &&
-            (identical(other.TaskType, TaskType) ||
-                other.TaskType == TaskType) &&
+            (identical(other.TaskTypeId, TaskTypeId) ||
+                other.TaskTypeId == TaskTypeId) &&
             (identical(other.CageId, CageId) || other.CageId == CageId) &&
             (identical(other.AssignedToUserId, AssignedToUserId) ||
                 other.AssignedToUserId == AssignedToUserId) &&
@@ -349,7 +349,7 @@ class _$GetTaskRequestImpl implements _GetTaskRequest {
       runtimeType,
       KeySearch,
       Status,
-      TaskType,
+      TaskTypeId,
       CageId,
       AssignedToUserId,
       DueDateFrom,
@@ -382,7 +382,7 @@ abstract class _GetTaskRequest implements GetTaskRequest {
   const factory _GetTaskRequest(
       {final String? KeySearch,
       final String? Status,
-      final String? TaskType,
+      final String? TaskTypeId,
       final String? CageId,
       final String? AssignedToUserId,
       final String? DueDateFrom,
@@ -402,7 +402,7 @@ abstract class _GetTaskRequest implements GetTaskRequest {
   @override
   String? get Status;
   @override
-  String? get TaskType;
+  String? get TaskTypeId;
   @override
   String? get CageId;
   @override

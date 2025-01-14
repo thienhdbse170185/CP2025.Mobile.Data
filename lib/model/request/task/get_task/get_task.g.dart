@@ -10,7 +10,7 @@ _$GetTaskRequestImpl _$$GetTaskRequestImplFromJson(Map<String, dynamic> json) =>
     _$GetTaskRequestImpl(
       KeySearch: json['KeySearch'] as String?,
       Status: json['Status'] as String?,
-      TaskType: json['TaskType'] as String?,
+      TaskTypeId: json['TaskTypeId'] as String?,
       CageId: json['CageId'] as String?,
       AssignedToUserId: json['AssignedToUserId'] as String?,
       DueDateFrom: json['DueDateFrom'] as String?,
@@ -28,7 +28,7 @@ Map<String, dynamic> _$$GetTaskRequestImplToJson(
     <String, dynamic>{
       'KeySearch': instance.KeySearch,
       'Status': instance.Status,
-      'TaskType': instance.TaskType,
+      'TaskTypeId': instance.TaskTypeId,
       'CageId': instance.CageId,
       'AssignedToUserId': instance.AssignedToUserId,
       'DueDateFrom': instance.DueDateFrom,
