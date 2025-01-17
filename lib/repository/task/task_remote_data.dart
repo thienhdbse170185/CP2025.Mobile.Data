@@ -79,16 +79,6 @@ class TaskRemoteData {
     }
   }
 
-  Future<bool> create(entity) {
-    // TODO: implement create
-    throw UnimplementedError();
-  }
-
-  Future<bool> delete(String id) {
-    // TODO: implement delete
-    throw UnimplementedError();
-  }
-
   Future<TaskHaveCageName> read(String id) async {
     try {
       final response = await dio.get('${ApiEndpoints.getTasks}/$id');

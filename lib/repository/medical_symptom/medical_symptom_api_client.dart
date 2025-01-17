@@ -87,7 +87,10 @@ class MedicalSymptomApiClient {
       //     .toList();
     } on DioException catch (e) {
       log(e.toString());
-      throw Exception(e.response?.data['message']);
+      if (e.response?.statusCode == 404) {
+        throw Exception('no-symptom-found');
+      }
+      throw Exception(e.response?.data['result']['message']);
     }
   }
 }

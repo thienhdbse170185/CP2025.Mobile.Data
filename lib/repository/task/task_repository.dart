@@ -19,14 +19,6 @@ class TaskRepository {
     }
   }
 
-  Future<bool> delete(String id) async {
-    try {
-      return await apiClient.delete(id);
-    } catch (e) {
-      rethrow;
-    }
-  }
-
   Future<List<TaskHaveCageName>> fetchTasks(GetTaskRequest request) async {
     try {
       final data = await apiClient.fetchTasks(request);
@@ -43,15 +35,6 @@ class TaskRepository {
   Future<TaskHaveCageName> getById(String id) async {
     try {
       return await apiClient.read(id);
-    } catch (e) {
-      rethrow;
-    }
-  }
-
-  Future<bool> insert(item) async {
-    try {
-      await apiClient.create(item);
-      return true;
     } catch (e) {
       rethrow;
     }
