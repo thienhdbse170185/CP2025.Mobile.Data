@@ -11,7 +11,7 @@ _$FarmingBatchDtoImpl _$$FarmingBatchDtoImplFromJson(
     _$FarmingBatchDtoImpl(
       id: json['id'] as String,
       name: json['name'] as String,
-      species: json['species'] as String,
+      species: json['species'] as String?,
       startDate: DateTime.parse(json['startDate'] as String),
       completeAt: json['completeAt'] == null
           ? null

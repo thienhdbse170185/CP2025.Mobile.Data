@@ -22,7 +22,7 @@ FarmingBatchDto _$FarmingBatchDtoFromJson(Map<String, dynamic> json) {
 mixin _$FarmingBatchDto {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
-  String get species => throw _privateConstructorUsedError;
+  String? get species => throw _privateConstructorUsedError;
   DateTime get startDate => throw _privateConstructorUsedError;
   DateTime? get completeAt => throw _privateConstructorUsedError;
   DateTime? get endDate => throw _privateConstructorUsedError;
@@ -52,7 +52,7 @@ abstract class $FarmingBatchDtoCopyWith<$Res> {
   $Res call(
       {String id,
       String name,
-      String species,
+      String? species,
       DateTime startDate,
       DateTime? completeAt,
       DateTime? endDate,
@@ -84,7 +84,7 @@ class _$FarmingBatchDtoCopyWithImpl<$Res, $Val extends FarmingBatchDto>
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? species = null,
+    Object? species = freezed,
     Object? startDate = null,
     Object? completeAt = freezed,
     Object? endDate = freezed,
@@ -104,10 +104,10 @@ class _$FarmingBatchDtoCopyWithImpl<$Res, $Val extends FarmingBatchDto>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      species: null == species
+      species: freezed == species
           ? _value.species
           : species // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       startDate: null == startDate
           ? _value.startDate
           : startDate // ignore: cast_nullable_to_non_nullable
@@ -187,7 +187,7 @@ abstract class _$$FarmingBatchDtoImplCopyWith<$Res>
   $Res call(
       {String id,
       String name,
-      String species,
+      String? species,
       DateTime startDate,
       DateTime? completeAt,
       DateTime? endDate,
@@ -219,7 +219,7 @@ class __$$FarmingBatchDtoImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? species = null,
+    Object? species = freezed,
     Object? startDate = null,
     Object? completeAt = freezed,
     Object? endDate = freezed,
@@ -239,10 +239,10 @@ class __$$FarmingBatchDtoImplCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      species: null == species
+      species: freezed == species
           ? _value.species
           : species // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       startDate: null == startDate
           ? _value.startDate
           : startDate // ignore: cast_nullable_to_non_nullable
@@ -308,7 +308,7 @@ class _$FarmingBatchDtoImpl implements _FarmingBatchDto {
   @override
   final String name;
   @override
-  final String species;
+  final String? species;
   @override
   final DateTime startDate;
   @override
@@ -396,7 +396,7 @@ abstract class _FarmingBatchDto implements FarmingBatchDto {
   const factory _FarmingBatchDto(
       {required final String id,
       required final String name,
-      required final String species,
+      required final String? species,
       required final DateTime startDate,
       required final DateTime? completeAt,
       required final DateTime? endDate,
@@ -415,7 +415,7 @@ abstract class _FarmingBatchDto implements FarmingBatchDto {
   @override
   String get name;
   @override
-  String get species;
+  String? get species;
   @override
   DateTime get startDate;
   @override

@@ -9,7 +9,7 @@ class FarmingBatchDto with _$FarmingBatchDto {
   const factory FarmingBatchDto({
     required String id,
     required String name,
-    required String species,
+    required String? species,
     required DateTime startDate,
     required DateTime? completeAt,
     required DateTime? endDate,
