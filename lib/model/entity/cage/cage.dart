@@ -13,7 +13,6 @@ class Cage with _$Cage {
     required int area,
     required String location,
     required int capacity,
-    required String animalType,
     required String boardCode,
     required bool boardStatus,
     required String createdDate,

@@ -4,7 +4,11 @@ class UserRepository {
   final UserApiClient userApiClient;
   const UserRepository({required this.userApiClient});
 
-  // UserDto? getUserByEmail(String email) {
-  //   return sampleUsers.firstWhere((user) => user.email == email);
-  // }
+  Future<String> getServerTime() async {
+    try {
+      return userApiClient.getServerTime();
+    } catch (e) {
+      throw Exception(e.toString());
+    }
+  }
 }

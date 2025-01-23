@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:data_layer/api_endpoints.dart';
 import 'package:data_layer/model/entity/cage/cage.dart';
 import 'package:data_layer/model/response/cage/get_all/get_all_cage_response.dart';
@@ -31,7 +33,8 @@ class CageApiClient {
       return (response.data['result'] as List)
           .map((e) => Cage.fromJson(e))
           .toList();
-    } on DioException {
+    } on DioException catch (e) {
+      log(e.message.toString());
       rethrow;
     }
   }

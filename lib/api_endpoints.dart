@@ -26,6 +26,7 @@ class ApiEndpoints {
   // USER
   static const String getUsers = '/users';
   static const String postUser = '/users';
+  static const String getServerTime = '/users/server-time';
 
   // GROWTHSTAGE
   static const String growthStage = '/growthstage';

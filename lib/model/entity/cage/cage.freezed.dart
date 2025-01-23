@@ -27,7 +27,6 @@ mixin _$Cage {
   int get area => throw _privateConstructorUsedError;
   String get location => throw _privateConstructorUsedError;
   int get capacity => throw _privateConstructorUsedError;
-  String get animalType => throw _privateConstructorUsedError;
   String get boardCode => throw _privateConstructorUsedError;
   bool get boardStatus => throw _privateConstructorUsedError;
   String get createdDate => throw _privateConstructorUsedError;
@@ -56,7 +55,6 @@ abstract class $CageCopyWith<$Res> {
       int area,
       String location,
       int capacity,
-      String animalType,
       String boardCode,
       bool boardStatus,
       String createdDate,
@@ -86,7 +84,6 @@ class _$CageCopyWithImpl<$Res, $Val extends Cage>
     Object? area = null,
     Object? location = null,
     Object? capacity = null,
-    Object? animalType = null,
     Object? boardCode = null,
     Object? boardStatus = null,
     Object? createdDate = null,
@@ -122,10 +119,6 @@ class _$CageCopyWithImpl<$Res, $Val extends Cage>
           ? _value.capacity
           : capacity // ignore: cast_nullable_to_non_nullable
               as int,
-      animalType: null == animalType
-          ? _value.animalType
-          : animalType // ignore: cast_nullable_to_non_nullable
-              as String,
       boardCode: null == boardCode
           ? _value.boardCode
           : boardCode // ignore: cast_nullable_to_non_nullable
@@ -165,7 +158,6 @@ abstract class _$$CageImplCopyWith<$Res> implements $CageCopyWith<$Res> {
       int area,
       String location,
       int capacity,
-      String animalType,
       String boardCode,
       bool boardStatus,
       String createdDate,
@@ -192,7 +184,6 @@ class __$$CageImplCopyWithImpl<$Res>
     Object? area = null,
     Object? location = null,
     Object? capacity = null,
-    Object? animalType = null,
     Object? boardCode = null,
     Object? boardStatus = null,
     Object? createdDate = null,
@@ -228,10 +219,6 @@ class __$$CageImplCopyWithImpl<$Res>
           ? _value.capacity
           : capacity // ignore: cast_nullable_to_non_nullable
               as int,
-      animalType: null == animalType
-          ? _value.animalType
-          : animalType // ignore: cast_nullable_to_non_nullable
-              as String,
       boardCode: null == boardCode
           ? _value.boardCode
           : boardCode // ignore: cast_nullable_to_non_nullable
@@ -267,7 +254,6 @@ class _$CageImpl implements _Cage {
       required this.area,
       required this.location,
       required this.capacity,
-      required this.animalType,
       required this.boardCode,
       required this.boardStatus,
       required this.createdDate,
@@ -292,8 +278,6 @@ class _$CageImpl implements _Cage {
   @override
   final int capacity;
   @override
-  final String animalType;
-  @override
   final String boardCode;
   @override
   final bool boardStatus;
@@ -306,7 +290,7 @@ class _$CageImpl implements _Cage {
 
   @override
   String toString() {
-    return 'Cage(id: $id, penCode: $penCode, farmId: $farmId, name: $name, area: $area, location: $location, capacity: $capacity, animalType: $animalType, boardCode: $boardCode, boardStatus: $boardStatus, createdDate: $createdDate, modifiedDate: $modifiedDate, cameraUrl: $cameraUrl)';
+    return 'Cage(id: $id, penCode: $penCode, farmId: $farmId, name: $name, area: $area, location: $location, capacity: $capacity, boardCode: $boardCode, boardStatus: $boardStatus, createdDate: $createdDate, modifiedDate: $modifiedDate, cameraUrl: $cameraUrl)';
   }
 
   @override
@@ -323,8 +307,6 @@ class _$CageImpl implements _Cage {
                 other.location == location) &&
             (identical(other.capacity, capacity) ||
                 other.capacity == capacity) &&
-            (identical(other.animalType, animalType) ||
-                other.animalType == animalType) &&
             (identical(other.boardCode, boardCode) ||
                 other.boardCode == boardCode) &&
             (identical(other.boardStatus, boardStatus) ||
@@ -348,7 +330,6 @@ class _$CageImpl implements _Cage {
       area,
       location,
       capacity,
-      animalType,
       boardCode,
       boardStatus,
       createdDate,
@@ -380,7 +361,6 @@ abstract class _Cage implements Cage {
       required final int area,
       required final String location,
       required final int capacity,
-      required final String animalType,
       required final String boardCode,
       required final bool boardStatus,
       required final String createdDate,
@@ -403,8 +383,6 @@ abstract class _Cage implements Cage {
   String get location;
   @override
   int get capacity;
-  @override
-  String get animalType;
   @override
   String get boardCode;
   @override
