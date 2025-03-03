@@ -27,7 +27,7 @@ mixin _$NextTask {
   String get assignName => throw _privateConstructorUsedError;
   int get priorityNum => throw _privateConstructorUsedError;
   String get status => throw _privateConstructorUsedError;
-  String get dueDate => throw _privateConstructorUsedError;
+  String? get dueDate => throw _privateConstructorUsedError;
   int get total => throw _privateConstructorUsedError;
   int get taskDone => throw _privateConstructorUsedError;
 
@@ -54,7 +54,7 @@ abstract class $NextTaskCopyWith<$Res> {
       String assignName,
       int priorityNum,
       String status,
-      String dueDate,
+      String? dueDate,
       int total,
       int taskDone});
 }
@@ -81,7 +81,7 @@ class _$NextTaskCopyWithImpl<$Res, $Val extends NextTask>
     Object? assignName = null,
     Object? priorityNum = null,
     Object? status = null,
-    Object? dueDate = null,
+    Object? dueDate = freezed,
     Object? total = null,
     Object? taskDone = null,
   }) {
@@ -114,10 +114,10 @@ class _$NextTaskCopyWithImpl<$Res, $Val extends NextTask>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as String,
-      dueDate: null == dueDate
+      dueDate: freezed == dueDate
           ? _value.dueDate
           : dueDate // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       total: null == total
           ? _value.total
           : total // ignore: cast_nullable_to_non_nullable
@@ -146,7 +146,7 @@ abstract class _$$NextTaskImplCopyWith<$Res>
       String assignName,
       int priorityNum,
       String status,
-      String dueDate,
+      String? dueDate,
       int total,
       int taskDone});
 }
@@ -171,7 +171,7 @@ class __$$NextTaskImplCopyWithImpl<$Res>
     Object? assignName = null,
     Object? priorityNum = null,
     Object? status = null,
-    Object? dueDate = null,
+    Object? dueDate = freezed,
     Object? total = null,
     Object? taskDone = null,
   }) {
@@ -204,10 +204,10 @@ class __$$NextTaskImplCopyWithImpl<$Res>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as String,
-      dueDate: null == dueDate
+      dueDate: freezed == dueDate
           ? _value.dueDate
           : dueDate // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       total: null == total
           ? _value.total
           : total // ignore: cast_nullable_to_non_nullable
@@ -253,7 +253,7 @@ class _$NextTaskImpl implements _NextTask {
   @override
   final String status;
   @override
-  final String dueDate;
+  final String? dueDate;
   @override
   final int total;
   @override
@@ -316,7 +316,7 @@ abstract class _NextTask implements NextTask {
       required final String assignName,
       required final int priorityNum,
       required final String status,
-      required final String dueDate,
+      required final String? dueDate,
       required final int total,
       required final int taskDone}) = _$NextTaskImpl;
 
@@ -338,7 +338,7 @@ abstract class _NextTask implements NextTask {
   @override
   String get status;
   @override
-  String get dueDate;
+  String? get dueDate;
   @override
   int get total;
   @override

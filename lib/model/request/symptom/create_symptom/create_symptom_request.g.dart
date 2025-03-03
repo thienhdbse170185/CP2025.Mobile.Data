@@ -10,7 +10,6 @@ _$CreateSymptomRequestImpl _$$CreateSymptomRequestImplFromJson(
         Map<String, dynamic> json) =>
     _$CreateSymptomRequestImpl(
       farmingBatchId: json['farmingBatchId'] as String,
-      prescriptionId: json['prescriptionId'] as String,
       symptoms: json['symptoms'] as String,
       status: json['status'] as String,
       affectedQuantity: (json['affectedQuantity'] as num).toInt(),
@@ -27,7 +26,6 @@ Map<String, dynamic> _$$CreateSymptomRequestImplToJson(
         _$CreateSymptomRequestImpl instance) =>
     <String, dynamic>{
       'farmingBatchId': instance.farmingBatchId,
-      'prescriptionId': instance.prescriptionId,
       'symptoms': instance.symptoms,
       'status': instance.status,
       'affectedQuantity': instance.affectedQuantity,

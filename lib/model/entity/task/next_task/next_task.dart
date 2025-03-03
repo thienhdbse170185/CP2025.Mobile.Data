@@ -13,7 +13,7 @@ class NextTask with _$NextTask {
     required String assignName,
     required int priorityNum,
     required String status,
-    required String dueDate,
+    required String? dueDate,
     required int total,
     required int taskDone,
   }) = _NextTask;

@@ -14,58 +14,77 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-VaccinScheduleLogDto _$VaccinScheduleLogDtoFromJson(Map<String, dynamic> json) {
+VaccineScheduleLogDto _$VaccineScheduleLogDtoFromJson(
+    Map<String, dynamic> json) {
   return _VaccinScheduleLogDto.fromJson(json);
 }
 
 /// @nodoc
-mixin _$VaccinScheduleLogDto {
+mixin _$VaccineScheduleLogDto {
+  String get id => throw _privateConstructorUsedError;
+  String get scheduleId => throw _privateConstructorUsedError;
   String get date => throw _privateConstructorUsedError;
   String get notes => throw _privateConstructorUsedError;
   String get photo => throw _privateConstructorUsedError;
   String get taskId => throw _privateConstructorUsedError;
 
-  /// Serializes this VaccinScheduleLogDto to a JSON map.
+  /// Serializes this VaccineScheduleLogDto to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-  /// Create a copy of VaccinScheduleLogDto
+  /// Create a copy of VaccineScheduleLogDto
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $VaccinScheduleLogDtoCopyWith<VaccinScheduleLogDto> get copyWith =>
+  $VaccineScheduleLogDtoCopyWith<VaccineScheduleLogDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $VaccinScheduleLogDtoCopyWith<$Res> {
-  factory $VaccinScheduleLogDtoCopyWith(VaccinScheduleLogDto value,
-          $Res Function(VaccinScheduleLogDto) then) =
-      _$VaccinScheduleLogDtoCopyWithImpl<$Res, VaccinScheduleLogDto>;
+abstract class $VaccineScheduleLogDtoCopyWith<$Res> {
+  factory $VaccineScheduleLogDtoCopyWith(VaccineScheduleLogDto value,
+          $Res Function(VaccineScheduleLogDto) then) =
+      _$VaccineScheduleLogDtoCopyWithImpl<$Res, VaccineScheduleLogDto>;
   @useResult
-  $Res call({String date, String notes, String photo, String taskId});
+  $Res call(
+      {String id,
+      String scheduleId,
+      String date,
+      String notes,
+      String photo,
+      String taskId});
 }
 
 /// @nodoc
-class _$VaccinScheduleLogDtoCopyWithImpl<$Res,
-        $Val extends VaccinScheduleLogDto>
-    implements $VaccinScheduleLogDtoCopyWith<$Res> {
-  _$VaccinScheduleLogDtoCopyWithImpl(this._value, this._then);
+class _$VaccineScheduleLogDtoCopyWithImpl<$Res,
+        $Val extends VaccineScheduleLogDto>
+    implements $VaccineScheduleLogDtoCopyWith<$Res> {
+  _$VaccineScheduleLogDtoCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of VaccinScheduleLogDto
+  /// Create a copy of VaccineScheduleLogDto
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
+    Object? scheduleId = null,
     Object? date = null,
     Object? notes = null,
     Object? photo = null,
     Object? taskId = null,
   }) {
     return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      scheduleId: null == scheduleId
+          ? _value.scheduleId
+          : scheduleId // ignore: cast_nullable_to_non_nullable
+              as String,
       date: null == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
@@ -88,34 +107,51 @@ class _$VaccinScheduleLogDtoCopyWithImpl<$Res,
 
 /// @nodoc
 abstract class _$$VaccinScheduleLogDtoImplCopyWith<$Res>
-    implements $VaccinScheduleLogDtoCopyWith<$Res> {
+    implements $VaccineScheduleLogDtoCopyWith<$Res> {
   factory _$$VaccinScheduleLogDtoImplCopyWith(_$VaccinScheduleLogDtoImpl value,
           $Res Function(_$VaccinScheduleLogDtoImpl) then) =
       __$$VaccinScheduleLogDtoImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String date, String notes, String photo, String taskId});
+  $Res call(
+      {String id,
+      String scheduleId,
+      String date,
+      String notes,
+      String photo,
+      String taskId});
 }
 
 /// @nodoc
 class __$$VaccinScheduleLogDtoImplCopyWithImpl<$Res>
-    extends _$VaccinScheduleLogDtoCopyWithImpl<$Res, _$VaccinScheduleLogDtoImpl>
+    extends _$VaccineScheduleLogDtoCopyWithImpl<$Res,
+        _$VaccinScheduleLogDtoImpl>
     implements _$$VaccinScheduleLogDtoImplCopyWith<$Res> {
   __$$VaccinScheduleLogDtoImplCopyWithImpl(_$VaccinScheduleLogDtoImpl _value,
       $Res Function(_$VaccinScheduleLogDtoImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of VaccinScheduleLogDto
+  /// Create a copy of VaccineScheduleLogDto
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
+    Object? scheduleId = null,
     Object? date = null,
     Object? notes = null,
     Object? photo = null,
     Object? taskId = null,
   }) {
     return _then(_$VaccinScheduleLogDtoImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      scheduleId: null == scheduleId
+          ? _value.scheduleId
+          : scheduleId // ignore: cast_nullable_to_non_nullable
+              as String,
       date: null == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
@@ -140,7 +176,9 @@ class __$$VaccinScheduleLogDtoImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$VaccinScheduleLogDtoImpl implements _VaccinScheduleLogDto {
   const _$VaccinScheduleLogDtoImpl(
-      {required this.date,
+      {required this.id,
+      required this.scheduleId,
+      required this.date,
       required this.notes,
       required this.photo,
       required this.taskId});
@@ -148,6 +186,10 @@ class _$VaccinScheduleLogDtoImpl implements _VaccinScheduleLogDto {
   factory _$VaccinScheduleLogDtoImpl.fromJson(Map<String, dynamic> json) =>
       _$$VaccinScheduleLogDtoImplFromJson(json);
 
+  @override
+  final String id;
+  @override
+  final String scheduleId;
   @override
   final String date;
   @override
@@ -159,7 +201,7 @@ class _$VaccinScheduleLogDtoImpl implements _VaccinScheduleLogDto {
 
   @override
   String toString() {
-    return 'VaccinScheduleLogDto(date: $date, notes: $notes, photo: $photo, taskId: $taskId)';
+    return 'VaccineScheduleLogDto(id: $id, scheduleId: $scheduleId, date: $date, notes: $notes, photo: $photo, taskId: $taskId)';
   }
 
   @override
@@ -167,6 +209,9 @@ class _$VaccinScheduleLogDtoImpl implements _VaccinScheduleLogDto {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$VaccinScheduleLogDtoImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.scheduleId, scheduleId) ||
+                other.scheduleId == scheduleId) &&
             (identical(other.date, date) || other.date == date) &&
             (identical(other.notes, notes) || other.notes == notes) &&
             (identical(other.photo, photo) || other.photo == photo) &&
@@ -175,9 +220,10 @@ class _$VaccinScheduleLogDtoImpl implements _VaccinScheduleLogDto {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, date, notes, photo, taskId);
+  int get hashCode =>
+      Object.hash(runtimeType, id, scheduleId, date, notes, photo, taskId);
 
-  /// Create a copy of VaccinScheduleLogDto
+  /// Create a copy of VaccineScheduleLogDto
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
@@ -195,9 +241,11 @@ class _$VaccinScheduleLogDtoImpl implements _VaccinScheduleLogDto {
   }
 }
 
-abstract class _VaccinScheduleLogDto implements VaccinScheduleLogDto {
+abstract class _VaccinScheduleLogDto implements VaccineScheduleLogDto {
   const factory _VaccinScheduleLogDto(
-      {required final String date,
+      {required final String id,
+      required final String scheduleId,
+      required final String date,
       required final String notes,
       required final String photo,
       required final String taskId}) = _$VaccinScheduleLogDtoImpl;
@@ -205,6 +253,10 @@ abstract class _VaccinScheduleLogDto implements VaccinScheduleLogDto {
   factory _VaccinScheduleLogDto.fromJson(Map<String, dynamic> json) =
       _$VaccinScheduleLogDtoImpl.fromJson;
 
+  @override
+  String get id;
+  @override
+  String get scheduleId;
   @override
   String get date;
   @override
@@ -214,7 +266,7 @@ abstract class _VaccinScheduleLogDto implements VaccinScheduleLogDto {
   @override
   String get taskId;
 
-  /// Create a copy of VaccinScheduleLogDto
+  /// Create a copy of VaccineScheduleLogDto
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)

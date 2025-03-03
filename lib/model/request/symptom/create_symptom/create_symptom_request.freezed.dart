@@ -21,7 +21,6 @@ CreateSymptomRequest _$CreateSymptomRequestFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$CreateSymptomRequest {
   String get farmingBatchId => throw _privateConstructorUsedError;
-  String get prescriptionId => throw _privateConstructorUsedError;
   String get symptoms => throw _privateConstructorUsedError;
   String get status => throw _privateConstructorUsedError;
   int get affectedQuantity => throw _privateConstructorUsedError;
@@ -48,7 +47,6 @@ abstract class $CreateSymptomRequestCopyWith<$Res> {
   @useResult
   $Res call(
       {String farmingBatchId,
-      String prescriptionId,
       String symptoms,
       String status,
       int affectedQuantity,
@@ -74,7 +72,6 @@ class _$CreateSymptomRequestCopyWithImpl<$Res,
   @override
   $Res call({
     Object? farmingBatchId = null,
-    Object? prescriptionId = null,
     Object? symptoms = null,
     Object? status = null,
     Object? affectedQuantity = null,
@@ -86,10 +83,6 @@ class _$CreateSymptomRequestCopyWithImpl<$Res,
       farmingBatchId: null == farmingBatchId
           ? _value.farmingBatchId
           : farmingBatchId // ignore: cast_nullable_to_non_nullable
-              as String,
-      prescriptionId: null == prescriptionId
-          ? _value.prescriptionId
-          : prescriptionId // ignore: cast_nullable_to_non_nullable
               as String,
       symptoms: null == symptoms
           ? _value.symptoms
@@ -129,7 +122,6 @@ abstract class _$$CreateSymptomRequestImplCopyWith<$Res>
   @useResult
   $Res call(
       {String farmingBatchId,
-      String prescriptionId,
       String symptoms,
       String status,
       int affectedQuantity,
@@ -152,7 +144,6 @@ class __$$CreateSymptomRequestImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? farmingBatchId = null,
-    Object? prescriptionId = null,
     Object? symptoms = null,
     Object? status = null,
     Object? affectedQuantity = null,
@@ -164,10 +155,6 @@ class __$$CreateSymptomRequestImplCopyWithImpl<$Res>
       farmingBatchId: null == farmingBatchId
           ? _value.farmingBatchId
           : farmingBatchId // ignore: cast_nullable_to_non_nullable
-              as String,
-      prescriptionId: null == prescriptionId
-          ? _value.prescriptionId
-          : prescriptionId // ignore: cast_nullable_to_non_nullable
               as String,
       symptoms: null == symptoms
           ? _value.symptoms
@@ -202,7 +189,6 @@ class __$$CreateSymptomRequestImplCopyWithImpl<$Res>
 class _$CreateSymptomRequestImpl implements _CreateSymptomRequest {
   const _$CreateSymptomRequestImpl(
       {required this.farmingBatchId,
-      required this.prescriptionId,
       required this.symptoms,
       required this.status,
       required this.affectedQuantity,
@@ -217,8 +203,6 @@ class _$CreateSymptomRequestImpl implements _CreateSymptomRequest {
 
   @override
   final String farmingBatchId;
-  @override
-  final String prescriptionId;
   @override
   final String symptoms;
   @override
@@ -246,7 +230,7 @@ class _$CreateSymptomRequestImpl implements _CreateSymptomRequest {
 
   @override
   String toString() {
-    return 'CreateSymptomRequest(farmingBatchId: $farmingBatchId, prescriptionId: $prescriptionId, symptoms: $symptoms, status: $status, affectedQuantity: $affectedQuantity, notes: $notes, pictures: $pictures, medicalSymptomDetails: $medicalSymptomDetails)';
+    return 'CreateSymptomRequest(farmingBatchId: $farmingBatchId, symptoms: $symptoms, status: $status, affectedQuantity: $affectedQuantity, notes: $notes, pictures: $pictures, medicalSymptomDetails: $medicalSymptomDetails)';
   }
 
   @override
@@ -256,8 +240,6 @@ class _$CreateSymptomRequestImpl implements _CreateSymptomRequest {
             other is _$CreateSymptomRequestImpl &&
             (identical(other.farmingBatchId, farmingBatchId) ||
                 other.farmingBatchId == farmingBatchId) &&
-            (identical(other.prescriptionId, prescriptionId) ||
-                other.prescriptionId == prescriptionId) &&
             (identical(other.symptoms, symptoms) ||
                 other.symptoms == symptoms) &&
             (identical(other.status, status) || other.status == status) &&
@@ -274,7 +256,6 @@ class _$CreateSymptomRequestImpl implements _CreateSymptomRequest {
   int get hashCode => Object.hash(
       runtimeType,
       farmingBatchId,
-      prescriptionId,
       symptoms,
       status,
       affectedQuantity,
@@ -303,7 +284,6 @@ class _$CreateSymptomRequestImpl implements _CreateSymptomRequest {
 abstract class _CreateSymptomRequest implements CreateSymptomRequest {
   const factory _CreateSymptomRequest(
           {required final String farmingBatchId,
-          required final String prescriptionId,
           required final String symptoms,
           required final String status,
           required final int affectedQuantity,
@@ -317,8 +297,6 @@ abstract class _CreateSymptomRequest implements CreateSymptomRequest {
 
   @override
   String get farmingBatchId;
-  @override
-  String get prescriptionId;
   @override
   String get symptoms;
   @override

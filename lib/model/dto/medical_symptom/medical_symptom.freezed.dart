@@ -22,13 +22,12 @@ MedicalSymptomDto _$MedicalSymptomDtoFromJson(Map<String, dynamic> json) {
 mixin _$MedicalSymptomDto {
   String get id => throw _privateConstructorUsedError;
   String get farmingBatchId => throw _privateConstructorUsedError;
-  String? get prescriptionId => throw _privateConstructorUsedError;
-  String get symtom => throw _privateConstructorUsedError;
+  String? get symtoms => throw _privateConstructorUsedError;
   String? get diagnosis => throw _privateConstructorUsedError;
   DateTime get createAt => throw _privateConstructorUsedError;
   String get status => throw _privateConstructorUsedError;
   int get affectedQuantity => throw _privateConstructorUsedError;
-  int get quantity => throw _privateConstructorUsedError;
+  int? get quantity => throw _privateConstructorUsedError;
   String? get nameAnimal => throw _privateConstructorUsedError;
   String get notes => throw _privateConstructorUsedError;
   List<PictureSymptom>? get pictures => throw _privateConstructorUsedError;
@@ -56,13 +55,12 @@ abstract class $MedicalSymptomDtoCopyWith<$Res> {
   $Res call(
       {String id,
       String farmingBatchId,
-      String? prescriptionId,
-      String symtom,
+      String? symtoms,
       String? diagnosis,
       DateTime createAt,
       String status,
       int affectedQuantity,
-      int quantity,
+      int? quantity,
       String? nameAnimal,
       String notes,
       List<PictureSymptom>? pictures,
@@ -87,13 +85,12 @@ class _$MedicalSymptomDtoCopyWithImpl<$Res, $Val extends MedicalSymptomDto>
   $Res call({
     Object? id = null,
     Object? farmingBatchId = null,
-    Object? prescriptionId = freezed,
-    Object? symtom = null,
+    Object? symtoms = freezed,
     Object? diagnosis = freezed,
     Object? createAt = null,
     Object? status = null,
     Object? affectedQuantity = null,
-    Object? quantity = null,
+    Object? quantity = freezed,
     Object? nameAnimal = freezed,
     Object? notes = null,
     Object? pictures = freezed,
@@ -109,14 +106,10 @@ class _$MedicalSymptomDtoCopyWithImpl<$Res, $Val extends MedicalSymptomDto>
           ? _value.farmingBatchId
           : farmingBatchId // ignore: cast_nullable_to_non_nullable
               as String,
-      prescriptionId: freezed == prescriptionId
-          ? _value.prescriptionId
-          : prescriptionId // ignore: cast_nullable_to_non_nullable
+      symtoms: freezed == symtoms
+          ? _value.symtoms
+          : symtoms // ignore: cast_nullable_to_non_nullable
               as String?,
-      symtom: null == symtom
-          ? _value.symtom
-          : symtom // ignore: cast_nullable_to_non_nullable
-              as String,
       diagnosis: freezed == diagnosis
           ? _value.diagnosis
           : diagnosis // ignore: cast_nullable_to_non_nullable
@@ -133,10 +126,10 @@ class _$MedicalSymptomDtoCopyWithImpl<$Res, $Val extends MedicalSymptomDto>
           ? _value.affectedQuantity
           : affectedQuantity // ignore: cast_nullable_to_non_nullable
               as int,
-      quantity: null == quantity
+      quantity: freezed == quantity
           ? _value.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       nameAnimal: freezed == nameAnimal
           ? _value.nameAnimal
           : nameAnimal // ignore: cast_nullable_to_non_nullable
@@ -172,13 +165,12 @@ abstract class _$$MedicalSymptomDtoImplCopyWith<$Res>
   $Res call(
       {String id,
       String farmingBatchId,
-      String? prescriptionId,
-      String symtom,
+      String? symtoms,
       String? diagnosis,
       DateTime createAt,
       String status,
       int affectedQuantity,
-      int quantity,
+      int? quantity,
       String? nameAnimal,
       String notes,
       List<PictureSymptom>? pictures,
@@ -201,13 +193,12 @@ class __$$MedicalSymptomDtoImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? farmingBatchId = null,
-    Object? prescriptionId = freezed,
-    Object? symtom = null,
+    Object? symtoms = freezed,
     Object? diagnosis = freezed,
     Object? createAt = null,
     Object? status = null,
     Object? affectedQuantity = null,
-    Object? quantity = null,
+    Object? quantity = freezed,
     Object? nameAnimal = freezed,
     Object? notes = null,
     Object? pictures = freezed,
@@ -223,14 +214,10 @@ class __$$MedicalSymptomDtoImplCopyWithImpl<$Res>
           ? _value.farmingBatchId
           : farmingBatchId // ignore: cast_nullable_to_non_nullable
               as String,
-      prescriptionId: freezed == prescriptionId
-          ? _value.prescriptionId
-          : prescriptionId // ignore: cast_nullable_to_non_nullable
+      symtoms: freezed == symtoms
+          ? _value.symtoms
+          : symtoms // ignore: cast_nullable_to_non_nullable
               as String?,
-      symtom: null == symtom
-          ? _value.symtom
-          : symtom // ignore: cast_nullable_to_non_nullable
-              as String,
       diagnosis: freezed == diagnosis
           ? _value.diagnosis
           : diagnosis // ignore: cast_nullable_to_non_nullable
@@ -247,10 +234,10 @@ class __$$MedicalSymptomDtoImplCopyWithImpl<$Res>
           ? _value.affectedQuantity
           : affectedQuantity // ignore: cast_nullable_to_non_nullable
               as int,
-      quantity: null == quantity
+      quantity: freezed == quantity
           ? _value.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       nameAnimal: freezed == nameAnimal
           ? _value.nameAnimal
           : nameAnimal // ignore: cast_nullable_to_non_nullable
@@ -281,8 +268,7 @@ class _$MedicalSymptomDtoImpl implements _MedicalSymptomDto {
   const _$MedicalSymptomDtoImpl(
       {required this.id,
       required this.farmingBatchId,
-      required this.prescriptionId,
-      required this.symtom,
+      required this.symtoms,
       required this.diagnosis,
       required this.createAt,
       required this.status,
@@ -305,9 +291,7 @@ class _$MedicalSymptomDtoImpl implements _MedicalSymptomDto {
   @override
   final String farmingBatchId;
   @override
-  final String? prescriptionId;
-  @override
-  final String symtom;
+  final String? symtoms;
   @override
   final String? diagnosis;
   @override
@@ -317,7 +301,7 @@ class _$MedicalSymptomDtoImpl implements _MedicalSymptomDto {
   @override
   final int affectedQuantity;
   @override
-  final int quantity;
+  final int? quantity;
   @override
   final String? nameAnimal;
   @override
@@ -355,7 +339,7 @@ class _$MedicalSymptomDtoImpl implements _MedicalSymptomDto {
 
   @override
   String toString() {
-    return 'MedicalSymptomDto(id: $id, farmingBatchId: $farmingBatchId, prescriptionId: $prescriptionId, symtom: $symtom, diagnosis: $diagnosis, createAt: $createAt, status: $status, affectedQuantity: $affectedQuantity, quantity: $quantity, nameAnimal: $nameAnimal, notes: $notes, pictures: $pictures, medicalSymptomDetails: $medicalSymptomDetails, prescriptions: $prescriptions)';
+    return 'MedicalSymptomDto(id: $id, farmingBatchId: $farmingBatchId, symtoms: $symtoms, diagnosis: $diagnosis, createAt: $createAt, status: $status, affectedQuantity: $affectedQuantity, quantity: $quantity, nameAnimal: $nameAnimal, notes: $notes, pictures: $pictures, medicalSymptomDetails: $medicalSymptomDetails, prescriptions: $prescriptions)';
   }
 
   @override
@@ -366,9 +350,7 @@ class _$MedicalSymptomDtoImpl implements _MedicalSymptomDto {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.farmingBatchId, farmingBatchId) ||
                 other.farmingBatchId == farmingBatchId) &&
-            (identical(other.prescriptionId, prescriptionId) ||
-                other.prescriptionId == prescriptionId) &&
-            (identical(other.symtom, symtom) || other.symtom == symtom) &&
+            (identical(other.symtoms, symtoms) || other.symtoms == symtoms) &&
             (identical(other.diagnosis, diagnosis) ||
                 other.diagnosis == diagnosis) &&
             (identical(other.createAt, createAt) ||
@@ -394,8 +376,7 @@ class _$MedicalSymptomDtoImpl implements _MedicalSymptomDto {
       runtimeType,
       id,
       farmingBatchId,
-      prescriptionId,
-      symtom,
+      symtoms,
       diagnosis,
       createAt,
       status,
@@ -428,13 +409,12 @@ abstract class _MedicalSymptomDto implements MedicalSymptomDto {
   const factory _MedicalSymptomDto(
           {required final String id,
           required final String farmingBatchId,
-          required final String? prescriptionId,
-          required final String symtom,
+          required final String? symtoms,
           required final String? diagnosis,
           required final DateTime createAt,
           required final String status,
           required final int affectedQuantity,
-          required final int quantity,
+          required final int? quantity,
           required final String? nameAnimal,
           required final String notes,
           required final List<PictureSymptom>? pictures,
@@ -450,9 +430,7 @@ abstract class _MedicalSymptomDto implements MedicalSymptomDto {
   @override
   String get farmingBatchId;
   @override
-  String? get prescriptionId;
-  @override
-  String get symtom;
+  String? get symtoms;
   @override
   String? get diagnosis;
   @override
@@ -462,7 +440,7 @@ abstract class _MedicalSymptomDto implements MedicalSymptomDto {
   @override
   int get affectedQuantity;
   @override
-  int get quantity;
+  int? get quantity;
   @override
   String? get nameAnimal;
   @override

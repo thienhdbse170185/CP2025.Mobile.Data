@@ -97,7 +97,7 @@ class TaskRepository {
   }
 
   Future<bool> createVaccinScheduleLog(
-      String cageId, VaccinScheduleLogDto request) async {
+      String cageId, VaccineScheduleLogDto request) async {
     try {
       await apiClient.createVaccinScheduleLog(cageId, request);
       return true;
@@ -122,7 +122,7 @@ class TaskRepository {
     }
   }
 
-  Future<VaccinScheduleLogDto> getVaccinScheduleLog(String taskId) async {
+  Future<VaccineScheduleLogDto> getVaccinScheduleLog(String taskId) async {
     try {
       return await apiClient.getVaccinScheduleLog(taskId);
     } catch (e) {

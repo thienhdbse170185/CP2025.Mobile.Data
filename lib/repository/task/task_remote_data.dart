@@ -95,6 +95,7 @@ class TaskRemoteData {
 
   Future<bool> update(String taskId, String statusId) async {
     try {
+      log('[UPDATE_TASK_STATUS] req: $taskId - $statusId');
       final response =
           await dio.put('${ApiEndpoints.getTasks}/$taskId/status/$statusId');
       if (response.statusCode == 200) {
@@ -138,6 +139,8 @@ class TaskRemoteData {
   Future<bool> createDailyFoodUsageLog(
       String cageId, DailyFoodUsageLogDto request) async {
     try {
+      log('[TASK_REMOTE_DATA] createDailyFoodUsageLog: $request');
+      log('[TASK_REMOTE_DATA] cageid: $cageId');
       final response = await dio.post(
           '${ApiEndpoints.dailyFoodUsageLog}/$cageId',
           data: request.toJson());
@@ -158,6 +161,7 @@ class TaskRemoteData {
       String prescriptionId, HealthLogDto request) async {
     try {
       final data = request.toJson();
+      log(data.toString());
       final response = await dio.post(
           '${ApiEndpoints.healthLog}/$prescriptionId/health-log',
           data: request.toJson());
@@ -176,7 +180,7 @@ class TaskRemoteData {
   }
 
   Future<bool> createVaccinScheduleLog(
-      String cageId, VaccinScheduleLogDto request) async {
+      String cageId, VaccineScheduleLogDto request) async {
     try {
       final response = await dio.post(
           '${ApiEndpoints.vaccineScheduleLog}/$cageId',
@@ -229,12 +233,12 @@ class TaskRemoteData {
     }
   }
 
-  Future<VaccinScheduleLogDto> getVaccinScheduleLog(String taskId) async {
+  Future<VaccineScheduleLogDto> getVaccinScheduleLog(String taskId) async {
     try {
       final response =
           await dio.get('${ApiEndpoints.vaccineScheduleLog}/task/$taskId');
       if (response.statusCode == 200) {
-        return VaccinScheduleLogDto.fromJson(response.data['result']);
+        return VaccineScheduleLogDto.fromJson(response.data['result']);
       } else {
         throw Exception('Failed to load vaccin schedule log');
       }

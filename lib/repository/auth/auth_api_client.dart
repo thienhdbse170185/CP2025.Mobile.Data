@@ -17,8 +17,12 @@ class AuthApiClient {
       } else {
         throw Exception('Failed to login');
       }
-    } catch (e) {
-      rethrow;
+    } on DioException catch (e) {
+      if (e.response?.statusCode == 400) {
+        throw Exception('wrong-credentials');
+      } else {
+        throw Exception('Failed to login');
+      }
     }
   }
 }

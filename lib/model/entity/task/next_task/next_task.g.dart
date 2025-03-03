@@ -15,7 +15,7 @@ _$NextTaskImpl _$$NextTaskImplFromJson(Map<String, dynamic> json) =>
       assignName: json['assignName'] as String,
       priorityNum: (json['priorityNum'] as num).toInt(),
       status: json['status'] as String,
-      dueDate: json['dueDate'] as String,
+      dueDate: json['dueDate'] as String?,
       total: (json['total'] as num).toInt(),
       taskDone: (json['taskDone'] as num).toInt(),
     );

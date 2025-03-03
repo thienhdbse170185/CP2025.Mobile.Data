@@ -11,13 +11,12 @@ _$MedicalSymptomDtoImpl _$$MedicalSymptomDtoImplFromJson(
     _$MedicalSymptomDtoImpl(
       id: json['id'] as String,
       farmingBatchId: json['farmingBatchId'] as String,
-      prescriptionId: json['prescriptionId'] as String?,
-      symtom: json['symtom'] as String,
+      symtoms: json['symtoms'] as String?,
       diagnosis: json['diagnosis'] as String?,
       createAt: DateTime.parse(json['createAt'] as String),
       status: json['status'] as String,
       affectedQuantity: (json['affectedQuantity'] as num).toInt(),
-      quantity: (json['quantity'] as num).toInt(),
+      quantity: (json['quantity'] as num?)?.toInt(),
       nameAnimal: json['nameAnimal'] as String?,
       notes: json['notes'] as String,
       pictures: (json['pictures'] as List<dynamic>?)
@@ -36,8 +35,7 @@ Map<String, dynamic> _$$MedicalSymptomDtoImplToJson(
     <String, dynamic>{
       'id': instance.id,
       'farmingBatchId': instance.farmingBatchId,
-      'prescriptionId': instance.prescriptionId,
-      'symtom': instance.symtom,
+      'symtoms': instance.symtoms,
       'diagnosis': instance.diagnosis,
       'createAt': instance.createAt.toIso8601String(),
       'status': instance.status,

@@ -8,7 +8,6 @@ part 'create_symptom_request.g.dart';
 class CreateSymptomRequest with _$CreateSymptomRequest {
   const factory CreateSymptomRequest(
           {required String farmingBatchId,
-          required String prescriptionId,
           required String symptoms,
           required String status,
           required int affectedQuantity,

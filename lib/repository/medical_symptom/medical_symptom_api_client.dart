@@ -1,16 +1,19 @@
 import 'dart:developer';
 
 import 'package:data_layer/api_endpoints.dart';
-import 'package:data_layer/model/dto/medical_symptom/medical_symptom.dart';
+import 'package:data_layer/model/response/medical_symptom/medical_symptom_response.dart';
 import 'package:dio/dio.dart';
 
 class MedicalSymptomApiClient {
   final Dio dio;
   const MedicalSymptomApiClient({required this.dio});
 
-  Future<List<MedicalSymptomDto>> getSymptomsByBatch(
+  Future<List<MedicalSymptomResponse>?> getSymptomsByBatch(
       String userId, String? farmingBatchId) async {
     try {
+      log('[MEDICAL_SYMPTOM_API_CLIENT] Chuẩn bị thực hiện lấy báo cáo triệu chứng...');
+      log('[MEDICAL_SYMPTOM_API_CLIENT] userId: $userId');
+      log('[MEDICAL_SYMPTOM_API_CLIENT] farmingBatchId: $farmingBatchId');
       // Comment out the actual API call
       final response = await dio
           .get(ApiEndpoints.getMedicalSymptomsByBatch, queryParameters: {
@@ -18,8 +21,9 @@ class MedicalSymptomApiClient {
         'farmBatchId': farmingBatchId,
       });
       if (response.statusCode == 200) {
+        log('[MEDICAL_SYMPTOM_API_CLIENT] Lấy báo cáo triệu chứng thành công!');
         return (response.data['result'] as List)
-            .map((e) => MedicalSymptomDto.fromJson(e))
+            .map((e) => MedicalSymptomResponse.fromJson(e))
             .toList();
       } else {
         throw Exception(response.data['message']);
@@ -86,10 +90,12 @@ class MedicalSymptomApiClient {
       //     .map((e) => MedicalSymptomDto.fromJson(e))
       //     .toList();
     } on DioException catch (e) {
-      log(e.toString());
       if (e.response?.statusCode == 404) {
-        throw Exception('no-symptom-found');
+        log('[MEDICAL_SYMPTOM_API_CLIENT] Vụ nuôi này không có báo cáo triệu chứng.');
+        return null;
       }
+      log('[MEDICAL_SYMPTOM_API_CLIENT] Lỗi khi lấy báo cáo triệu chứng');
+      log('[MEDICAL_SYMPTOM_API_CLIENT] Error: ${e.message}');
       throw Exception(e.response?.data['result']['message']);
     }
   }
