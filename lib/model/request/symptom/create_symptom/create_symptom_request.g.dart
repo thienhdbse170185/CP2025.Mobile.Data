@@ -13,6 +13,8 @@ _$CreateSymptomRequestImpl _$$CreateSymptomRequestImplFromJson(
       symptoms: json['symptoms'] as String,
       status: json['status'] as String,
       affectedQuantity: (json['affectedQuantity'] as num).toInt(),
+      isEmergency: json['isEmergency'] as bool,
+      quantityInCage: (json['quantityInCage'] as num).toInt(),
       notes: json['notes'] as String,
       pictures: (json['pictures'] as List<dynamic>)
           .map((e) => PictureSymptom.fromJson(e as Map<String, dynamic>))
@@ -29,6 +31,8 @@ Map<String, dynamic> _$$CreateSymptomRequestImplToJson(
       'symptoms': instance.symptoms,
       'status': instance.status,
       'affectedQuantity': instance.affectedQuantity,
+      'isEmergency': instance.isEmergency,
+      'quantityInCage': instance.quantityInCage,
       'notes': instance.notes,
       'pictures': instance.pictures,
       'medicalSymptomDetails': instance.medicalSymptomDetails,

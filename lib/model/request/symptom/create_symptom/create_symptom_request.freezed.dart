@@ -24,6 +24,8 @@ mixin _$CreateSymptomRequest {
   String get symptoms => throw _privateConstructorUsedError;
   String get status => throw _privateConstructorUsedError;
   int get affectedQuantity => throw _privateConstructorUsedError;
+  bool get isEmergency => throw _privateConstructorUsedError;
+  int get quantityInCage => throw _privateConstructorUsedError;
   String get notes => throw _privateConstructorUsedError;
   List<PictureSymptom> get pictures => throw _privateConstructorUsedError;
   List<GetSymptomRequest> get medicalSymptomDetails =>
@@ -50,6 +52,8 @@ abstract class $CreateSymptomRequestCopyWith<$Res> {
       String symptoms,
       String status,
       int affectedQuantity,
+      bool isEmergency,
+      int quantityInCage,
       String notes,
       List<PictureSymptom> pictures,
       List<GetSymptomRequest> medicalSymptomDetails});
@@ -75,6 +79,8 @@ class _$CreateSymptomRequestCopyWithImpl<$Res,
     Object? symptoms = null,
     Object? status = null,
     Object? affectedQuantity = null,
+    Object? isEmergency = null,
+    Object? quantityInCage = null,
     Object? notes = null,
     Object? pictures = null,
     Object? medicalSymptomDetails = null,
@@ -95,6 +101,14 @@ class _$CreateSymptomRequestCopyWithImpl<$Res,
       affectedQuantity: null == affectedQuantity
           ? _value.affectedQuantity
           : affectedQuantity // ignore: cast_nullable_to_non_nullable
+              as int,
+      isEmergency: null == isEmergency
+          ? _value.isEmergency
+          : isEmergency // ignore: cast_nullable_to_non_nullable
+              as bool,
+      quantityInCage: null == quantityInCage
+          ? _value.quantityInCage
+          : quantityInCage // ignore: cast_nullable_to_non_nullable
               as int,
       notes: null == notes
           ? _value.notes
@@ -125,6 +139,8 @@ abstract class _$$CreateSymptomRequestImplCopyWith<$Res>
       String symptoms,
       String status,
       int affectedQuantity,
+      bool isEmergency,
+      int quantityInCage,
       String notes,
       List<PictureSymptom> pictures,
       List<GetSymptomRequest> medicalSymptomDetails});
@@ -147,6 +163,8 @@ class __$$CreateSymptomRequestImplCopyWithImpl<$Res>
     Object? symptoms = null,
     Object? status = null,
     Object? affectedQuantity = null,
+    Object? isEmergency = null,
+    Object? quantityInCage = null,
     Object? notes = null,
     Object? pictures = null,
     Object? medicalSymptomDetails = null,
@@ -167,6 +185,14 @@ class __$$CreateSymptomRequestImplCopyWithImpl<$Res>
       affectedQuantity: null == affectedQuantity
           ? _value.affectedQuantity
           : affectedQuantity // ignore: cast_nullable_to_non_nullable
+              as int,
+      isEmergency: null == isEmergency
+          ? _value.isEmergency
+          : isEmergency // ignore: cast_nullable_to_non_nullable
+              as bool,
+      quantityInCage: null == quantityInCage
+          ? _value.quantityInCage
+          : quantityInCage // ignore: cast_nullable_to_non_nullable
               as int,
       notes: null == notes
           ? _value.notes
@@ -192,6 +218,8 @@ class _$CreateSymptomRequestImpl implements _CreateSymptomRequest {
       required this.symptoms,
       required this.status,
       required this.affectedQuantity,
+      required this.isEmergency,
+      required this.quantityInCage,
       required this.notes,
       required final List<PictureSymptom> pictures,
       required final List<GetSymptomRequest> medicalSymptomDetails})
@@ -209,6 +237,10 @@ class _$CreateSymptomRequestImpl implements _CreateSymptomRequest {
   final String status;
   @override
   final int affectedQuantity;
+  @override
+  final bool isEmergency;
+  @override
+  final int quantityInCage;
   @override
   final String notes;
   final List<PictureSymptom> _pictures;
@@ -230,7 +262,7 @@ class _$CreateSymptomRequestImpl implements _CreateSymptomRequest {
 
   @override
   String toString() {
-    return 'CreateSymptomRequest(farmingBatchId: $farmingBatchId, symptoms: $symptoms, status: $status, affectedQuantity: $affectedQuantity, notes: $notes, pictures: $pictures, medicalSymptomDetails: $medicalSymptomDetails)';
+    return 'CreateSymptomRequest(farmingBatchId: $farmingBatchId, symptoms: $symptoms, status: $status, affectedQuantity: $affectedQuantity, isEmergency: $isEmergency, quantityInCage: $quantityInCage, notes: $notes, pictures: $pictures, medicalSymptomDetails: $medicalSymptomDetails)';
   }
 
   @override
@@ -245,6 +277,10 @@ class _$CreateSymptomRequestImpl implements _CreateSymptomRequest {
             (identical(other.status, status) || other.status == status) &&
             (identical(other.affectedQuantity, affectedQuantity) ||
                 other.affectedQuantity == affectedQuantity) &&
+            (identical(other.isEmergency, isEmergency) ||
+                other.isEmergency == isEmergency) &&
+            (identical(other.quantityInCage, quantityInCage) ||
+                other.quantityInCage == quantityInCage) &&
             (identical(other.notes, notes) || other.notes == notes) &&
             const DeepCollectionEquality().equals(other._pictures, _pictures) &&
             const DeepCollectionEquality()
@@ -259,6 +295,8 @@ class _$CreateSymptomRequestImpl implements _CreateSymptomRequest {
       symptoms,
       status,
       affectedQuantity,
+      isEmergency,
+      quantityInCage,
       notes,
       const DeepCollectionEquality().hash(_pictures),
       const DeepCollectionEquality().hash(_medicalSymptomDetails));
@@ -287,6 +325,8 @@ abstract class _CreateSymptomRequest implements CreateSymptomRequest {
           required final String symptoms,
           required final String status,
           required final int affectedQuantity,
+          required final bool isEmergency,
+          required final int quantityInCage,
           required final String notes,
           required final List<PictureSymptom> pictures,
           required final List<GetSymptomRequest> medicalSymptomDetails}) =
@@ -303,6 +343,10 @@ abstract class _CreateSymptomRequest implements CreateSymptomRequest {
   String get status;
   @override
   int get affectedQuantity;
+  @override
+  bool get isEmergency;
+  @override
+  int get quantityInCage;
   @override
   String get notes;
   @override

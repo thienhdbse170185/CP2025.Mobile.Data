@@ -11,6 +11,8 @@ class CreateSymptomRequest with _$CreateSymptomRequest {
           required String symptoms,
           required String status,
           required int affectedQuantity,
+          required bool isEmergency,
+          required int quantityInCage,
           required String notes,
           required List<PictureSymptom> pictures,
           required List<GetSymptomRequest> medicalSymptomDetails}) =
