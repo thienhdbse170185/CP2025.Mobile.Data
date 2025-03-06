@@ -11,7 +11,7 @@ class HealthyApiClient {
   Future<MedicalSymptomDto> create(CreateSymptomRequest request) async {
     try {
       final data = request.toJson();
-      log('HEALTHY_API_CLIENT] request: $data');
+      log('[HEALTHY_API_CLIENT] request: $data');
       final response = await dio.post(ApiEndpoints.postSymptom, data: data);
       if (response.statusCode == 201) {
         return MedicalSymptomDto.fromJson(response.data['result']);
