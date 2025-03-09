@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:data_layer/api_endpoints.dart';
 import 'package:data_layer/data_layer.dart';
 import 'package:data_layer/model/response/upload_image/upload_image_response.dart';
+import 'package:data_layer/model/response/upload_multiple_image/upload_multiple_image_response.dart';
 import 'package:dio/dio.dart';
 import 'package:http_parser/http_parser.dart';
 
@@ -64,6 +65,44 @@ class UploadImageApiClient {
       }
       log('[UPLOAD_IMAGE_API_CLIENT] Xóa ảnh thất bại!');
       log(e.toString());
+      rethrow;
+    }
+  }
+
+  Future<UploadMultipleImageResponse> uploadMultipleImage(
+      {required List<File> images}) async {
+    try {
+      log('[UPLOAD_IMAGE_API_CLIENT] Uploading multiple image...');
+      // log('[UPLOAD_IMAGE_API_CLIENT] File path: ${file.path}');
+      final formData = FormData();
+      for (var image in images) {
+        formData.files.add(MapEntry(
+          'images',
+          await MultipartFile.fromFile(image.path,
+              filename: image.path.split('/').last,
+              contentType: MediaType(
+                  'image', image.path.endsWith('.png') ? 'png' : 'jpeg')),
+        ));
+      }
+
+      final response = await dio.post('${ApiEndpoints.imageUpload}/batch',
+          data: formData,
+          options: Options(
+            contentType: 'multipart/form-data',
+            headers: {
+              'x-api-key': Environment.apiKey,
+            },
+          ));
+      if (response.statusCode == 201) {
+        log('[UPLOAD_IMAGE_API_CLIENT] Upload multiple success!');
+        return UploadMultipleImageResponse.fromJson(response.data);
+      } else {
+        log('[UPLOAD_IMAGE_API_CLIENT] Upload ảnh thất bại!');
+        throw Exception('upload-image-failure');
+      }
+    } on DioException catch (e) {
+      log('[UPLOAD_IMAGE_API_CLIENT] Upload ảnh thất bại!');
+      log('[UPLOAD_IMAGE_API_CLIENT] Error: ${e.message}');
       rethrow;
     }
   }
