@@ -1,10 +1,11 @@
+import 'package:data_layer/model/response/server_time/get_server_time_response.dart';
 import 'package:data_layer/repository/user/user_api_client.dart';
 
 class UserRepository {
   final UserApiClient userApiClient;
   const UserRepository({required this.userApiClient});
 
-  Future<String> getServerTime() async {
+  Future<GetServerTimeResponse> getServerTime() async {
     try {
       return await userApiClient.getServerTime();
     } catch (e) {
@@ -20,9 +21,9 @@ class UserRepository {
     }
   }
 
-  Future<bool> sendOTP(String email, bool isResend) async {
+  Future<bool> sendOTP(String email, String username, bool isResend) async {
     try {
-      return await userApiClient.sendOTP(email, isResend);
+      return await userApiClient.sendOTP(email, username, isResend);
     } catch (e) {
       throw Exception(e.toString());
     }

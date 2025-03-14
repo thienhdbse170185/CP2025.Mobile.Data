@@ -1,21 +1,23 @@
 import 'dart:developer';
 
 import 'package:data_layer/api_endpoints.dart';
+import 'package:data_layer/model/response/server_time/get_server_time_response.dart';
 import 'package:dio/dio.dart';
 
 class UserApiClient {
   final Dio dio;
   const UserApiClient({required this.dio});
 
-  Future<String> getServerTime() async {
+  Future<GetServerTimeResponse> getServerTime() async {
     try {
       final response = await dio.get(ApiEndpoints.getServerTime);
       if (response.statusCode == 200) {
-        return response.data['result'];
+        return GetServerTimeResponse.fromJson(response.data['result']);
       } else {
         throw Exception('Failed to get server time');
       }
     } on DioException catch (e) {
+      log('[UserApiClient] error - getServerTime: ${e.toString()}');
       throw Exception(e.toString());
     }
   }
@@ -34,10 +36,11 @@ class UserApiClient {
     }
   }
 
-  Future<bool> sendOTP(String email, bool isResend) async {
+  Future<bool> sendOTP(String email, String username, bool isResend) async {
     try {
       final request = {
         'email': email,
+        'username': username,
         'isResend': isResend,
       };
       final response =

@@ -103,7 +103,12 @@ class TaskRemoteData {
       } else {
         throw Exception('Failed to update task status');
       }
-    } catch (e) {
+    } on DioException catch (e) {
+      log('[UPDATE_TASK_STATUS] Cập nhật công việc thất bại!');
+      log('[UPDATE_TASK_STATUS] Error: ${e.toString()}');
+      if (e.response?.data != null) {
+        log('[UPDATE_TASK_STATUS] Error body: ${e.response?.data}');
+      }
       rethrow;
     }
   }
