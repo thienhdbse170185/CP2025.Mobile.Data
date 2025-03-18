@@ -20,7 +20,7 @@ GetAllCageResponse _$GetAllCageResponseFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$GetAllCageResponse {
-  List<Cage> get items => throw _privateConstructorUsedError;
+  List<CageAdminDto> get items => throw _privateConstructorUsedError;
 
   /// Serializes this GetAllCageResponse to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -38,7 +38,7 @@ abstract class $GetAllCageResponseCopyWith<$Res> {
           GetAllCageResponse value, $Res Function(GetAllCageResponse) then) =
       _$GetAllCageResponseCopyWithImpl<$Res, GetAllCageResponse>;
   @useResult
-  $Res call({List<Cage> items});
+  $Res call({List<CageAdminDto> items});
 }
 
 /// @nodoc
@@ -62,7 +62,7 @@ class _$GetAllCageResponseCopyWithImpl<$Res, $Val extends GetAllCageResponse>
       items: null == items
           ? _value.items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<Cage>,
+              as List<CageAdminDto>,
     ) as $Val);
   }
 }
@@ -75,7 +75,7 @@ abstract class _$$GetAllCageResponseImplCopyWith<$Res>
       __$$GetAllCageResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<Cage> items});
+  $Res call({List<CageAdminDto> items});
 }
 
 /// @nodoc
@@ -97,7 +97,7 @@ class __$$GetAllCageResponseImplCopyWithImpl<$Res>
       items: null == items
           ? _value._items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<Cage>,
+              as List<CageAdminDto>,
     ));
   }
 }
@@ -105,15 +105,15 @@ class __$$GetAllCageResponseImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$GetAllCageResponseImpl implements _GetAllCageResponse {
-  const _$GetAllCageResponseImpl({required final List<Cage> items})
+  const _$GetAllCageResponseImpl({required final List<CageAdminDto> items})
       : _items = items;
 
   factory _$GetAllCageResponseImpl.fromJson(Map<String, dynamic> json) =>
       _$$GetAllCageResponseImplFromJson(json);
 
-  final List<Cage> _items;
+  final List<CageAdminDto> _items;
   @override
-  List<Cage> get items {
+  List<CageAdminDto> get items {
     if (_items is EqualUnmodifiableListView) return _items;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_items);
@@ -155,14 +155,14 @@ class _$GetAllCageResponseImpl implements _GetAllCageResponse {
 }
 
 abstract class _GetAllCageResponse implements GetAllCageResponse {
-  const factory _GetAllCageResponse({required final List<Cage> items}) =
+  const factory _GetAllCageResponse({required final List<CageAdminDto> items}) =
       _$GetAllCageResponseImpl;
 
   factory _GetAllCageResponse.fromJson(Map<String, dynamic> json) =
       _$GetAllCageResponseImpl.fromJson;
 
   @override
-  List<Cage> get items;
+  List<CageAdminDto> get items;
 
   /// Create a copy of GetAllCageResponse
   /// with the given fields replaced by the non-null parameter values.

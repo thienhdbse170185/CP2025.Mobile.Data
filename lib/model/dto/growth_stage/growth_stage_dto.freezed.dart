@@ -27,10 +27,11 @@ mixin _$GrowthStageDto {
   int? get quantity => throw _privateConstructorUsedError;
   int get ageStart => throw _privateConstructorUsedError;
   int get ageEnd => throw _privateConstructorUsedError;
+  String? get foodType => throw _privateConstructorUsedError;
   String get ageStartDate => throw _privateConstructorUsedError;
   String get ageEndDate => throw _privateConstructorUsedError;
   String get status => throw _privateConstructorUsedError;
-  int get affectQuantity => throw _privateConstructorUsedError;
+  int? get affectQuantity => throw _privateConstructorUsedError;
   double get recommendedWeightPerSession => throw _privateConstructorUsedError;
   double get weightBasedOnBodyMass => throw _privateConstructorUsedError;
   TaskByUserResponse? get taskDailies => throw _privateConstructorUsedError;
@@ -61,10 +62,11 @@ abstract class $GrowthStageDtoCopyWith<$Res> {
       int? quantity,
       int ageStart,
       int ageEnd,
+      String? foodType,
       String ageStartDate,
       String ageEndDate,
       String status,
-      int affectQuantity,
+      int? affectQuantity,
       double recommendedWeightPerSession,
       double weightBasedOnBodyMass,
       TaskByUserResponse? taskDailies,
@@ -95,10 +97,11 @@ class _$GrowthStageDtoCopyWithImpl<$Res, $Val extends GrowthStageDto>
     Object? quantity = freezed,
     Object? ageStart = null,
     Object? ageEnd = null,
+    Object? foodType = freezed,
     Object? ageStartDate = null,
     Object? ageEndDate = null,
     Object? status = null,
-    Object? affectQuantity = null,
+    Object? affectQuantity = freezed,
     Object? recommendedWeightPerSession = null,
     Object? weightBasedOnBodyMass = null,
     Object? taskDailies = freezed,
@@ -133,6 +136,10 @@ class _$GrowthStageDtoCopyWithImpl<$Res, $Val extends GrowthStageDto>
           ? _value.ageEnd
           : ageEnd // ignore: cast_nullable_to_non_nullable
               as int,
+      foodType: freezed == foodType
+          ? _value.foodType
+          : foodType // ignore: cast_nullable_to_non_nullable
+              as String?,
       ageStartDate: null == ageStartDate
           ? _value.ageStartDate
           : ageStartDate // ignore: cast_nullable_to_non_nullable
@@ -145,10 +152,10 @@ class _$GrowthStageDtoCopyWithImpl<$Res, $Val extends GrowthStageDto>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as String,
-      affectQuantity: null == affectQuantity
+      affectQuantity: freezed == affectQuantity
           ? _value.affectQuantity
           : affectQuantity // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       recommendedWeightPerSession: null == recommendedWeightPerSession
           ? _value.recommendedWeightPerSession
           : recommendedWeightPerSession // ignore: cast_nullable_to_non_nullable
@@ -199,10 +206,11 @@ abstract class _$$GrowthStageDtoImplCopyWith<$Res>
       int? quantity,
       int ageStart,
       int ageEnd,
+      String? foodType,
       String ageStartDate,
       String ageEndDate,
       String status,
-      int affectQuantity,
+      int? affectQuantity,
       double recommendedWeightPerSession,
       double weightBasedOnBodyMass,
       TaskByUserResponse? taskDailies,
@@ -232,10 +240,11 @@ class __$$GrowthStageDtoImplCopyWithImpl<$Res>
     Object? quantity = freezed,
     Object? ageStart = null,
     Object? ageEnd = null,
+    Object? foodType = freezed,
     Object? ageStartDate = null,
     Object? ageEndDate = null,
     Object? status = null,
-    Object? affectQuantity = null,
+    Object? affectQuantity = freezed,
     Object? recommendedWeightPerSession = null,
     Object? weightBasedOnBodyMass = null,
     Object? taskDailies = freezed,
@@ -270,6 +279,10 @@ class __$$GrowthStageDtoImplCopyWithImpl<$Res>
           ? _value.ageEnd
           : ageEnd // ignore: cast_nullable_to_non_nullable
               as int,
+      foodType: freezed == foodType
+          ? _value.foodType
+          : foodType // ignore: cast_nullable_to_non_nullable
+              as String?,
       ageStartDate: null == ageStartDate
           ? _value.ageStartDate
           : ageStartDate // ignore: cast_nullable_to_non_nullable
@@ -282,10 +295,10 @@ class __$$GrowthStageDtoImplCopyWithImpl<$Res>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as String,
-      affectQuantity: null == affectQuantity
+      affectQuantity: freezed == affectQuantity
           ? _value.affectQuantity
           : affectQuantity // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       recommendedWeightPerSession: null == recommendedWeightPerSession
           ? _value.recommendedWeightPerSession
           : recommendedWeightPerSession // ignore: cast_nullable_to_non_nullable
@@ -317,6 +330,7 @@ class _$GrowthStageDtoImpl implements _GrowthStageDto {
       required this.quantity,
       required this.ageStart,
       required this.ageEnd,
+      required this.foodType,
       required this.ageStartDate,
       required this.ageEndDate,
       required this.status,
@@ -345,13 +359,15 @@ class _$GrowthStageDtoImpl implements _GrowthStageDto {
   @override
   final int ageEnd;
   @override
+  final String? foodType;
+  @override
   final String ageStartDate;
   @override
   final String ageEndDate;
   @override
   final String status;
   @override
-  final int affectQuantity;
+  final int? affectQuantity;
   @override
   final double recommendedWeightPerSession;
   @override
@@ -371,7 +387,7 @@ class _$GrowthStageDtoImpl implements _GrowthStageDto {
 
   @override
   String toString() {
-    return 'GrowthStageDto(id: $id, farmingBatchId: $farmingBatchId, name: $name, weightAnimal: $weightAnimal, quantity: $quantity, ageStart: $ageStart, ageEnd: $ageEnd, ageStartDate: $ageStartDate, ageEndDate: $ageEndDate, status: $status, affectQuantity: $affectQuantity, recommendedWeightPerSession: $recommendedWeightPerSession, weightBasedOnBodyMass: $weightBasedOnBodyMass, taskDailies: $taskDailies, vaccineSchedules: $vaccineSchedules)';
+    return 'GrowthStageDto(id: $id, farmingBatchId: $farmingBatchId, name: $name, weightAnimal: $weightAnimal, quantity: $quantity, ageStart: $ageStart, ageEnd: $ageEnd, foodType: $foodType, ageStartDate: $ageStartDate, ageEndDate: $ageEndDate, status: $status, affectQuantity: $affectQuantity, recommendedWeightPerSession: $recommendedWeightPerSession, weightBasedOnBodyMass: $weightBasedOnBodyMass, taskDailies: $taskDailies, vaccineSchedules: $vaccineSchedules)';
   }
 
   @override
@@ -390,6 +406,8 @@ class _$GrowthStageDtoImpl implements _GrowthStageDto {
             (identical(other.ageStart, ageStart) ||
                 other.ageStart == ageStart) &&
             (identical(other.ageEnd, ageEnd) || other.ageEnd == ageEnd) &&
+            (identical(other.foodType, foodType) ||
+                other.foodType == foodType) &&
             (identical(other.ageStartDate, ageStartDate) ||
                 other.ageStartDate == ageStartDate) &&
             (identical(other.ageEndDate, ageEndDate) ||
@@ -420,6 +438,7 @@ class _$GrowthStageDtoImpl implements _GrowthStageDto {
       quantity,
       ageStart,
       ageEnd,
+      foodType,
       ageStartDate,
       ageEndDate,
       status,
@@ -455,10 +474,11 @@ abstract class _GrowthStageDto implements GrowthStageDto {
           required final int? quantity,
           required final int ageStart,
           required final int ageEnd,
+          required final String? foodType,
           required final String ageStartDate,
           required final String ageEndDate,
           required final String status,
-          required final int affectQuantity,
+          required final int? affectQuantity,
           required final double recommendedWeightPerSession,
           required final double weightBasedOnBodyMass,
           required final TaskByUserResponse? taskDailies,
@@ -483,13 +503,15 @@ abstract class _GrowthStageDto implements GrowthStageDto {
   @override
   int get ageEnd;
   @override
+  String? get foodType;
+  @override
   String get ageStartDate;
   @override
   String get ageEndDate;
   @override
   String get status;
   @override
-  int get affectQuantity;
+  int? get affectQuantity;
   @override
   double get recommendedWeightPerSession;
   @override

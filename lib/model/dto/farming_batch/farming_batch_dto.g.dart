@@ -10,15 +10,13 @@ _$FarmingBatchDtoImpl _$$FarmingBatchDtoImplFromJson(
         Map<String, dynamic> json) =>
     _$FarmingBatchDtoImpl(
       id: json['id'] as String,
+      farmingbatchCode: json['farmingbatchCode'] as String?,
       name: json['name'] as String,
       species: json['species'] as String?,
-      startDate: DateTime.parse(json['startDate'] as String),
-      completeAt: json['completeAt'] == null
-          ? null
-          : DateTime.parse(json['completeAt'] as String),
-      endDate: json['endDate'] == null
-          ? null
-          : DateTime.parse(json['endDate'] as String),
+      startDate: json['startDate'] as String?,
+      completeAt: json['completeAt'] as String?,
+      estimatedTimeStart: json['estimatedTimeStart'] as String?,
+      endDate: json['endDate'] as String?,
       status: json['status'] as String,
       cleaningFrequency: (json['cleaningFrequency'] as num).toInt(),
       quantity: (json['quantity'] as num).toInt(),
@@ -36,11 +34,13 @@ Map<String, dynamic> _$$FarmingBatchDtoImplToJson(
         _$FarmingBatchDtoImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
+      'farmingbatchCode': instance.farmingbatchCode,
       'name': instance.name,
       'species': instance.species,
-      'startDate': instance.startDate.toIso8601String(),
-      'completeAt': instance.completeAt?.toIso8601String(),
-      'endDate': instance.endDate?.toIso8601String(),
+      'startDate': instance.startDate,
+      'completeAt': instance.completeAt,
+      'estimatedTimeStart': instance.estimatedTimeStart,
+      'endDate': instance.endDate,
       'status': instance.status,
       'cleaningFrequency': instance.cleaningFrequency,
       'quantity': instance.quantity,

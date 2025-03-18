@@ -8,11 +8,13 @@ part 'farming_batch_dto.g.dart';
 class FarmingBatchDto with _$FarmingBatchDto {
   const factory FarmingBatchDto({
     required String id,
+    required String? farmingbatchCode,
     required String name,
     required String? species,
-    required DateTime startDate,
-    required DateTime? completeAt,
-    required DateTime? endDate,
+    required String? startDate,
+    required String? completeAt,
+    required String? estimatedTimeStart,
+    required String? endDate,
     required String status,
     required int cleaningFrequency,
     required int quantity,

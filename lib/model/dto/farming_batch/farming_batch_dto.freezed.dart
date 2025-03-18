@@ -21,11 +21,13 @@ FarmingBatchDto _$FarmingBatchDtoFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$FarmingBatchDto {
   String get id => throw _privateConstructorUsedError;
+  String? get farmingbatchCode => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String? get species => throw _privateConstructorUsedError;
-  DateTime get startDate => throw _privateConstructorUsedError;
-  DateTime? get completeAt => throw _privateConstructorUsedError;
-  DateTime? get endDate => throw _privateConstructorUsedError;
+  String? get startDate => throw _privateConstructorUsedError;
+  String? get completeAt => throw _privateConstructorUsedError;
+  String? get estimatedTimeStart => throw _privateConstructorUsedError;
+  String? get endDate => throw _privateConstructorUsedError;
   String get status => throw _privateConstructorUsedError;
   int get cleaningFrequency => throw _privateConstructorUsedError;
   int get quantity => throw _privateConstructorUsedError;
@@ -51,11 +53,13 @@ abstract class $FarmingBatchDtoCopyWith<$Res> {
   @useResult
   $Res call(
       {String id,
+      String? farmingbatchCode,
       String name,
       String? species,
-      DateTime startDate,
-      DateTime? completeAt,
-      DateTime? endDate,
+      String? startDate,
+      String? completeAt,
+      String? estimatedTimeStart,
+      String? endDate,
       String status,
       int cleaningFrequency,
       int quantity,
@@ -83,10 +87,12 @@ class _$FarmingBatchDtoCopyWithImpl<$Res, $Val extends FarmingBatchDto>
   @override
   $Res call({
     Object? id = null,
+    Object? farmingbatchCode = freezed,
     Object? name = null,
     Object? species = freezed,
-    Object? startDate = null,
+    Object? startDate = freezed,
     Object? completeAt = freezed,
+    Object? estimatedTimeStart = freezed,
     Object? endDate = freezed,
     Object? status = null,
     Object? cleaningFrequency = null,
@@ -100,6 +106,10 @@ class _$FarmingBatchDtoCopyWithImpl<$Res, $Val extends FarmingBatchDto>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
+      farmingbatchCode: freezed == farmingbatchCode
+          ? _value.farmingbatchCode
+          : farmingbatchCode // ignore: cast_nullable_to_non_nullable
+              as String?,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -108,18 +118,22 @@ class _$FarmingBatchDtoCopyWithImpl<$Res, $Val extends FarmingBatchDto>
           ? _value.species
           : species // ignore: cast_nullable_to_non_nullable
               as String?,
-      startDate: null == startDate
+      startDate: freezed == startDate
           ? _value.startDate
           : startDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as String?,
       completeAt: freezed == completeAt
           ? _value.completeAt
           : completeAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as String?,
+      estimatedTimeStart: freezed == estimatedTimeStart
+          ? _value.estimatedTimeStart
+          : estimatedTimeStart // ignore: cast_nullable_to_non_nullable
+              as String?,
       endDate: freezed == endDate
           ? _value.endDate
           : endDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as String?,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -186,11 +200,13 @@ abstract class _$$FarmingBatchDtoImplCopyWith<$Res>
   @useResult
   $Res call(
       {String id,
+      String? farmingbatchCode,
       String name,
       String? species,
-      DateTime startDate,
-      DateTime? completeAt,
-      DateTime? endDate,
+      String? startDate,
+      String? completeAt,
+      String? estimatedTimeStart,
+      String? endDate,
       String status,
       int cleaningFrequency,
       int quantity,
@@ -218,10 +234,12 @@ class __$$FarmingBatchDtoImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
+    Object? farmingbatchCode = freezed,
     Object? name = null,
     Object? species = freezed,
-    Object? startDate = null,
+    Object? startDate = freezed,
     Object? completeAt = freezed,
+    Object? estimatedTimeStart = freezed,
     Object? endDate = freezed,
     Object? status = null,
     Object? cleaningFrequency = null,
@@ -235,6 +253,10 @@ class __$$FarmingBatchDtoImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
+      farmingbatchCode: freezed == farmingbatchCode
+          ? _value.farmingbatchCode
+          : farmingbatchCode // ignore: cast_nullable_to_non_nullable
+              as String?,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -243,18 +265,22 @@ class __$$FarmingBatchDtoImplCopyWithImpl<$Res>
           ? _value.species
           : species // ignore: cast_nullable_to_non_nullable
               as String?,
-      startDate: null == startDate
+      startDate: freezed == startDate
           ? _value.startDate
           : startDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as String?,
       completeAt: freezed == completeAt
           ? _value.completeAt
           : completeAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as String?,
+      estimatedTimeStart: freezed == estimatedTimeStart
+          ? _value.estimatedTimeStart
+          : estimatedTimeStart // ignore: cast_nullable_to_non_nullable
+              as String?,
       endDate: freezed == endDate
           ? _value.endDate
           : endDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as String?,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -288,10 +314,12 @@ class __$$FarmingBatchDtoImplCopyWithImpl<$Res>
 class _$FarmingBatchDtoImpl implements _FarmingBatchDto {
   const _$FarmingBatchDtoImpl(
       {required this.id,
+      required this.farmingbatchCode,
       required this.name,
       required this.species,
       required this.startDate,
       required this.completeAt,
+      required this.estimatedTimeStart,
       required this.endDate,
       required this.status,
       required this.cleaningFrequency,
@@ -306,15 +334,19 @@ class _$FarmingBatchDtoImpl implements _FarmingBatchDto {
   @override
   final String id;
   @override
+  final String? farmingbatchCode;
+  @override
   final String name;
   @override
   final String? species;
   @override
-  final DateTime startDate;
+  final String? startDate;
   @override
-  final DateTime? completeAt;
+  final String? completeAt;
   @override
-  final DateTime? endDate;
+  final String? estimatedTimeStart;
+  @override
+  final String? endDate;
   @override
   final String status;
   @override
@@ -330,7 +362,7 @@ class _$FarmingBatchDtoImpl implements _FarmingBatchDto {
 
   @override
   String toString() {
-    return 'FarmingBatchDto(id: $id, name: $name, species: $species, startDate: $startDate, completeAt: $completeAt, endDate: $endDate, status: $status, cleaningFrequency: $cleaningFrequency, quantity: $quantity, affectedQuantity: $affectedQuantity, growthStageDetails: $growthStageDetails, cage: $cage)';
+    return 'FarmingBatchDto(id: $id, farmingbatchCode: $farmingbatchCode, name: $name, species: $species, startDate: $startDate, completeAt: $completeAt, estimatedTimeStart: $estimatedTimeStart, endDate: $endDate, status: $status, cleaningFrequency: $cleaningFrequency, quantity: $quantity, affectedQuantity: $affectedQuantity, growthStageDetails: $growthStageDetails, cage: $cage)';
   }
 
   @override
@@ -339,12 +371,16 @@ class _$FarmingBatchDtoImpl implements _FarmingBatchDto {
         (other.runtimeType == runtimeType &&
             other is _$FarmingBatchDtoImpl &&
             (identical(other.id, id) || other.id == id) &&
+            (identical(other.farmingbatchCode, farmingbatchCode) ||
+                other.farmingbatchCode == farmingbatchCode) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.species, species) || other.species == species) &&
             (identical(other.startDate, startDate) ||
                 other.startDate == startDate) &&
             (identical(other.completeAt, completeAt) ||
                 other.completeAt == completeAt) &&
+            (identical(other.estimatedTimeStart, estimatedTimeStart) ||
+                other.estimatedTimeStart == estimatedTimeStart) &&
             (identical(other.endDate, endDate) || other.endDate == endDate) &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.cleaningFrequency, cleaningFrequency) ||
@@ -363,10 +399,12 @@ class _$FarmingBatchDtoImpl implements _FarmingBatchDto {
   int get hashCode => Object.hash(
       runtimeType,
       id,
+      farmingbatchCode,
       name,
       species,
       startDate,
       completeAt,
+      estimatedTimeStart,
       endDate,
       status,
       cleaningFrequency,
@@ -395,11 +433,13 @@ class _$FarmingBatchDtoImpl implements _FarmingBatchDto {
 abstract class _FarmingBatchDto implements FarmingBatchDto {
   const factory _FarmingBatchDto(
       {required final String id,
+      required final String? farmingbatchCode,
       required final String name,
       required final String? species,
-      required final DateTime startDate,
-      required final DateTime? completeAt,
-      required final DateTime? endDate,
+      required final String? startDate,
+      required final String? completeAt,
+      required final String? estimatedTimeStart,
+      required final String? endDate,
       required final String status,
       required final int cleaningFrequency,
       required final int quantity,
@@ -413,15 +453,19 @@ abstract class _FarmingBatchDto implements FarmingBatchDto {
   @override
   String get id;
   @override
+  String? get farmingbatchCode;
+  @override
   String get name;
   @override
   String? get species;
   @override
-  DateTime get startDate;
+  String? get startDate;
   @override
-  DateTime? get completeAt;
+  String? get completeAt;
   @override
-  DateTime? get endDate;
+  String? get estimatedTimeStart;
+  @override
+  String? get endDate;
   @override
   String get status;
   @override

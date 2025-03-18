@@ -10,7 +10,7 @@ _$GetAllCageResponseImpl _$$GetAllCageResponseImplFromJson(
         Map<String, dynamic> json) =>
     _$GetAllCageResponseImpl(
       items: (json['items'] as List<dynamic>)
-          .map((e) => Cage.fromJson(e as Map<String, dynamic>))
+          .map((e) => CageAdminDto.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
