@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:data_layer/api_endpoints.dart';
+import 'package:data_layer/model/dto/cage_admin/cage_admin_dto.dart';
 import 'package:data_layer/model/entity/cage/cage.dart';
 import 'package:data_layer/model/response/cage/get_all/get_all_cage_response.dart';
 import 'package:dio/dio.dart';
@@ -23,6 +24,19 @@ class CageApiClient {
       final response = await dio.get('${ApiEndpoints.getCages}/$id');
       return Cage.fromJson(response.data['result']);
     } on DioException {
+      rethrow;
+    }
+  }
+
+  Future<CageAdminDto> getCageAdminById({required String cageId}) async {
+    try {
+      log('[CAGE_API_CLIENT] Đang call API lấy thông tin cage id $cageId');
+      final response = await dio.get('${ApiEndpoints.getCages}/$cageId/admin');
+      log('[CAGE_API_CLIENT] Lấy thông tin cage id $cageId thành công');
+      return CageAdminDto.fromJson(response.data['result']);
+    } on DioException catch (e) {
+      log('[CAGE_API_CLIENT] Lấy thông tin cage id $cageId thất bại');
+      log('[CAGE_API_CLIENT] Error: $e');
       rethrow;
     }
   }
