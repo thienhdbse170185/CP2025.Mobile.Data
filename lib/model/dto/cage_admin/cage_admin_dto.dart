@@ -23,7 +23,7 @@ class CageAdminDto with _$CageAdminDto {
     required String staffId,
     required String staffName,
     required bool? isSolationCage,
-    required FarmingBatchDto? farmingBatch,
+    required FarmingBatchDto? farmingBatchStageModel,
   }) = _CageAdminDto;
 
   factory CageAdminDto.fromJson(Map<String, dynamic> json) =>

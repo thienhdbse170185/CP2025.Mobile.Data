@@ -24,10 +24,10 @@ _$CageAdminDtoImpl _$$CageAdminDtoImplFromJson(Map<String, dynamic> json) =>
       staffId: json['staffId'] as String,
       staffName: json['staffName'] as String,
       isSolationCage: json['isSolationCage'] as bool?,
-      farmingBatch: json['farmingBatch'] == null
+      farmingBatchStageModel: json['farmingBatchStageModel'] == null
           ? null
           : FarmingBatchDto.fromJson(
-              json['farmingBatch'] as Map<String, dynamic>),
+              json['farmingBatchStageModel'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$CageAdminDtoImplToJson(_$CageAdminDtoImpl instance) =>
@@ -48,5 +48,5 @@ Map<String, dynamic> _$$CageAdminDtoImplToJson(_$CageAdminDtoImpl instance) =>
       'staffId': instance.staffId,
       'staffName': instance.staffName,
       'isSolationCage': instance.isSolationCage,
-      'farmingBatch': instance.farmingBatch,
+      'farmingBatchStageModel': instance.farmingBatchStageModel,
     };

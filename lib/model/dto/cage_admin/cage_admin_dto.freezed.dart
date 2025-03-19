@@ -36,7 +36,8 @@ mixin _$CageAdminDto {
   String get staffId => throw _privateConstructorUsedError;
   String get staffName => throw _privateConstructorUsedError;
   bool? get isSolationCage => throw _privateConstructorUsedError;
-  FarmingBatchDto? get farmingBatch => throw _privateConstructorUsedError;
+  FarmingBatchDto? get farmingBatchStageModel =>
+      throw _privateConstructorUsedError;
 
   /// Serializes this CageAdminDto to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -71,9 +72,9 @@ abstract class $CageAdminDtoCopyWith<$Res> {
       String staffId,
       String staffName,
       bool? isSolationCage,
-      FarmingBatchDto? farmingBatch});
+      FarmingBatchDto? farmingBatchStageModel});
 
-  $FarmingBatchDtoCopyWith<$Res>? get farmingBatch;
+  $FarmingBatchDtoCopyWith<$Res>? get farmingBatchStageModel;
 }
 
 /// @nodoc
@@ -107,7 +108,7 @@ class _$CageAdminDtoCopyWithImpl<$Res, $Val extends CageAdminDto>
     Object? staffId = null,
     Object? staffName = null,
     Object? isSolationCage = freezed,
-    Object? farmingBatch = freezed,
+    Object? farmingBatchStageModel = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -174,9 +175,9 @@ class _$CageAdminDtoCopyWithImpl<$Res, $Val extends CageAdminDto>
           ? _value.isSolationCage
           : isSolationCage // ignore: cast_nullable_to_non_nullable
               as bool?,
-      farmingBatch: freezed == farmingBatch
-          ? _value.farmingBatch
-          : farmingBatch // ignore: cast_nullable_to_non_nullable
+      farmingBatchStageModel: freezed == farmingBatchStageModel
+          ? _value.farmingBatchStageModel
+          : farmingBatchStageModel // ignore: cast_nullable_to_non_nullable
               as FarmingBatchDto?,
     ) as $Val);
   }
@@ -185,13 +186,14 @@ class _$CageAdminDtoCopyWithImpl<$Res, $Val extends CageAdminDto>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $FarmingBatchDtoCopyWith<$Res>? get farmingBatch {
-    if (_value.farmingBatch == null) {
+  $FarmingBatchDtoCopyWith<$Res>? get farmingBatchStageModel {
+    if (_value.farmingBatchStageModel == null) {
       return null;
     }
 
-    return $FarmingBatchDtoCopyWith<$Res>(_value.farmingBatch!, (value) {
-      return _then(_value.copyWith(farmingBatch: value) as $Val);
+    return $FarmingBatchDtoCopyWith<$Res>(_value.farmingBatchStageModel!,
+        (value) {
+      return _then(_value.copyWith(farmingBatchStageModel: value) as $Val);
     });
   }
 }
@@ -221,10 +223,10 @@ abstract class _$$CageAdminDtoImplCopyWith<$Res>
       String staffId,
       String staffName,
       bool? isSolationCage,
-      FarmingBatchDto? farmingBatch});
+      FarmingBatchDto? farmingBatchStageModel});
 
   @override
-  $FarmingBatchDtoCopyWith<$Res>? get farmingBatch;
+  $FarmingBatchDtoCopyWith<$Res>? get farmingBatchStageModel;
 }
 
 /// @nodoc
@@ -256,7 +258,7 @@ class __$$CageAdminDtoImplCopyWithImpl<$Res>
     Object? staffId = null,
     Object? staffName = null,
     Object? isSolationCage = freezed,
-    Object? farmingBatch = freezed,
+    Object? farmingBatchStageModel = freezed,
   }) {
     return _then(_$CageAdminDtoImpl(
       id: null == id
@@ -323,9 +325,9 @@ class __$$CageAdminDtoImplCopyWithImpl<$Res>
           ? _value.isSolationCage
           : isSolationCage // ignore: cast_nullable_to_non_nullable
               as bool?,
-      farmingBatch: freezed == farmingBatch
-          ? _value.farmingBatch
-          : farmingBatch // ignore: cast_nullable_to_non_nullable
+      farmingBatchStageModel: freezed == farmingBatchStageModel
+          ? _value.farmingBatchStageModel
+          : farmingBatchStageModel // ignore: cast_nullable_to_non_nullable
               as FarmingBatchDto?,
     ));
   }
@@ -351,7 +353,7 @@ class _$CageAdminDtoImpl implements _CageAdminDto {
       required this.staffId,
       required this.staffName,
       required this.isSolationCage,
-      required this.farmingBatch});
+      required this.farmingBatchStageModel});
 
   factory _$CageAdminDtoImpl.fromJson(Map<String, dynamic> json) =>
       _$$CageAdminDtoImplFromJson(json);
@@ -389,11 +391,11 @@ class _$CageAdminDtoImpl implements _CageAdminDto {
   @override
   final bool? isSolationCage;
   @override
-  final FarmingBatchDto? farmingBatch;
+  final FarmingBatchDto? farmingBatchStageModel;
 
   @override
   String toString() {
-    return 'CageAdminDto(id: $id, penCode: $penCode, farmId: $farmId, name: $name, area: $area, animalType: $animalType, location: $location, capacity: $capacity, boardCode: $boardCode, boardStatus: $boardStatus, endDateOfFarmingBatch: $endDateOfFarmingBatch, createdDate: $createdDate, cameraUrl: $cameraUrl, staffId: $staffId, staffName: $staffName, isSolationCage: $isSolationCage, farmingBatch: $farmingBatch)';
+    return 'CageAdminDto(id: $id, penCode: $penCode, farmId: $farmId, name: $name, area: $area, animalType: $animalType, location: $location, capacity: $capacity, boardCode: $boardCode, boardStatus: $boardStatus, endDateOfFarmingBatch: $endDateOfFarmingBatch, createdDate: $createdDate, cameraUrl: $cameraUrl, staffId: $staffId, staffName: $staffName, isSolationCage: $isSolationCage, farmingBatchStageModel: $farmingBatchStageModel)';
   }
 
   @override
@@ -427,8 +429,8 @@ class _$CageAdminDtoImpl implements _CageAdminDto {
                 other.staffName == staffName) &&
             (identical(other.isSolationCage, isSolationCage) ||
                 other.isSolationCage == isSolationCage) &&
-            (identical(other.farmingBatch, farmingBatch) ||
-                other.farmingBatch == farmingBatch));
+            (identical(other.farmingBatchStageModel, farmingBatchStageModel) ||
+                other.farmingBatchStageModel == farmingBatchStageModel));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -451,7 +453,7 @@ class _$CageAdminDtoImpl implements _CageAdminDto {
       staffId,
       staffName,
       isSolationCage,
-      farmingBatch);
+      farmingBatchStageModel);
 
   /// Create a copy of CageAdminDto
   /// with the given fields replaced by the non-null parameter values.
@@ -471,23 +473,24 @@ class _$CageAdminDtoImpl implements _CageAdminDto {
 
 abstract class _CageAdminDto implements CageAdminDto {
   factory _CageAdminDto(
-      {required final String id,
-      required final String penCode,
-      required final String farmId,
-      required final String name,
-      required final int area,
-      required final String? animalType,
-      required final String location,
-      required final int capacity,
-      required final String boardCode,
-      required final bool boardStatus,
-      required final String? endDateOfFarmingBatch,
-      required final String createdDate,
-      required final String cameraUrl,
-      required final String staffId,
-      required final String staffName,
-      required final bool? isSolationCage,
-      required final FarmingBatchDto? farmingBatch}) = _$CageAdminDtoImpl;
+          {required final String id,
+          required final String penCode,
+          required final String farmId,
+          required final String name,
+          required final int area,
+          required final String? animalType,
+          required final String location,
+          required final int capacity,
+          required final String boardCode,
+          required final bool boardStatus,
+          required final String? endDateOfFarmingBatch,
+          required final String createdDate,
+          required final String cameraUrl,
+          required final String staffId,
+          required final String staffName,
+          required final bool? isSolationCage,
+          required final FarmingBatchDto? farmingBatchStageModel}) =
+      _$CageAdminDtoImpl;
 
   factory _CageAdminDto.fromJson(Map<String, dynamic> json) =
       _$CageAdminDtoImpl.fromJson;
@@ -525,7 +528,7 @@ abstract class _CageAdminDto implements CageAdminDto {
   @override
   bool? get isSolationCage;
   @override
-  FarmingBatchDto? get farmingBatch;
+  FarmingBatchDto? get farmingBatchStageModel;
 
   /// Create a copy of CageAdminDto
   /// with the given fields replaced by the non-null parameter values.
