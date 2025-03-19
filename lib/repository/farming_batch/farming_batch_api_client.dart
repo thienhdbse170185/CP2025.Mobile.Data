@@ -17,6 +17,9 @@ class FarmingBatchApiClient {
       }
       throw Exception('Failed to fetch farming batch by cage');
     } on DioException catch (e) {
+      if (e.response?.statusCode == 404) {
+        throw Exception('farming-batch-not-found');
+      }
       log(e.toString());
       rethrow;
     }
