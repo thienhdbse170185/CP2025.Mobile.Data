@@ -25,16 +25,17 @@ mixin _$CageAdminDto {
   String get farmId => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   int get area => throw _privateConstructorUsedError;
+  String? get animalType => throw _privateConstructorUsedError;
   String get location => throw _privateConstructorUsedError;
   int get capacity => throw _privateConstructorUsedError;
   String get boardCode => throw _privateConstructorUsedError;
   bool get boardStatus => throw _privateConstructorUsedError;
-  String get endDateOfFarmingBatch => throw _privateConstructorUsedError;
+  String? get endDateOfFarmingBatch => throw _privateConstructorUsedError;
   String get createdDate => throw _privateConstructorUsedError;
   String get cameraUrl => throw _privateConstructorUsedError;
   String get staffId => throw _privateConstructorUsedError;
   String get staffName => throw _privateConstructorUsedError;
-  bool get isSolationCage => throw _privateConstructorUsedError;
+  bool? get isSolationCage => throw _privateConstructorUsedError;
   FarmingBatchDto? get farmingBatch => throw _privateConstructorUsedError;
 
   /// Serializes this CageAdminDto to a JSON map.
@@ -59,16 +60,17 @@ abstract class $CageAdminDtoCopyWith<$Res> {
       String farmId,
       String name,
       int area,
+      String? animalType,
       String location,
       int capacity,
       String boardCode,
       bool boardStatus,
-      String endDateOfFarmingBatch,
+      String? endDateOfFarmingBatch,
       String createdDate,
       String cameraUrl,
       String staffId,
       String staffName,
-      bool isSolationCage,
+      bool? isSolationCage,
       FarmingBatchDto? farmingBatch});
 
   $FarmingBatchDtoCopyWith<$Res>? get farmingBatch;
@@ -94,16 +96,17 @@ class _$CageAdminDtoCopyWithImpl<$Res, $Val extends CageAdminDto>
     Object? farmId = null,
     Object? name = null,
     Object? area = null,
+    Object? animalType = freezed,
     Object? location = null,
     Object? capacity = null,
     Object? boardCode = null,
     Object? boardStatus = null,
-    Object? endDateOfFarmingBatch = null,
+    Object? endDateOfFarmingBatch = freezed,
     Object? createdDate = null,
     Object? cameraUrl = null,
     Object? staffId = null,
     Object? staffName = null,
-    Object? isSolationCage = null,
+    Object? isSolationCage = freezed,
     Object? farmingBatch = freezed,
   }) {
     return _then(_value.copyWith(
@@ -127,6 +130,10 @@ class _$CageAdminDtoCopyWithImpl<$Res, $Val extends CageAdminDto>
           ? _value.area
           : area // ignore: cast_nullable_to_non_nullable
               as int,
+      animalType: freezed == animalType
+          ? _value.animalType
+          : animalType // ignore: cast_nullable_to_non_nullable
+              as String?,
       location: null == location
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
@@ -143,10 +150,10 @@ class _$CageAdminDtoCopyWithImpl<$Res, $Val extends CageAdminDto>
           ? _value.boardStatus
           : boardStatus // ignore: cast_nullable_to_non_nullable
               as bool,
-      endDateOfFarmingBatch: null == endDateOfFarmingBatch
+      endDateOfFarmingBatch: freezed == endDateOfFarmingBatch
           ? _value.endDateOfFarmingBatch
           : endDateOfFarmingBatch // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       createdDate: null == createdDate
           ? _value.createdDate
           : createdDate // ignore: cast_nullable_to_non_nullable
@@ -163,10 +170,10 @@ class _$CageAdminDtoCopyWithImpl<$Res, $Val extends CageAdminDto>
           ? _value.staffName
           : staffName // ignore: cast_nullable_to_non_nullable
               as String,
-      isSolationCage: null == isSolationCage
+      isSolationCage: freezed == isSolationCage
           ? _value.isSolationCage
           : isSolationCage // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       farmingBatch: freezed == farmingBatch
           ? _value.farmingBatch
           : farmingBatch // ignore: cast_nullable_to_non_nullable
@@ -203,16 +210,17 @@ abstract class _$$CageAdminDtoImplCopyWith<$Res>
       String farmId,
       String name,
       int area,
+      String? animalType,
       String location,
       int capacity,
       String boardCode,
       bool boardStatus,
-      String endDateOfFarmingBatch,
+      String? endDateOfFarmingBatch,
       String createdDate,
       String cameraUrl,
       String staffId,
       String staffName,
-      bool isSolationCage,
+      bool? isSolationCage,
       FarmingBatchDto? farmingBatch});
 
   @override
@@ -237,16 +245,17 @@ class __$$CageAdminDtoImplCopyWithImpl<$Res>
     Object? farmId = null,
     Object? name = null,
     Object? area = null,
+    Object? animalType = freezed,
     Object? location = null,
     Object? capacity = null,
     Object? boardCode = null,
     Object? boardStatus = null,
-    Object? endDateOfFarmingBatch = null,
+    Object? endDateOfFarmingBatch = freezed,
     Object? createdDate = null,
     Object? cameraUrl = null,
     Object? staffId = null,
     Object? staffName = null,
-    Object? isSolationCage = null,
+    Object? isSolationCage = freezed,
     Object? farmingBatch = freezed,
   }) {
     return _then(_$CageAdminDtoImpl(
@@ -270,6 +279,10 @@ class __$$CageAdminDtoImplCopyWithImpl<$Res>
           ? _value.area
           : area // ignore: cast_nullable_to_non_nullable
               as int,
+      animalType: freezed == animalType
+          ? _value.animalType
+          : animalType // ignore: cast_nullable_to_non_nullable
+              as String?,
       location: null == location
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
@@ -286,10 +299,10 @@ class __$$CageAdminDtoImplCopyWithImpl<$Res>
           ? _value.boardStatus
           : boardStatus // ignore: cast_nullable_to_non_nullable
               as bool,
-      endDateOfFarmingBatch: null == endDateOfFarmingBatch
+      endDateOfFarmingBatch: freezed == endDateOfFarmingBatch
           ? _value.endDateOfFarmingBatch
           : endDateOfFarmingBatch // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       createdDate: null == createdDate
           ? _value.createdDate
           : createdDate // ignore: cast_nullable_to_non_nullable
@@ -306,10 +319,10 @@ class __$$CageAdminDtoImplCopyWithImpl<$Res>
           ? _value.staffName
           : staffName // ignore: cast_nullable_to_non_nullable
               as String,
-      isSolationCage: null == isSolationCage
+      isSolationCage: freezed == isSolationCage
           ? _value.isSolationCage
           : isSolationCage // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       farmingBatch: freezed == farmingBatch
           ? _value.farmingBatch
           : farmingBatch // ignore: cast_nullable_to_non_nullable
@@ -327,6 +340,7 @@ class _$CageAdminDtoImpl implements _CageAdminDto {
       required this.farmId,
       required this.name,
       required this.area,
+      required this.animalType,
       required this.location,
       required this.capacity,
       required this.boardCode,
@@ -353,6 +367,8 @@ class _$CageAdminDtoImpl implements _CageAdminDto {
   @override
   final int area;
   @override
+  final String? animalType;
+  @override
   final String location;
   @override
   final int capacity;
@@ -361,7 +377,7 @@ class _$CageAdminDtoImpl implements _CageAdminDto {
   @override
   final bool boardStatus;
   @override
-  final String endDateOfFarmingBatch;
+  final String? endDateOfFarmingBatch;
   @override
   final String createdDate;
   @override
@@ -371,13 +387,13 @@ class _$CageAdminDtoImpl implements _CageAdminDto {
   @override
   final String staffName;
   @override
-  final bool isSolationCage;
+  final bool? isSolationCage;
   @override
   final FarmingBatchDto? farmingBatch;
 
   @override
   String toString() {
-    return 'CageAdminDto(id: $id, penCode: $penCode, farmId: $farmId, name: $name, area: $area, location: $location, capacity: $capacity, boardCode: $boardCode, boardStatus: $boardStatus, endDateOfFarmingBatch: $endDateOfFarmingBatch, createdDate: $createdDate, cameraUrl: $cameraUrl, staffId: $staffId, staffName: $staffName, isSolationCage: $isSolationCage, farmingBatch: $farmingBatch)';
+    return 'CageAdminDto(id: $id, penCode: $penCode, farmId: $farmId, name: $name, area: $area, animalType: $animalType, location: $location, capacity: $capacity, boardCode: $boardCode, boardStatus: $boardStatus, endDateOfFarmingBatch: $endDateOfFarmingBatch, createdDate: $createdDate, cameraUrl: $cameraUrl, staffId: $staffId, staffName: $staffName, isSolationCage: $isSolationCage, farmingBatch: $farmingBatch)';
   }
 
   @override
@@ -390,6 +406,8 @@ class _$CageAdminDtoImpl implements _CageAdminDto {
             (identical(other.farmId, farmId) || other.farmId == farmId) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.area, area) || other.area == area) &&
+            (identical(other.animalType, animalType) ||
+                other.animalType == animalType) &&
             (identical(other.location, location) ||
                 other.location == location) &&
             (identical(other.capacity, capacity) ||
@@ -422,6 +440,7 @@ class _$CageAdminDtoImpl implements _CageAdminDto {
       farmId,
       name,
       area,
+      animalType,
       location,
       capacity,
       boardCode,
@@ -457,16 +476,17 @@ abstract class _CageAdminDto implements CageAdminDto {
       required final String farmId,
       required final String name,
       required final int area,
+      required final String? animalType,
       required final String location,
       required final int capacity,
       required final String boardCode,
       required final bool boardStatus,
-      required final String endDateOfFarmingBatch,
+      required final String? endDateOfFarmingBatch,
       required final String createdDate,
       required final String cameraUrl,
       required final String staffId,
       required final String staffName,
-      required final bool isSolationCage,
+      required final bool? isSolationCage,
       required final FarmingBatchDto? farmingBatch}) = _$CageAdminDtoImpl;
 
   factory _CageAdminDto.fromJson(Map<String, dynamic> json) =
@@ -483,6 +503,8 @@ abstract class _CageAdminDto implements CageAdminDto {
   @override
   int get area;
   @override
+  String? get animalType;
+  @override
   String get location;
   @override
   int get capacity;
@@ -491,7 +513,7 @@ abstract class _CageAdminDto implements CageAdminDto {
   @override
   bool get boardStatus;
   @override
-  String get endDateOfFarmingBatch;
+  String? get endDateOfFarmingBatch;
   @override
   String get createdDate;
   @override
@@ -501,7 +523,7 @@ abstract class _CageAdminDto implements CageAdminDto {
   @override
   String get staffName;
   @override
-  bool get isSolationCage;
+  bool? get isSolationCage;
   @override
   FarmingBatchDto? get farmingBatch;
 

@@ -31,7 +31,7 @@ class CageApiClient {
   Future<CageAdminDto> getCageAdminById({required String cageId}) async {
     try {
       log('[CAGE_API_CLIENT] Đang call API lấy thông tin cage id $cageId');
-      final response = await dio.get('${ApiEndpoints.getCages}/$cageId/admin');
+      final response = await dio.get('${ApiEndpoints.getCages}/$cageId');
       log('[CAGE_API_CLIENT] Lấy thông tin cage id $cageId thành công');
       return CageAdminDto.fromJson(response.data['result']);
     } on DioException catch (e) {

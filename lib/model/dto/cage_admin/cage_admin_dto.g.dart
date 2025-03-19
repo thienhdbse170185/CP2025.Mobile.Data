@@ -13,16 +13,17 @@ _$CageAdminDtoImpl _$$CageAdminDtoImplFromJson(Map<String, dynamic> json) =>
       farmId: json['farmId'] as String,
       name: json['name'] as String,
       area: (json['area'] as num).toInt(),
+      animalType: json['animalType'] as String?,
       location: json['location'] as String,
       capacity: (json['capacity'] as num).toInt(),
       boardCode: json['boardCode'] as String,
       boardStatus: json['boardStatus'] as bool,
-      endDateOfFarmingBatch: json['endDateOfFarmingBatch'] as String,
+      endDateOfFarmingBatch: json['endDateOfFarmingBatch'] as String?,
       createdDate: json['createdDate'] as String,
       cameraUrl: json['cameraUrl'] as String,
       staffId: json['staffId'] as String,
       staffName: json['staffName'] as String,
-      isSolationCage: json['isSolationCage'] as bool,
+      isSolationCage: json['isSolationCage'] as bool?,
       farmingBatch: json['farmingBatch'] == null
           ? null
           : FarmingBatchDto.fromJson(
@@ -36,6 +37,7 @@ Map<String, dynamic> _$$CageAdminDtoImplToJson(_$CageAdminDtoImpl instance) =>
       'farmId': instance.farmId,
       'name': instance.name,
       'area': instance.area,
+      'animalType': instance.animalType,
       'location': instance.location,
       'capacity': instance.capacity,
       'boardCode': instance.boardCode,
