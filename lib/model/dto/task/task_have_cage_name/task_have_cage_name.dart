@@ -20,6 +20,7 @@ class TaskHaveCageName with _$TaskHaveCageName {
     required int session,
     String? completedAt,
     String? cageAnimalName,
+    bool? hasAnimalDesease,
     required User assignedToUser,
     required TaskType taskType,
     required String? prescriptionId,

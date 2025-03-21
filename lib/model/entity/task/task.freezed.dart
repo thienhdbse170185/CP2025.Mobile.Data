@@ -30,6 +30,8 @@ mixin _$Task {
   String get dueDate => throw _privateConstructorUsedError;
   int get session => throw _privateConstructorUsedError;
   String? get completedAt => throw _privateConstructorUsedError;
+  String? get cageAnimalName => throw _privateConstructorUsedError;
+  bool get hasAnimalDesease => throw _privateConstructorUsedError;
   bool get isTreatmentTask => throw _privateConstructorUsedError;
   String? get prescriptionId => throw _privateConstructorUsedError;
   User get assignedToUser => throw _privateConstructorUsedError;
@@ -60,6 +62,8 @@ abstract class $TaskCopyWith<$Res> {
       String dueDate,
       int session,
       String? completedAt,
+      String? cageAnimalName,
+      bool hasAnimalDesease,
       bool isTreatmentTask,
       String? prescriptionId,
       User assignedToUser,
@@ -94,6 +98,8 @@ class _$TaskCopyWithImpl<$Res, $Val extends Task>
     Object? dueDate = null,
     Object? session = null,
     Object? completedAt = freezed,
+    Object? cageAnimalName = freezed,
+    Object? hasAnimalDesease = null,
     Object? isTreatmentTask = null,
     Object? prescriptionId = freezed,
     Object? assignedToUser = null,
@@ -140,6 +146,14 @@ class _$TaskCopyWithImpl<$Res, $Val extends Task>
           ? _value.completedAt
           : completedAt // ignore: cast_nullable_to_non_nullable
               as String?,
+      cageAnimalName: freezed == cageAnimalName
+          ? _value.cageAnimalName
+          : cageAnimalName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      hasAnimalDesease: null == hasAnimalDesease
+          ? _value.hasAnimalDesease
+          : hasAnimalDesease // ignore: cast_nullable_to_non_nullable
+              as bool,
       isTreatmentTask: null == isTreatmentTask
           ? _value.isTreatmentTask
           : isTreatmentTask // ignore: cast_nullable_to_non_nullable
@@ -198,6 +212,8 @@ abstract class _$$TaskImplCopyWith<$Res> implements $TaskCopyWith<$Res> {
       String dueDate,
       int session,
       String? completedAt,
+      String? cageAnimalName,
+      bool hasAnimalDesease,
       bool isTreatmentTask,
       String? prescriptionId,
       User assignedToUser,
@@ -231,6 +247,8 @@ class __$$TaskImplCopyWithImpl<$Res>
     Object? dueDate = null,
     Object? session = null,
     Object? completedAt = freezed,
+    Object? cageAnimalName = freezed,
+    Object? hasAnimalDesease = null,
     Object? isTreatmentTask = null,
     Object? prescriptionId = freezed,
     Object? assignedToUser = null,
@@ -277,6 +295,14 @@ class __$$TaskImplCopyWithImpl<$Res>
           ? _value.completedAt
           : completedAt // ignore: cast_nullable_to_non_nullable
               as String?,
+      cageAnimalName: freezed == cageAnimalName
+          ? _value.cageAnimalName
+          : cageAnimalName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      hasAnimalDesease: null == hasAnimalDesease
+          ? _value.hasAnimalDesease
+          : hasAnimalDesease // ignore: cast_nullable_to_non_nullable
+              as bool,
       isTreatmentTask: null == isTreatmentTask
           ? _value.isTreatmentTask
           : isTreatmentTask // ignore: cast_nullable_to_non_nullable
@@ -311,6 +337,8 @@ class _$TaskImpl implements _Task {
       required this.dueDate,
       required this.session,
       this.completedAt,
+      this.cageAnimalName,
+      required this.hasAnimalDesease,
       required this.isTreatmentTask,
       required this.prescriptionId,
       required this.assignedToUser,
@@ -340,6 +368,10 @@ class _$TaskImpl implements _Task {
   @override
   final String? completedAt;
   @override
+  final String? cageAnimalName;
+  @override
+  final bool hasAnimalDesease;
+  @override
   final bool isTreatmentTask;
   @override
   final String? prescriptionId;
@@ -350,7 +382,7 @@ class _$TaskImpl implements _Task {
 
   @override
   String toString() {
-    return 'Task(id: $id, cageId: $cageId, taskName: $taskName, description: $description, status: $status, createdAt: $createdAt, priorityNum: $priorityNum, dueDate: $dueDate, session: $session, completedAt: $completedAt, isTreatmentTask: $isTreatmentTask, prescriptionId: $prescriptionId, assignedToUser: $assignedToUser, taskType: $taskType)';
+    return 'Task(id: $id, cageId: $cageId, taskName: $taskName, description: $description, status: $status, createdAt: $createdAt, priorityNum: $priorityNum, dueDate: $dueDate, session: $session, completedAt: $completedAt, cageAnimalName: $cageAnimalName, hasAnimalDesease: $hasAnimalDesease, isTreatmentTask: $isTreatmentTask, prescriptionId: $prescriptionId, assignedToUser: $assignedToUser, taskType: $taskType)';
   }
 
   @override
@@ -373,6 +405,10 @@ class _$TaskImpl implements _Task {
             (identical(other.session, session) || other.session == session) &&
             (identical(other.completedAt, completedAt) ||
                 other.completedAt == completedAt) &&
+            (identical(other.cageAnimalName, cageAnimalName) ||
+                other.cageAnimalName == cageAnimalName) &&
+            (identical(other.hasAnimalDesease, hasAnimalDesease) ||
+                other.hasAnimalDesease == hasAnimalDesease) &&
             (identical(other.isTreatmentTask, isTreatmentTask) ||
                 other.isTreatmentTask == isTreatmentTask) &&
             (identical(other.prescriptionId, prescriptionId) ||
@@ -397,6 +433,8 @@ class _$TaskImpl implements _Task {
       dueDate,
       session,
       completedAt,
+      cageAnimalName,
+      hasAnimalDesease,
       isTreatmentTask,
       prescriptionId,
       assignedToUser,
@@ -430,6 +468,8 @@ abstract class _Task implements Task {
       required final String dueDate,
       required final int session,
       final String? completedAt,
+      final String? cageAnimalName,
+      required final bool hasAnimalDesease,
       required final bool isTreatmentTask,
       required final String? prescriptionId,
       required final User assignedToUser,
@@ -457,6 +497,10 @@ abstract class _Task implements Task {
   int get session;
   @override
   String? get completedAt;
+  @override
+  String? get cageAnimalName;
+  @override
+  bool get hasAnimalDesease;
   @override
   bool get isTreatmentTask;
   @override
