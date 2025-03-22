@@ -22,6 +22,7 @@ _$TaskHaveCageNameImpl _$$TaskHaveCageNameImplFromJson(
       completedAt: json['completedAt'] as String?,
       cageAnimalName: json['cageAnimalName'] as String?,
       hasAnimalDesease: json['hasAnimalDesease'] as bool?,
+      isWarning: json['isWarning'] as bool,
       assignedToUser:
           User.fromJson(json['assignedToUser'] as Map<String, dynamic>),
       taskType: TaskType.fromJson(json['taskType'] as Map<String, dynamic>),
@@ -45,6 +46,7 @@ Map<String, dynamic> _$$TaskHaveCageNameImplToJson(
       'completedAt': instance.completedAt,
       'cageAnimalName': instance.cageAnimalName,
       'hasAnimalDesease': instance.hasAnimalDesease,
+      'isWarning': instance.isWarning,
       'assignedToUser': instance.assignedToUser,
       'taskType': instance.taskType,
       'prescriptionId': instance.prescriptionId,

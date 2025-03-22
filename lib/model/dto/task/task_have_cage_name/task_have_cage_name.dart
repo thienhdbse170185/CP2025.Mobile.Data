@@ -21,6 +21,7 @@ class TaskHaveCageName with _$TaskHaveCageName {
     String? completedAt,
     String? cageAnimalName,
     bool? hasAnimalDesease,
+    required bool isWarning,
     required User assignedToUser,
     required TaskType taskType,
     String? prescriptionId,

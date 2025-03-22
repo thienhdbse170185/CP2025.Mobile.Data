@@ -257,9 +257,12 @@ class TaskRemoteData {
 
   Future<bool> setTaskIsTreatment({required String taskId}) async {
     try {
+      log('[TASK_REMOTE_DATA] Set task is treatment: $taskId');
+      log('[TASK_REMOTE_DATA] Đang chuyển trạng thái task có vấn đề...');
       final response =
           await dio.put('${ApiEndpoints.getTasks}/$taskId/set-treatment');
       if (response.statusCode == 200) {
+        log('[TASK_REMOTE_DATA] Set task is treatment thành công');
         return true;
       } else {
         throw Exception('set-task-is-treatment-error-occured');
