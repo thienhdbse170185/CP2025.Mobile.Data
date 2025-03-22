@@ -254,4 +254,20 @@ class TaskRemoteData {
       rethrow;
     }
   }
+
+  Future<bool> setTaskIsTreatment({required String taskId}) async {
+    try {
+      final response =
+          await dio.put('${ApiEndpoints.getTasks}/$taskId/set-treatment');
+      if (response.statusCode == 200) {
+        return true;
+      } else {
+        throw Exception('set-task-is-treatment-error-occured');
+      }
+    } on DioException catch (e) {
+      log('[TASK_REMOTE_DATA] Set task có vấn đề thất bại');
+      log('[TASK_REMOTE_DATA] Error: ${e.toString()}');
+      throw Exception('set-task-is-treatment-failure');
+    }
+  }
 }

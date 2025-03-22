@@ -23,7 +23,7 @@ class TaskHaveCageName with _$TaskHaveCageName {
     bool? hasAnimalDesease,
     required User assignedToUser,
     required TaskType taskType,
-    required String? prescriptionId,
+    String? prescriptionId,
     required bool isTreatmentTask,
   }) = _TaskHaveCageName;
 

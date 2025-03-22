@@ -129,4 +129,12 @@ class TaskRepository {
       rethrow;
     }
   }
+
+  Future<bool> setTaskIsTreatment({required String taskId}) async {
+    try {
+      return await apiClient.setTaskIsTreatment(taskId: taskId);
+    } catch (e) {
+      rethrow;
+    }
+  }
 }

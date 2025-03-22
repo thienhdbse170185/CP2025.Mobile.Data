@@ -359,7 +359,7 @@ class _$TaskHaveCageNameImpl implements _TaskHaveCageName {
       this.hasAnimalDesease,
       required this.assignedToUser,
       required this.taskType,
-      required this.prescriptionId,
+      this.prescriptionId,
       required this.isTreatmentTask});
 
   factory _$TaskHaveCageNameImpl.fromJson(Map<String, dynamic> json) =>
@@ -497,7 +497,7 @@ abstract class _TaskHaveCageName implements TaskHaveCageName {
       final bool? hasAnimalDesease,
       required final User assignedToUser,
       required final TaskType taskType,
-      required final String? prescriptionId,
+      final String? prescriptionId,
       required final bool isTreatmentTask}) = _$TaskHaveCageNameImpl;
 
   factory _TaskHaveCageName.fromJson(Map<String, dynamic> json) =
