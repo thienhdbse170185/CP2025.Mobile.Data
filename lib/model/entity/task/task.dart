@@ -20,7 +20,7 @@ class Task with _$Task {
     String? completedAt,
     String? cageAnimalName,
     bool? isWarning,
-    required bool hasAnimalDesease,
+    bool? hasAnimalDesease,
     required bool isTreatmentTask,
     required String? prescriptionId,
     required User assignedToUser,

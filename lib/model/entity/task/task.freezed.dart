@@ -32,7 +32,7 @@ mixin _$Task {
   String? get completedAt => throw _privateConstructorUsedError;
   String? get cageAnimalName => throw _privateConstructorUsedError;
   bool? get isWarning => throw _privateConstructorUsedError;
-  bool get hasAnimalDesease => throw _privateConstructorUsedError;
+  bool? get hasAnimalDesease => throw _privateConstructorUsedError;
   bool get isTreatmentTask => throw _privateConstructorUsedError;
   String? get prescriptionId => throw _privateConstructorUsedError;
   User get assignedToUser => throw _privateConstructorUsedError;
@@ -65,7 +65,7 @@ abstract class $TaskCopyWith<$Res> {
       String? completedAt,
       String? cageAnimalName,
       bool? isWarning,
-      bool hasAnimalDesease,
+      bool? hasAnimalDesease,
       bool isTreatmentTask,
       String? prescriptionId,
       User assignedToUser,
@@ -102,7 +102,7 @@ class _$TaskCopyWithImpl<$Res, $Val extends Task>
     Object? completedAt = freezed,
     Object? cageAnimalName = freezed,
     Object? isWarning = freezed,
-    Object? hasAnimalDesease = null,
+    Object? hasAnimalDesease = freezed,
     Object? isTreatmentTask = null,
     Object? prescriptionId = freezed,
     Object? assignedToUser = null,
@@ -157,10 +157,10 @@ class _$TaskCopyWithImpl<$Res, $Val extends Task>
           ? _value.isWarning
           : isWarning // ignore: cast_nullable_to_non_nullable
               as bool?,
-      hasAnimalDesease: null == hasAnimalDesease
+      hasAnimalDesease: freezed == hasAnimalDesease
           ? _value.hasAnimalDesease
           : hasAnimalDesease // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       isTreatmentTask: null == isTreatmentTask
           ? _value.isTreatmentTask
           : isTreatmentTask // ignore: cast_nullable_to_non_nullable
@@ -221,7 +221,7 @@ abstract class _$$TaskImplCopyWith<$Res> implements $TaskCopyWith<$Res> {
       String? completedAt,
       String? cageAnimalName,
       bool? isWarning,
-      bool hasAnimalDesease,
+      bool? hasAnimalDesease,
       bool isTreatmentTask,
       String? prescriptionId,
       User assignedToUser,
@@ -257,7 +257,7 @@ class __$$TaskImplCopyWithImpl<$Res>
     Object? completedAt = freezed,
     Object? cageAnimalName = freezed,
     Object? isWarning = freezed,
-    Object? hasAnimalDesease = null,
+    Object? hasAnimalDesease = freezed,
     Object? isTreatmentTask = null,
     Object? prescriptionId = freezed,
     Object? assignedToUser = null,
@@ -312,10 +312,10 @@ class __$$TaskImplCopyWithImpl<$Res>
           ? _value.isWarning
           : isWarning // ignore: cast_nullable_to_non_nullable
               as bool?,
-      hasAnimalDesease: null == hasAnimalDesease
+      hasAnimalDesease: freezed == hasAnimalDesease
           ? _value.hasAnimalDesease
           : hasAnimalDesease // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       isTreatmentTask: null == isTreatmentTask
           ? _value.isTreatmentTask
           : isTreatmentTask // ignore: cast_nullable_to_non_nullable
@@ -352,7 +352,7 @@ class _$TaskImpl implements _Task {
       this.completedAt,
       this.cageAnimalName,
       this.isWarning,
-      required this.hasAnimalDesease,
+      this.hasAnimalDesease,
       required this.isTreatmentTask,
       required this.prescriptionId,
       required this.assignedToUser,
@@ -386,7 +386,7 @@ class _$TaskImpl implements _Task {
   @override
   final bool? isWarning;
   @override
-  final bool hasAnimalDesease;
+  final bool? hasAnimalDesease;
   @override
   final bool isTreatmentTask;
   @override
@@ -489,7 +489,7 @@ abstract class _Task implements Task {
       final String? completedAt,
       final String? cageAnimalName,
       final bool? isWarning,
-      required final bool hasAnimalDesease,
+      final bool? hasAnimalDesease,
       required final bool isTreatmentTask,
       required final String? prescriptionId,
       required final User assignedToUser,
@@ -522,7 +522,7 @@ abstract class _Task implements Task {
   @override
   bool? get isWarning;
   @override
-  bool get hasAnimalDesease;
+  bool? get hasAnimalDesease;
   @override
   bool get isTreatmentTask;
   @override

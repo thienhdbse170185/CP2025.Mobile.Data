@@ -19,7 +19,7 @@ _$TaskImpl _$$TaskImplFromJson(Map<String, dynamic> json) => _$TaskImpl(
       completedAt: json['completedAt'] as String?,
       cageAnimalName: json['cageAnimalName'] as String?,
       isWarning: json['isWarning'] as bool?,
-      hasAnimalDesease: json['hasAnimalDesease'] as bool,
+      hasAnimalDesease: json['hasAnimalDesease'] as bool?,
       isTreatmentTask: json['isTreatmentTask'] as bool,
       prescriptionId: json['prescriptionId'] as String?,
       assignedToUser:
