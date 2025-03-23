@@ -19,6 +19,7 @@ class Task with _$Task {
     required int session,
     String? completedAt,
     String? cageAnimalName,
+    bool? isWarning,
     required bool hasAnimalDesease,
     required bool isTreatmentTask,
     required String? prescriptionId,
