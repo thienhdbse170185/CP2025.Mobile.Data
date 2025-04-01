@@ -1,9 +1,5 @@
 export '../entity/task/task.dart';
 export '../entity/user/user.dart';
-export './farming_cycle_dto.dart';
-export './report_dto.dart';
-export './ticket_dto.dart';
-export './warehouse_dto.dart';
 export 'cage/cage_dto.dart';
 export 'farming_batch/farming_batch_dto.dart';
 export 'growth_stage/growth_stage_dto.dart';
@@ -15,4 +11,5 @@ export 'task/daily_food_usage_log/daily_food_usage_log_dto.dart';
 export 'task/health_log/health_log_dto.dart';
 export 'task/vaccin_schedule_log/vaccin_schedule_log_dto.dart';
 export 'upload_image/upload_image_dto.dart';
+export 'vaccine/vaccine_dto.dart';
 export 'vaccine_schedule/vaccine_schedule_dto.dart';

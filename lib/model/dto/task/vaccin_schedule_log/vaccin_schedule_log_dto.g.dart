@@ -15,6 +15,8 @@ _$VaccinScheduleLogDtoImpl _$$VaccinScheduleLogDtoImplFromJson(
       notes: json['notes'] as String,
       photo: json['photo'] as String,
       taskId: json['taskId'] as String,
+      quantity: (json['quantity'] as num).toInt(),
+      totalPrice: (json['toltalPrice'] as num).toInt(),
     );
 
 Map<String, dynamic> _$$VaccinScheduleLogDtoImplToJson(
@@ -26,4 +28,6 @@ Map<String, dynamic> _$$VaccinScheduleLogDtoImplToJson(
       'notes': instance.notes,
       'photo': instance.photo,
       'taskId': instance.taskId,
+      'quantity': instance.quantity,
+      'totalPrice': instance.totalPrice,
     };

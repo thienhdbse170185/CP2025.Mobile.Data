@@ -27,6 +27,8 @@ mixin _$VaccineScheduleLogDto {
   String get notes => throw _privateConstructorUsedError;
   String get photo => throw _privateConstructorUsedError;
   String get taskId => throw _privateConstructorUsedError;
+  int get quantity => throw _privateConstructorUsedError;
+  int get totalPrice => throw _privateConstructorUsedError;
 
   /// Serializes this VaccineScheduleLogDto to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -50,7 +52,9 @@ abstract class $VaccineScheduleLogDtoCopyWith<$Res> {
       String date,
       String notes,
       String photo,
-      String taskId});
+      String taskId,
+      int quantity,
+      int totalPrice});
 }
 
 /// @nodoc
@@ -75,6 +79,8 @@ class _$VaccineScheduleLogDtoCopyWithImpl<$Res,
     Object? notes = null,
     Object? photo = null,
     Object? taskId = null,
+    Object? quantity = null,
+    Object? totalPrice = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -101,6 +107,14 @@ class _$VaccineScheduleLogDtoCopyWithImpl<$Res,
           ? _value.taskId
           : taskId // ignore: cast_nullable_to_non_nullable
               as String,
+      quantity: null == quantity
+          ? _value.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
+              as int,
+      totalPrice: null == totalPrice
+          ? _value.totalPrice
+          : totalPrice // ignore: cast_nullable_to_non_nullable
+              as int,
     ) as $Val);
   }
 }
@@ -119,7 +133,9 @@ abstract class _$$VaccinScheduleLogDtoImplCopyWith<$Res>
       String date,
       String notes,
       String photo,
-      String taskId});
+      String taskId,
+      int quantity,
+      int totalPrice});
 }
 
 /// @nodoc
@@ -142,6 +158,8 @@ class __$$VaccinScheduleLogDtoImplCopyWithImpl<$Res>
     Object? notes = null,
     Object? photo = null,
     Object? taskId = null,
+    Object? quantity = null,
+    Object? totalPrice = null,
   }) {
     return _then(_$VaccinScheduleLogDtoImpl(
       id: null == id
@@ -168,6 +186,14 @@ class __$$VaccinScheduleLogDtoImplCopyWithImpl<$Res>
           ? _value.taskId
           : taskId // ignore: cast_nullable_to_non_nullable
               as String,
+      quantity: null == quantity
+          ? _value.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
+              as int,
+      totalPrice: null == totalPrice
+          ? _value.totalPrice
+          : totalPrice // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -181,7 +207,9 @@ class _$VaccinScheduleLogDtoImpl implements _VaccinScheduleLogDto {
       required this.date,
       required this.notes,
       required this.photo,
-      required this.taskId});
+      required this.taskId,
+      required this.quantity,
+      required this.totalPrice});
 
   factory _$VaccinScheduleLogDtoImpl.fromJson(Map<String, dynamic> json) =>
       _$$VaccinScheduleLogDtoImplFromJson(json);
@@ -198,10 +226,14 @@ class _$VaccinScheduleLogDtoImpl implements _VaccinScheduleLogDto {
   final String photo;
   @override
   final String taskId;
+  @override
+  final int quantity;
+  @override
+  final int totalPrice;
 
   @override
   String toString() {
-    return 'VaccineScheduleLogDto(id: $id, scheduleId: $scheduleId, date: $date, notes: $notes, photo: $photo, taskId: $taskId)';
+    return 'VaccineScheduleLogDto(id: $id, scheduleId: $scheduleId, date: $date, notes: $notes, photo: $photo, taskId: $taskId, quantity: $quantity, totalPrice: $totalPrice)';
   }
 
   @override
@@ -215,13 +247,17 @@ class _$VaccinScheduleLogDtoImpl implements _VaccinScheduleLogDto {
             (identical(other.date, date) || other.date == date) &&
             (identical(other.notes, notes) || other.notes == notes) &&
             (identical(other.photo, photo) || other.photo == photo) &&
-            (identical(other.taskId, taskId) || other.taskId == taskId));
+            (identical(other.taskId, taskId) || other.taskId == taskId) &&
+            (identical(other.quantity, quantity) ||
+                other.quantity == quantity) &&
+            (identical(other.totalPrice, totalPrice) ||
+                other.totalPrice == totalPrice));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, scheduleId, date, notes, photo, taskId);
+  int get hashCode => Object.hash(runtimeType, id, scheduleId, date, notes,
+      photo, taskId, quantity, totalPrice);
 
   /// Create a copy of VaccineScheduleLogDto
   /// with the given fields replaced by the non-null parameter values.
@@ -248,7 +284,9 @@ abstract class _VaccinScheduleLogDto implements VaccineScheduleLogDto {
       required final String date,
       required final String notes,
       required final String photo,
-      required final String taskId}) = _$VaccinScheduleLogDtoImpl;
+      required final String taskId,
+      required final int quantity,
+      required final int totalPrice}) = _$VaccinScheduleLogDtoImpl;
 
   factory _VaccinScheduleLogDto.fromJson(Map<String, dynamic> json) =
       _$VaccinScheduleLogDtoImpl.fromJson;
@@ -265,6 +303,10 @@ abstract class _VaccinScheduleLogDto implements VaccineScheduleLogDto {
   String get photo;
   @override
   String get taskId;
+  @override
+  int get quantity;
+  @override
+  int get totalPrice;
 
   /// Create a copy of VaccineScheduleLogDto
   /// with the given fields replaced by the non-null parameter values.

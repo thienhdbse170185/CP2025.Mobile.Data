@@ -12,6 +12,8 @@ class VaccineScheduleLogDto with _$VaccineScheduleLogDto {
     required String notes,
     required String photo,
     required String taskId,
+    required int quantity,
+    required int totalPrice,
   }) = _VaccinScheduleLogDto;
 
   factory VaccineScheduleLogDto.fromJson(Map<String, dynamic> json) =>

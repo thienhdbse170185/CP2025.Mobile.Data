@@ -49,6 +49,9 @@ class ApiEndpoints {
   // VACCINE SCHEDULE LOG
   static const String vaccineScheduleLog = '/vaccineschedulelog';
 
+  // VACCINE
+  static const String vaccine = '/vaccine';
+
   // ANIMAL SALE
   static const String animalSale = '/animalsale';
 
