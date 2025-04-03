@@ -35,4 +35,14 @@ class NotificationRepository {
       rethrow;
     }
   }
+
+  Future<bool> deleteNotificationById({required String notificationId}) async {
+    try {
+      final response = await notificationApiClient.deleteNotificationById(
+          notificationId: notificationId);
+      return response;
+    } catch (e) {
+      rethrow;
+    }
+  }
 }

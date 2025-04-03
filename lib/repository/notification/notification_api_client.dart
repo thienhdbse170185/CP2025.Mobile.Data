@@ -60,4 +60,21 @@ class NotificationApiClient {
       rethrow;
     }
   }
+
+  Future<bool> deleteNotificationById({required String notificationId}) async {
+    try {
+      log('[NOTIFICATION_API_CLIENT] Đang xóa thông báo...');
+      log('[NOTIFICATION_API_CLIENT] notificationId: $notificationId');
+      final response = await dio.delete('/notification/$notificationId');
+      if (response.statusCode == 200) {
+        log('[NOTIFICATION_API_CLIENT] Xóa thông báo thành công!');
+        return true;
+      }
+      throw Exception('Lỗi không xác định!');
+    } on DioException catch (e) {
+      log('[NOTIFICATION_API_CLIENT] Xóa thông báo thất bại!');
+      log('Lỗi: ${e.toString()}');
+      rethrow;
+    }
+  }
 }
