@@ -15,7 +15,7 @@ class AnimalSaleRepository {
     }
   }
 
-  Future<SaleLogDto> getSaleLogByGrowthStageId(
+  Future<List<SaleLogDto>> getSaleLogByGrowthStageId(
       {required String growthStageId}) async {
     try {
       return await _animalSaleApiClient.getSaleLogByGrowthStageId(

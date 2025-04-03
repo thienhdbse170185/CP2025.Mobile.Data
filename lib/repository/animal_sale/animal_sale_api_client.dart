@@ -27,7 +27,7 @@ class AnimalSaleApiClient {
     }
   }
 
-  Future<SaleLogDto> getSaleLogByGrowthStageId(
+  Future<List<SaleLogDto>> getSaleLogByGrowthStageId(
       {required String growthStageId}) async {
     try {
       log('[ANIMAL_SALE_API_CLIENT] Chuẩn bị lấy thông tin bán gia cầm theo ID giai đoạn phát triển');
@@ -35,7 +35,9 @@ class AnimalSaleApiClient {
           .get('${ApiEndpoints.growthStage}/growth-stage/$growthStageId/sales');
       if (response.statusCode == 200) {
         log('[ANIMAL_SALE_API_CLIENT] Lấy thông tin bán gia cầm thành công!');
-        return SaleLogDto.fromJson(response.data);
+        return (response.data['result'] as List)
+            .map((saleLog) => SaleLogDto.fromJson(saleLog))
+            .toList();
       }
       throw Exception('Lỗi không xác định!');
     } on DioException catch (e) {
