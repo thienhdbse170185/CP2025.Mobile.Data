@@ -4,6 +4,7 @@ export 'cage/cage_dto.dart';
 export 'farming_batch/farming_batch_dto.dart';
 export 'growth_stage/growth_stage_dto.dart';
 export 'medical_symptom/medical_symptom.dart';
+export 'notification/notification_dto.dart';
 export 'prescription/prescription.dart';
 export 'sale_type/sale_type_dto.dart';
 export 'symptom/symptom.dart';
