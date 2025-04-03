@@ -44,12 +44,28 @@ class CageApiClient {
 
   Future<List<Cage>> fetchCagesByUserId(String userId) async {
     try {
+      log('[CAGE_API_CLIENT] Đang call API lấy thông tin chuồng theo userId $userId');
       final response = await dio.get('${ApiEndpoints.getUsers}/$userId/cages');
-      return (response.data['result'] as List)
-          .map((e) => Cage.fromJson(e))
-          .toList();
+      if (response.statusCode == 200) {
+        log('[CAGE_API_CLIENT] Lấy thông tin chuồng theo userId $userId thành công');
+        return (response.data['result'] as List)
+            .map((e) => Cage.fromJson(e))
+            .toList();
+      } else {
+        log('[CAGE_API_CLIENT] Lỗi không xác định khi lấy thông tin chuồng theo userId $userId');
+        throw Exception('get-cage-by-user-id-failed');
+      }
     } on DioException catch (e) {
-      log(e.message.toString());
+      log('[CAGE_API_CLIENT] Lấy thông tin chuồng theo userId $userId thất bại');
+      log('[CAGE_API_CLIENT] Error: $e');
+      if (e.response?.data != null) {
+        if (e.response?.statusCode == 400) {
+          final errorMessage = e.response?.data['result']['message'] as String;
+          if (errorMessage.contains('No cages found')) {
+            throw Exception('no-cages-found');
+          }
+        }
+      }
       rethrow;
     }
   }
