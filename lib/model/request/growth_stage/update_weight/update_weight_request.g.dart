@@ -11,6 +11,7 @@ _$UpdateWeightRequestImpl _$$UpdateWeightRequestImplFromJson(
     _$UpdateWeightRequestImpl(
       growthStageId: json['growthStageId'] as String,
       weightAnimal: (json['weightAnimal'] as num).toDouble(),
+      taskId: json['taskId'] as String,
     );
 
 Map<String, dynamic> _$$UpdateWeightRequestImplToJson(
@@ -18,4 +19,5 @@ Map<String, dynamic> _$$UpdateWeightRequestImplToJson(
     <String, dynamic>{
       'growthStageId': instance.growthStageId,
       'weightAnimal': instance.weightAnimal,
+      'taskId': instance.taskId,
     };

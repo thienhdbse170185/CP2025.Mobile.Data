@@ -255,12 +255,19 @@ class TaskRemoteData {
     }
   }
 
-  Future<bool> setTaskIsTreatment({required String taskId}) async {
+  Future<bool> setTaskIsTreatment({
+    required String taskId,
+    required String medicalSymptomId,
+  }) async {
     try {
       log('[TASK_REMOTE_DATA] Set task is treatment: $taskId');
+      log('[TASK_REMOTE_DATA] medicalSymptomId: $medicalSymptomId');
       log('[TASK_REMOTE_DATA] Đang chuyển trạng thái task có vấn đề...');
-      final response =
-          await dio.put('${ApiEndpoints.getTasks}/$taskId/set-treatment');
+      final response = await dio.put(
+          '${ApiEndpoints.getTasks}/$taskId/set-treatment',
+          queryParameters: {
+            'medicalSymptomId': medicalSymptomId,
+          });
       if (response.statusCode == 200) {
         log('[TASK_REMOTE_DATA] Set task is treatment thành công');
         return true;

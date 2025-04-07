@@ -22,6 +22,7 @@ UpdateWeightRequest _$UpdateWeightRequestFromJson(Map<String, dynamic> json) {
 mixin _$UpdateWeightRequest {
   String get growthStageId => throw _privateConstructorUsedError;
   double get weightAnimal => throw _privateConstructorUsedError;
+  String get taskId => throw _privateConstructorUsedError;
 
   /// Serializes this UpdateWeightRequest to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -39,7 +40,7 @@ abstract class $UpdateWeightRequestCopyWith<$Res> {
           UpdateWeightRequest value, $Res Function(UpdateWeightRequest) then) =
       _$UpdateWeightRequestCopyWithImpl<$Res, UpdateWeightRequest>;
   @useResult
-  $Res call({String growthStageId, double weightAnimal});
+  $Res call({String growthStageId, double weightAnimal, String taskId});
 }
 
 /// @nodoc
@@ -59,6 +60,7 @@ class _$UpdateWeightRequestCopyWithImpl<$Res, $Val extends UpdateWeightRequest>
   $Res call({
     Object? growthStageId = null,
     Object? weightAnimal = null,
+    Object? taskId = null,
   }) {
     return _then(_value.copyWith(
       growthStageId: null == growthStageId
@@ -69,6 +71,10 @@ class _$UpdateWeightRequestCopyWithImpl<$Res, $Val extends UpdateWeightRequest>
           ? _value.weightAnimal
           : weightAnimal // ignore: cast_nullable_to_non_nullable
               as double,
+      taskId: null == taskId
+          ? _value.taskId
+          : taskId // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -81,7 +87,7 @@ abstract class _$$UpdateWeightRequestImplCopyWith<$Res>
       __$$UpdateWeightRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String growthStageId, double weightAnimal});
+  $Res call({String growthStageId, double weightAnimal, String taskId});
 }
 
 /// @nodoc
@@ -99,6 +105,7 @@ class __$$UpdateWeightRequestImplCopyWithImpl<$Res>
   $Res call({
     Object? growthStageId = null,
     Object? weightAnimal = null,
+    Object? taskId = null,
   }) {
     return _then(_$UpdateWeightRequestImpl(
       growthStageId: null == growthStageId
@@ -109,6 +116,10 @@ class __$$UpdateWeightRequestImplCopyWithImpl<$Res>
           ? _value.weightAnimal
           : weightAnimal // ignore: cast_nullable_to_non_nullable
               as double,
+      taskId: null == taskId
+          ? _value.taskId
+          : taskId // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -117,7 +128,9 @@ class __$$UpdateWeightRequestImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$UpdateWeightRequestImpl implements _UpdateWeightRequest {
   const _$UpdateWeightRequestImpl(
-      {required this.growthStageId, required this.weightAnimal});
+      {required this.growthStageId,
+      required this.weightAnimal,
+      required this.taskId});
 
   factory _$UpdateWeightRequestImpl.fromJson(Map<String, dynamic> json) =>
       _$$UpdateWeightRequestImplFromJson(json);
@@ -126,10 +139,12 @@ class _$UpdateWeightRequestImpl implements _UpdateWeightRequest {
   final String growthStageId;
   @override
   final double weightAnimal;
+  @override
+  final String taskId;
 
   @override
   String toString() {
-    return 'UpdateWeightRequest(growthStageId: $growthStageId, weightAnimal: $weightAnimal)';
+    return 'UpdateWeightRequest(growthStageId: $growthStageId, weightAnimal: $weightAnimal, taskId: $taskId)';
   }
 
   @override
@@ -140,12 +155,14 @@ class _$UpdateWeightRequestImpl implements _UpdateWeightRequest {
             (identical(other.growthStageId, growthStageId) ||
                 other.growthStageId == growthStageId) &&
             (identical(other.weightAnimal, weightAnimal) ||
-                other.weightAnimal == weightAnimal));
+                other.weightAnimal == weightAnimal) &&
+            (identical(other.taskId, taskId) || other.taskId == taskId));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, growthStageId, weightAnimal);
+  int get hashCode =>
+      Object.hash(runtimeType, growthStageId, weightAnimal, taskId);
 
   /// Create a copy of UpdateWeightRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -167,7 +184,8 @@ class _$UpdateWeightRequestImpl implements _UpdateWeightRequest {
 abstract class _UpdateWeightRequest implements UpdateWeightRequest {
   const factory _UpdateWeightRequest(
       {required final String growthStageId,
-      required final double weightAnimal}) = _$UpdateWeightRequestImpl;
+      required final double weightAnimal,
+      required final String taskId}) = _$UpdateWeightRequestImpl;
 
   factory _UpdateWeightRequest.fromJson(Map<String, dynamic> json) =
       _$UpdateWeightRequestImpl.fromJson;
@@ -176,6 +194,8 @@ abstract class _UpdateWeightRequest implements UpdateWeightRequest {
   String get growthStageId;
   @override
   double get weightAnimal;
+  @override
+  String get taskId;
 
   /// Create a copy of UpdateWeightRequest
   /// with the given fields replaced by the non-null parameter values.

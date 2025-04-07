@@ -15,6 +15,7 @@ _$AnimalSaleRequestImpl _$$AnimalSaleRequestImplFromJson(
       quantity: (json['quantity'] as num).toInt(),
       staffId: json['staffId'] as String,
       saleTypeId: json['saleTypeId'] as String,
+      taskId: json['taskId'] as String,
     );
 
 Map<String, dynamic> _$$AnimalSaleRequestImplToJson(
@@ -26,4 +27,5 @@ Map<String, dynamic> _$$AnimalSaleRequestImplToJson(
       'quantity': instance.quantity,
       'staffId': instance.staffId,
       'saleTypeId': instance.saleTypeId,
+      'taskId': instance.taskId,
     };

@@ -130,9 +130,15 @@ class TaskRepository {
     }
   }
 
-  Future<bool> setTaskIsTreatment({required String taskId}) async {
+  Future<bool> setTaskIsTreatment({
+    required String taskId,
+    required String medicalSymptomId,
+  }) async {
     try {
-      return await apiClient.setTaskIsTreatment(taskId: taskId);
+      return await apiClient.setTaskIsTreatment(
+        taskId: taskId,
+        medicalSymptomId: medicalSymptomId,
+      );
     } catch (e) {
       rethrow;
     }

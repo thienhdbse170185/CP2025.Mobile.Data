@@ -8,6 +8,7 @@ class UpdateWeightRequest with _$UpdateWeightRequest {
   const factory UpdateWeightRequest({
     required String growthStageId,
     required double weightAnimal,
+    required String taskId,
   }) = _UpdateWeightRequest;
 
   factory UpdateWeightRequest.fromJson(Map<String, dynamic> json) =>
