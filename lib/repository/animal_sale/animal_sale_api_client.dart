@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:data_layer/api_endpoints.dart';
+import 'package:data_layer/model/dto/sale_log_detail/sale_log_detail_dto.dart';
 import 'package:data_layer/model/dto/task/sale_log/sale_log_dto.dart';
 import 'package:data_layer/model/request/animal_sale/animal_sale_request.dart';
 import 'package:dio/dio.dart';
@@ -42,6 +43,22 @@ class AnimalSaleApiClient {
       throw Exception('Lỗi không xác định!');
     } on DioException catch (e) {
       log('[ANIMAL_SALE_API_CLIENT] Lấy thông tin bán gia cầm thất bại!');
+      log('Lỗi: ${e.toString()}');
+      rethrow;
+    }
+  }
+
+  Future<SaleLogDetailDto> getSaleLogByTaskId({required String taskId}) async {
+    try {
+      log('[ANIMAL_SALE_API_CLIENT] Chuẩn bị lấy thông tin bán gia cầm theo ID công việc');
+      final response = await dio.get('/animalsale/$taskId');
+      if (response.statusCode == 200) {
+        log('[ANIMAL_SALE_API_CLIENT] Lấy thông tin bán gia cầm theo ID công việc thành công!');
+        return SaleLogDetailDto.fromJson(response.data['result']);
+      }
+      throw Exception('Lỗi không xác định!');
+    } on DioException catch (e) {
+      log('[ANIMAL_SALE_API_CLIENT] Lấy thông tin bán gia cầm theo ID công việc thất bại!');
       log('Lỗi: ${e.toString()}');
       rethrow;
     }
