@@ -1,3 +1,4 @@
+import 'package:data_layer/model/dto/task/status_log/status_log.dart';
 import 'package:data_layer/model/entity/task/tash_type/task_type.dart';
 import 'package:data_layer/model/entity/user/user.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -26,6 +27,7 @@ class TaskHaveCageName with _$TaskHaveCageName {
     required TaskType taskType,
     String? prescriptionId,
     required bool isTreatmentTask,
+    List<StatusLog>? statusLogs,
   }) = _TaskHaveCageName;
 
   factory TaskHaveCageName.fromJson(Map<String, dynamic> json) =>

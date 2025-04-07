@@ -28,6 +28,9 @@ _$TaskHaveCageNameImpl _$$TaskHaveCageNameImplFromJson(
       taskType: TaskType.fromJson(json['taskType'] as Map<String, dynamic>),
       prescriptionId: json['prescriptionId'] as String?,
       isTreatmentTask: json['isTreatmentTask'] as bool,
+      statusLogs: (json['statusLogs'] as List<dynamic>?)
+          ?.map((e) => StatusLog.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$$TaskHaveCageNameImplToJson(
@@ -51,4 +54,5 @@ Map<String, dynamic> _$$TaskHaveCageNameImplToJson(
       'taskType': instance.taskType,
       'prescriptionId': instance.prescriptionId,
       'isTreatmentTask': instance.isTreatmentTask,
+      'statusLogs': instance.statusLogs,
     };

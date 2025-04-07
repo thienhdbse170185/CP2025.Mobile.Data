@@ -38,6 +38,7 @@ mixin _$TaskHaveCageName {
   TaskType get taskType => throw _privateConstructorUsedError;
   String? get prescriptionId => throw _privateConstructorUsedError;
   bool get isTreatmentTask => throw _privateConstructorUsedError;
+  List<StatusLog>? get statusLogs => throw _privateConstructorUsedError;
 
   /// Serializes this TaskHaveCageName to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -73,7 +74,8 @@ abstract class $TaskHaveCageNameCopyWith<$Res> {
       User assignedToUser,
       TaskType taskType,
       String? prescriptionId,
-      bool isTreatmentTask});
+      bool isTreatmentTask,
+      List<StatusLog>? statusLogs});
 
   $UserCopyWith<$Res> get assignedToUser;
   $TaskTypeCopyWith<$Res> get taskType;
@@ -112,6 +114,7 @@ class _$TaskHaveCageNameCopyWithImpl<$Res, $Val extends TaskHaveCageName>
     Object? taskType = null,
     Object? prescriptionId = freezed,
     Object? isTreatmentTask = null,
+    Object? statusLogs = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -186,6 +189,10 @@ class _$TaskHaveCageNameCopyWithImpl<$Res, $Val extends TaskHaveCageName>
           ? _value.isTreatmentTask
           : isTreatmentTask // ignore: cast_nullable_to_non_nullable
               as bool,
+      statusLogs: freezed == statusLogs
+          ? _value.statusLogs
+          : statusLogs // ignore: cast_nullable_to_non_nullable
+              as List<StatusLog>?,
     ) as $Val);
   }
 
@@ -236,7 +243,8 @@ abstract class _$$TaskHaveCageNameImplCopyWith<$Res>
       User assignedToUser,
       TaskType taskType,
       String? prescriptionId,
-      bool isTreatmentTask});
+      bool isTreatmentTask,
+      List<StatusLog>? statusLogs});
 
   @override
   $UserCopyWith<$Res> get assignedToUser;
@@ -275,6 +283,7 @@ class __$$TaskHaveCageNameImplCopyWithImpl<$Res>
     Object? taskType = null,
     Object? prescriptionId = freezed,
     Object? isTreatmentTask = null,
+    Object? statusLogs = freezed,
   }) {
     return _then(_$TaskHaveCageNameImpl(
       id: null == id
@@ -349,6 +358,10 @@ class __$$TaskHaveCageNameImplCopyWithImpl<$Res>
           ? _value.isTreatmentTask
           : isTreatmentTask // ignore: cast_nullable_to_non_nullable
               as bool,
+      statusLogs: freezed == statusLogs
+          ? _value._statusLogs
+          : statusLogs // ignore: cast_nullable_to_non_nullable
+              as List<StatusLog>?,
     ));
   }
 }
@@ -374,7 +387,9 @@ class _$TaskHaveCageNameImpl implements _TaskHaveCageName {
       required this.assignedToUser,
       required this.taskType,
       this.prescriptionId,
-      required this.isTreatmentTask});
+      required this.isTreatmentTask,
+      final List<StatusLog>? statusLogs})
+      : _statusLogs = statusLogs;
 
   factory _$TaskHaveCageNameImpl.fromJson(Map<String, dynamic> json) =>
       _$$TaskHaveCageNameImplFromJson(json);
@@ -415,10 +430,19 @@ class _$TaskHaveCageNameImpl implements _TaskHaveCageName {
   final String? prescriptionId;
   @override
   final bool isTreatmentTask;
+  final List<StatusLog>? _statusLogs;
+  @override
+  List<StatusLog>? get statusLogs {
+    final value = _statusLogs;
+    if (value == null) return null;
+    if (_statusLogs is EqualUnmodifiableListView) return _statusLogs;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   String toString() {
-    return 'TaskHaveCageName(id: $id, cageId: $cageId, cageName: $cageName, taskName: $taskName, description: $description, status: $status, createdAt: $createdAt, priorityNum: $priorityNum, dueDate: $dueDate, session: $session, completedAt: $completedAt, cageAnimalName: $cageAnimalName, hasAnimalDesease: $hasAnimalDesease, isWarning: $isWarning, assignedToUser: $assignedToUser, taskType: $taskType, prescriptionId: $prescriptionId, isTreatmentTask: $isTreatmentTask)';
+    return 'TaskHaveCageName(id: $id, cageId: $cageId, cageName: $cageName, taskName: $taskName, description: $description, status: $status, createdAt: $createdAt, priorityNum: $priorityNum, dueDate: $dueDate, session: $session, completedAt: $completedAt, cageAnimalName: $cageAnimalName, hasAnimalDesease: $hasAnimalDesease, isWarning: $isWarning, assignedToUser: $assignedToUser, taskType: $taskType, prescriptionId: $prescriptionId, isTreatmentTask: $isTreatmentTask, statusLogs: $statusLogs)';
   }
 
   @override
@@ -456,31 +480,35 @@ class _$TaskHaveCageNameImpl implements _TaskHaveCageName {
             (identical(other.prescriptionId, prescriptionId) ||
                 other.prescriptionId == prescriptionId) &&
             (identical(other.isTreatmentTask, isTreatmentTask) ||
-                other.isTreatmentTask == isTreatmentTask));
+                other.isTreatmentTask == isTreatmentTask) &&
+            const DeepCollectionEquality()
+                .equals(other._statusLogs, _statusLogs));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      cageId,
-      cageName,
-      taskName,
-      description,
-      status,
-      createdAt,
-      priorityNum,
-      dueDate,
-      session,
-      completedAt,
-      cageAnimalName,
-      hasAnimalDesease,
-      isWarning,
-      assignedToUser,
-      taskType,
-      prescriptionId,
-      isTreatmentTask);
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        id,
+        cageId,
+        cageName,
+        taskName,
+        description,
+        status,
+        createdAt,
+        priorityNum,
+        dueDate,
+        session,
+        completedAt,
+        cageAnimalName,
+        hasAnimalDesease,
+        isWarning,
+        assignedToUser,
+        taskType,
+        prescriptionId,
+        isTreatmentTask,
+        const DeepCollectionEquality().hash(_statusLogs)
+      ]);
 
   /// Create a copy of TaskHaveCageName
   /// with the given fields replaced by the non-null parameter values.
@@ -518,7 +546,8 @@ abstract class _TaskHaveCageName implements TaskHaveCageName {
       required final User assignedToUser,
       required final TaskType taskType,
       final String? prescriptionId,
-      required final bool isTreatmentTask}) = _$TaskHaveCageNameImpl;
+      required final bool isTreatmentTask,
+      final List<StatusLog>? statusLogs}) = _$TaskHaveCageNameImpl;
 
   factory _TaskHaveCageName.fromJson(Map<String, dynamic> json) =
       _$TaskHaveCageNameImpl.fromJson;
@@ -559,6 +588,8 @@ abstract class _TaskHaveCageName implements TaskHaveCageName {
   String? get prescriptionId;
   @override
   bool get isTreatmentTask;
+  @override
+  List<StatusLog>? get statusLogs;
 
   /// Create a copy of TaskHaveCageName
   /// with the given fields replaced by the non-null parameter values.
