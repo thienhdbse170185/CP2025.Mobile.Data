@@ -14,3 +14,5 @@ export 'task/vaccin_schedule_log/vaccin_schedule_log_dto.dart';
 export 'upload_image/upload_image_dto.dart';
 export 'vaccine/vaccine_dto.dart';
 export 'vaccine_schedule/vaccine_schedule_dto.dart';
+export 'push_notification/push_notification_dto.dart';
+export 'push_notification/custom_data.dart';
