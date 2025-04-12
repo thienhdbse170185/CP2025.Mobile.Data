@@ -25,6 +25,24 @@ class FarmingBatchApiClient {
     }
   }
 
+  Future<FarmingBatchDto> getFarmingBatchByCageDuedate(
+      String cageId, String dueDateTask) async {
+    try {
+      final response = await dio
+          .get('${ApiEndpoints.farmingBatchByCage}/$cageId/$dueDateTask');
+      if (response.statusCode == 200) {
+        return FarmingBatchDto.fromJson(response.data['result']);
+      }
+      throw Exception('Failed to fetch farming batch by cage');
+    } on DioException catch (e) {
+      if (e.response?.statusCode == 404) {
+        throw Exception('farming-batch-not-found');
+      }
+      log(e.toString());
+      rethrow;
+    }
+  }
+
   Future<List<FarmingBatchDto>> getFarmingBatchesByUserId(String userId) async {
     try {
       final response = await dio.get(

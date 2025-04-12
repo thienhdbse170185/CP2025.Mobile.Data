@@ -11,7 +11,7 @@ class PrescriptionApiClient {
 
   Future<PrescriptionDto> getPrescriptionById(String prescriptionId) async {
     try {
-      log('[PRESCRIPTION_API_CLIENT] Lấy thông tin đơn thuốc theo id: $prescriptionId');
+      log('[PRESCRIPTION_API_CLIENT] Lấy thông tin đơn thuốc theo prescriptionId: $prescriptionId');
       final response = await dio
           .get('${ApiEndpoints.prescription}/$prescriptionId/prescription');
       if (response.statusCode == 200) {

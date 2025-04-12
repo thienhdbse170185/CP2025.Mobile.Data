@@ -13,6 +13,15 @@ class FarmingBatchRepository {
     }
   }
 
+  Future<FarmingBatchDto> getFarmingBatchByCageDuedate(
+      String cageId, String dueDateTask) async {
+    try {
+      return await apiClient.getFarmingBatchByCageDuedate(cageId, dueDateTask);
+    } catch (e) {
+      rethrow;
+    }
+  }
+
   Future<List<FarmingBatchDto>> getFarmingBatchesByUserId(String userId) async {
     try {
       return await apiClient.getFarmingBatchesByUserId(userId);
