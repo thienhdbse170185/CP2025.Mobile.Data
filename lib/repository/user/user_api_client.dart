@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:data_layer/api_endpoints.dart';
+import 'package:data_layer/model/dto/user/user_dto.dart';
 import 'package:data_layer/model/response/server_time/get_server_time_response.dart';
 import 'package:dio/dio.dart';
 
@@ -36,6 +37,19 @@ class UserApiClient {
     }
   }
 
+  Future<UserDto> getUserProfileByUserId(String userId) async {
+    try {
+      final response = await dio.get('/auth/me');
+      if (response.statusCode == 200) {
+        return UserDto.fromJson(response.data['result']);
+      } else {
+        throw Exception('Failed to get user profile by userId');
+      }
+    } on DioException catch (e) {
+      throw Exception(e.toString());
+    }
+  }
+
   Future<bool> sendOTP(String email, String username, bool isResend) async {
     try {
       final request = {
@@ -43,13 +57,32 @@ class UserApiClient {
         'username': username,
         'isResend': isResend,
       };
-      final response =
-          await dio.post('${ApiEndpoints.getUsers}/otp/send', data: request);
+      final response = await dio.post('users/otp/send', data: request);
       if (response.statusCode == 200) {
         log('[Server Send_OTP]: Server đã gửi OTP đến email $email');
         return true;
       } else {
         throw Exception('Failed to send OTP');
+      }
+    } on DioException catch (e) {
+      throw Exception(e.toString());
+    }
+  }
+
+  Future<bool> sendOTPSms(
+      String phoneNumber, String username, bool isResend) async {
+    try {
+      final request = {
+        'phoneNumber': phoneNumber,
+        'userName': username,
+        'isResend': isResend,
+      };
+      final response = await dio.post('/users/otp/sms/send', data: request);
+      if (response.statusCode == 200) {
+        log('[Server Send_OTP]: Server đã gửi OTP đến số điện thoại $phoneNumber');
+        return true;
+      } else {
+        throw Exception('Failed to send OTP SMS');
       }
     } on DioException catch (e) {
       throw Exception(e.toString());

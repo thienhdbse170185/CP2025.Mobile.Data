@@ -1,3 +1,4 @@
+import 'package:data_layer/model/dto/user/user_dto.dart';
 import 'package:data_layer/model/response/server_time/get_server_time_response.dart';
 import 'package:data_layer/repository/user/user_api_client.dart';
 
@@ -24,6 +25,23 @@ class UserRepository {
   Future<bool> sendOTP(String email, String username, bool isResend) async {
     try {
       return await userApiClient.sendOTP(email, username, isResend);
+    } catch (e) {
+      throw Exception(e.toString());
+    }
+  }
+
+  Future<bool> sendOTPSms(
+      String phoneNumber, String username, bool isResend) async {
+    try {
+      return await userApiClient.sendOTPSms(phoneNumber, username, isResend);
+    } catch (e) {
+      throw Exception(e.toString());
+    }
+  }
+
+  Future<UserDto> getUserProfileByUserId(String userId) async {
+    try {
+      return await userApiClient.getUserProfileByUserId(userId);
     } catch (e) {
       throw Exception(e.toString());
     }

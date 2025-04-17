@@ -29,4 +29,14 @@ class FarmingBatchRepository {
       rethrow;
     }
   }
+
+  Future<bool> createDeathReport(
+      String cageId, String dueDateTask, int deathReport) async {
+    try {
+      return await apiClient.createDeathReport(
+          cageId, dueDateTask, deathReport);
+    } catch (e) {
+      rethrow;
+    }
+  }
 }

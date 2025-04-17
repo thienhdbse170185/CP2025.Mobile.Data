@@ -16,3 +16,4 @@ export 'vaccine/vaccine_dto.dart';
 export 'vaccine_schedule/vaccine_schedule_dto.dart';
 export 'push_notification/push_notification_dto.dart';
 export 'push_notification/custom_data.dart';
+export 'user/user_dto.dart';

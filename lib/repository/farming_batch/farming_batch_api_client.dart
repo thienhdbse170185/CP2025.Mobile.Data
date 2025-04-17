@@ -61,4 +61,23 @@ class FarmingBatchApiClient {
       rethrow;
     }
   }
+
+  Future<bool> createDeathReport(
+      String batchId, String stageId, int deathAmount) async {
+    try {
+      final response = await dio.post(
+        '/farmingbatchs/$batchId/growth-stages/$stageId/dead-animals',
+        data: {
+          'deathAnimal': deathAmount,
+        },
+      );
+      if (response.statusCode == 200) {
+        return true;
+      }
+      throw Exception('Failed to create death report');
+    } on DioException catch (e) {
+      log(e.toString());
+      rethrow;
+    }
+  }
 }
