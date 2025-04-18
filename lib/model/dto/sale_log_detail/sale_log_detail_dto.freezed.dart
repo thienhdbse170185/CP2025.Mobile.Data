@@ -25,6 +25,7 @@ mixin _$SaleLogDetailDto {
   String get saleDate => throw _privateConstructorUsedError;
   int get unitPrice => throw _privateConstructorUsedError;
   int get quantity => throw _privateConstructorUsedError;
+  double get weight => throw _privateConstructorUsedError;
   int get total => throw _privateConstructorUsedError;
   String get staffId => throw _privateConstructorUsedError;
   String get staffName => throw _privateConstructorUsedError;
@@ -54,6 +55,7 @@ abstract class $SaleLogDetailDtoCopyWith<$Res> {
       String saleDate,
       int unitPrice,
       int quantity,
+      double weight,
       int total,
       String staffId,
       String staffName,
@@ -82,6 +84,7 @@ class _$SaleLogDetailDtoCopyWithImpl<$Res, $Val extends SaleLogDetailDto>
     Object? saleDate = null,
     Object? unitPrice = null,
     Object? quantity = null,
+    Object? weight = null,
     Object? total = null,
     Object? staffId = null,
     Object? staffName = null,
@@ -110,6 +113,10 @@ class _$SaleLogDetailDtoCopyWithImpl<$Res, $Val extends SaleLogDetailDto>
           ? _value.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
               as int,
+      weight: null == weight
+          ? _value.weight
+          : weight // ignore: cast_nullable_to_non_nullable
+              as double,
       total: null == total
           ? _value.total
           : total // ignore: cast_nullable_to_non_nullable
@@ -152,6 +159,7 @@ abstract class _$$SaleLogDetailDtoImplCopyWith<$Res>
       String saleDate,
       int unitPrice,
       int quantity,
+      double weight,
       int total,
       String staffId,
       String staffName,
@@ -178,6 +186,7 @@ class __$$SaleLogDetailDtoImplCopyWithImpl<$Res>
     Object? saleDate = null,
     Object? unitPrice = null,
     Object? quantity = null,
+    Object? weight = null,
     Object? total = null,
     Object? staffId = null,
     Object? staffName = null,
@@ -206,6 +215,10 @@ class __$$SaleLogDetailDtoImplCopyWithImpl<$Res>
           ? _value.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
               as int,
+      weight: null == weight
+          ? _value.weight
+          : weight // ignore: cast_nullable_to_non_nullable
+              as double,
       total: null == total
           ? _value.total
           : total // ignore: cast_nullable_to_non_nullable
@@ -243,6 +256,7 @@ class _$SaleLogDetailDtoImpl implements _SaleLogDetailDto {
       required this.saleDate,
       required this.unitPrice,
       required this.quantity,
+      required this.weight,
       required this.total,
       required this.staffId,
       required this.staffName,
@@ -264,6 +278,8 @@ class _$SaleLogDetailDtoImpl implements _SaleLogDetailDto {
   @override
   final int quantity;
   @override
+  final double weight;
+  @override
   final int total;
   @override
   final String staffId;
@@ -278,7 +294,7 @@ class _$SaleLogDetailDtoImpl implements _SaleLogDetailDto {
 
   @override
   String toString() {
-    return 'SaleLogDetailDto(growthStageId: $growthStageId, growthStageName: $growthStageName, saleDate: $saleDate, unitPrice: $unitPrice, quantity: $quantity, total: $total, staffId: $staffId, staffName: $staffName, saleTypeId: $saleTypeId, saleTypeName: $saleTypeName, logTime: $logTime)';
+    return 'SaleLogDetailDto(growthStageId: $growthStageId, growthStageName: $growthStageName, saleDate: $saleDate, unitPrice: $unitPrice, quantity: $quantity, weight: $weight, total: $total, staffId: $staffId, staffName: $staffName, saleTypeId: $saleTypeId, saleTypeName: $saleTypeName, logTime: $logTime)';
   }
 
   @override
@@ -296,6 +312,7 @@ class _$SaleLogDetailDtoImpl implements _SaleLogDetailDto {
                 other.unitPrice == unitPrice) &&
             (identical(other.quantity, quantity) ||
                 other.quantity == quantity) &&
+            (identical(other.weight, weight) || other.weight == weight) &&
             (identical(other.total, total) || other.total == total) &&
             (identical(other.staffId, staffId) || other.staffId == staffId) &&
             (identical(other.staffName, staffName) ||
@@ -316,6 +333,7 @@ class _$SaleLogDetailDtoImpl implements _SaleLogDetailDto {
       saleDate,
       unitPrice,
       quantity,
+      weight,
       total,
       staffId,
       staffName,
@@ -347,6 +365,7 @@ abstract class _SaleLogDetailDto implements SaleLogDetailDto {
       required final String saleDate,
       required final int unitPrice,
       required final int quantity,
+      required final double weight,
       required final int total,
       required final String staffId,
       required final String staffName,
@@ -367,6 +386,8 @@ abstract class _SaleLogDetailDto implements SaleLogDetailDto {
   int get unitPrice;
   @override
   int get quantity;
+  @override
+  double get weight;
   @override
   int get total;
   @override

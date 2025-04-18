@@ -10,6 +10,7 @@ class AnimalSaleRequest with _$AnimalSaleRequest {
     required String saleDate,
     required int unitPrice,
     required int quantity,
+    required double weight,
     required String staffId,
     required String saleTypeId,
     required String taskId,

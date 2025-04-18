@@ -11,6 +11,7 @@ class SaleLogDetailDto with _$SaleLogDetailDto {
     required String saleDate,
     required int unitPrice,
     required int quantity,
+    required double weight,
     required int total,
     required String staffId,
     required String staffName,

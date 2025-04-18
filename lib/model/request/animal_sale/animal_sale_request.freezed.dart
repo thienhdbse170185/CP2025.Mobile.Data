@@ -24,6 +24,7 @@ mixin _$AnimalSaleRequest {
   String get saleDate => throw _privateConstructorUsedError;
   int get unitPrice => throw _privateConstructorUsedError;
   int get quantity => throw _privateConstructorUsedError;
+  double get weight => throw _privateConstructorUsedError;
   String get staffId => throw _privateConstructorUsedError;
   String get saleTypeId => throw _privateConstructorUsedError;
   String get taskId => throw _privateConstructorUsedError;
@@ -49,6 +50,7 @@ abstract class $AnimalSaleRequestCopyWith<$Res> {
       String saleDate,
       int unitPrice,
       int quantity,
+      double weight,
       String staffId,
       String saleTypeId,
       String taskId});
@@ -73,6 +75,7 @@ class _$AnimalSaleRequestCopyWithImpl<$Res, $Val extends AnimalSaleRequest>
     Object? saleDate = null,
     Object? unitPrice = null,
     Object? quantity = null,
+    Object? weight = null,
     Object? staffId = null,
     Object? saleTypeId = null,
     Object? taskId = null,
@@ -94,6 +97,10 @@ class _$AnimalSaleRequestCopyWithImpl<$Res, $Val extends AnimalSaleRequest>
           ? _value.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
               as int,
+      weight: null == weight
+          ? _value.weight
+          : weight // ignore: cast_nullable_to_non_nullable
+              as double,
       staffId: null == staffId
           ? _value.staffId
           : staffId // ignore: cast_nullable_to_non_nullable
@@ -123,6 +130,7 @@ abstract class _$$AnimalSaleRequestImplCopyWith<$Res>
       String saleDate,
       int unitPrice,
       int quantity,
+      double weight,
       String staffId,
       String saleTypeId,
       String taskId});
@@ -145,6 +153,7 @@ class __$$AnimalSaleRequestImplCopyWithImpl<$Res>
     Object? saleDate = null,
     Object? unitPrice = null,
     Object? quantity = null,
+    Object? weight = null,
     Object? staffId = null,
     Object? saleTypeId = null,
     Object? taskId = null,
@@ -166,6 +175,10 @@ class __$$AnimalSaleRequestImplCopyWithImpl<$Res>
           ? _value.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
               as int,
+      weight: null == weight
+          ? _value.weight
+          : weight // ignore: cast_nullable_to_non_nullable
+              as double,
       staffId: null == staffId
           ? _value.staffId
           : staffId // ignore: cast_nullable_to_non_nullable
@@ -190,6 +203,7 @@ class _$AnimalSaleRequestImpl implements _AnimalSaleRequest {
       required this.saleDate,
       required this.unitPrice,
       required this.quantity,
+      required this.weight,
       required this.staffId,
       required this.saleTypeId,
       required this.taskId});
@@ -206,6 +220,8 @@ class _$AnimalSaleRequestImpl implements _AnimalSaleRequest {
   @override
   final int quantity;
   @override
+  final double weight;
+  @override
   final String staffId;
   @override
   final String saleTypeId;
@@ -214,7 +230,7 @@ class _$AnimalSaleRequestImpl implements _AnimalSaleRequest {
 
   @override
   String toString() {
-    return 'AnimalSaleRequest(growthStageId: $growthStageId, saleDate: $saleDate, unitPrice: $unitPrice, quantity: $quantity, staffId: $staffId, saleTypeId: $saleTypeId, taskId: $taskId)';
+    return 'AnimalSaleRequest(growthStageId: $growthStageId, saleDate: $saleDate, unitPrice: $unitPrice, quantity: $quantity, weight: $weight, staffId: $staffId, saleTypeId: $saleTypeId, taskId: $taskId)';
   }
 
   @override
@@ -230,6 +246,7 @@ class _$AnimalSaleRequestImpl implements _AnimalSaleRequest {
                 other.unitPrice == unitPrice) &&
             (identical(other.quantity, quantity) ||
                 other.quantity == quantity) &&
+            (identical(other.weight, weight) || other.weight == weight) &&
             (identical(other.staffId, staffId) || other.staffId == staffId) &&
             (identical(other.saleTypeId, saleTypeId) ||
                 other.saleTypeId == saleTypeId) &&
@@ -239,7 +256,7 @@ class _$AnimalSaleRequestImpl implements _AnimalSaleRequest {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, growthStageId, saleDate,
-      unitPrice, quantity, staffId, saleTypeId, taskId);
+      unitPrice, quantity, weight, staffId, saleTypeId, taskId);
 
   /// Create a copy of AnimalSaleRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -264,6 +281,7 @@ abstract class _AnimalSaleRequest implements AnimalSaleRequest {
       required final String saleDate,
       required final int unitPrice,
       required final int quantity,
+      required final double weight,
       required final String staffId,
       required final String saleTypeId,
       required final String taskId}) = _$AnimalSaleRequestImpl;
@@ -279,6 +297,8 @@ abstract class _AnimalSaleRequest implements AnimalSaleRequest {
   int get unitPrice;
   @override
   int get quantity;
+  @override
+  double get weight;
   @override
   String get staffId;
   @override
