@@ -25,7 +25,9 @@ class SymptomApiClient {
 
   Future<List<SymptomDto>> getSymptoms() async {
     try {
-      final response = await dio.get(ApiEndpoints.symptom);
+      final response = await dio.get(ApiEndpoints.symptom, queryParameters: {
+        'PageSize': 100,
+      });
       if (response.statusCode == 200) {
         return (response.data['result']['items'] as List)
             .map((e) => SymptomDto.fromJson(e))
