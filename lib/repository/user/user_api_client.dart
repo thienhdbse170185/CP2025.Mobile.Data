@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:data_layer/api_endpoints.dart';
 import 'package:data_layer/model/dto/user/user_dto.dart';
+import 'package:data_layer/model/request/user/update_user_info/update_user_info_request.dart';
 import 'package:data_layer/model/response/server_time/get_server_time_response.dart';
 import 'package:dio/dio.dart';
 
@@ -127,6 +128,21 @@ class UserApiClient {
       }
     } on DioException catch (e) {
       throw Exception(e.toString());
+    }
+  }
+
+  Future<bool> updateUserInfo(
+      String userId, UpdateUserInfoRequest request) async {
+    try {
+      final response = await dio.put('/users/$userId', data: request.toJson());
+      if (response.statusCode == 200) {
+        return true;
+      } else {
+        throw Exception('Failed to update user info');
+      }
+    } on DioException catch (e) {
+      log('[UserApiClient] error - updateUserInfo: ${e.toString()}');
+      rethrow;
     }
   }
 }

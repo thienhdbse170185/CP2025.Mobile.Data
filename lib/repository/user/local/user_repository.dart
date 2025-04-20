@@ -1,4 +1,5 @@
 import 'package:data_layer/model/dto/user/user_dto.dart';
+import 'package:data_layer/model/request/user/update_user_info/update_user_info_request.dart';
 import 'package:data_layer/model/response/server_time/get_server_time_response.dart';
 import 'package:data_layer/repository/user/user_api_client.dart';
 
@@ -62,6 +63,15 @@ class UserRepository {
   Future<bool> verifyOTP({required String email, required String otp}) async {
     try {
       return await userApiClient.verifyOTP(email: email, otp: otp);
+    } catch (e) {
+      throw Exception(e.toString());
+    }
+  }
+
+  Future<bool> updateUserInfo(
+      String userId, UpdateUserInfoRequest request) async {
+    try {
+      return await userApiClient.updateUserInfo(userId, request);
     } catch (e) {
       throw Exception(e.toString());
     }
