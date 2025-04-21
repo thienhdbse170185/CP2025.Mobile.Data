@@ -31,10 +31,14 @@ class FarmingBatchRepository {
   }
 
   Future<bool> createDeathReport(
-      String cageId, String dueDateTask, int deathReport) async {
+      String cageId, String dueDateTask, int deathReport, String notes) async {
     try {
       return await apiClient.createDeathReport(
-          cageId, dueDateTask, deathReport);
+        cageId,
+        dueDateTask,
+        deathReport,
+        notes,
+      );
     } catch (e) {
       rethrow;
     }
